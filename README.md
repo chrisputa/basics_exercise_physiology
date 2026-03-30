@@ -2,9 +2,9 @@
 [cc-by-image]: https://i.creativecommons.org/l/by/4.0/88x31.png
 [cc-by-shield]: https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg
 
-# Basics Exercise Physiology
+# Basics in Exercise Physiology
 
-This repository contains the content for the course "Basics Exercise Physiology". It includes lecture notes, tutorials, and interactive dashboards on topics relevant to the field of exercise physiology.
+This repository contains the content for the course "Basics in Exercise Physiology". It includes lecture notes, tutorials, and interactive dashboards on topics relevant to the field of exercise physiology.
 
 # Developer Notes
 

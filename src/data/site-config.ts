@@ -68,7 +68,7 @@ const siteConfig: SiteConfig = {
     },
     website: 'https://chrisputa.github.io/',
     base: '/basics_exercise_physiology/',
-    title: 'Basics Exercise Physiology',
+    title: 'Basics in Exercise Physiology',
     author: {
         name: 'Christian Puta',
         url: 'https://chrisputa.github.io/'
