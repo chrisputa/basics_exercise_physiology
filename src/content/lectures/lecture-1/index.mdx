@@ -1,18 +1,30 @@
 ---
-title: Basics Exercise Physiology and Immunology in Sports Medicine I
-description: Introduces foundational concepts of physical activity and exercise in relation to energy expenditure and metabolic strain. Covers short-term homeostatic balancing during exercise, including cardiovascular, respiratory, metabolic and thermoregulatory responses. Explores the physiology of sleep and wakefulness, including sleep architecture, NREM/REM cycles, and the bidirectional relationship between exercise and sleep quality.
-publishDate: '2026-04-10'
+title: Basics Exercise Physiology and Immunology - Key Concepts, Homeostasis and Hormesis
+description: Introduces foundational concepts of physical activity and exercise in relation to energy expenditure and metabolic strain.
+  Covers short-term homeostatic balancing during exercise, including cardiovascular, respiratory, metabolic and thermoregulatory responses.
+  Presents homeostasis and hormesis as complementary frameworks for exercise-induced inflammation, contrasting negative feedback dynamics with biphasic dose-response adaptation, and discussing implications for healthy athletes and clinical populations (ME/CFS, Long COVID).
+  Explores the physiology of sleep and wakefulness, including sleep architecture, NREM/REM cycles, and the bidirectional relationship between exercise and sleep quality.
+publishDate: '2026-04-13'
 draft: false
 tags:
   - Lecture
 ---
+
+import Figure from '../../../components/Figure.astro';
+import fig1 from '../../../assets/figure1_homeostasis_timecourse_bw.png';
+import fig1Dark from '../../../assets/generated/figure1_homeostasis_timecourse_bw_dark.png';
+import fig2 from '../../../assets/figure2_hormesis_doseresponse_bw.png';
+import fig2Dark from '../../../assets/generated/figure2_hormesis_doseresponse_bw_dark.png';
 
 
 ## Table of Contents
 
 1. [Key Terms of Physical Activity and Exercise](#1-key-terms-of-physical-activity-and-exercise-in-relation-to-energy-expenditure-and-metabolic-strain)
 2. [Short-Term Balancing of Homeostasis](#2-short-term-balancing-of-homeostasis)
-3. [State of Sleep and Wakefulness](#3-state-of-sleep-and-wakefulness)
+3. [Homeostasis and Hormesis](#3-homeostasis-and-hormesis)
+4. [State of Sleep and Wakefulness](#4-state-of-sleep-and-wakefulness)
+
+---
 
 From: Puta C, Gabriel H. *Basics for Exercise Physiology in Sports Medicine and Health Promotion.* Friedrich-Schiller-University Jena, April 6, 2025.
 
@@ -105,7 +117,91 @@ Upon cessation of exercise, the organism enters a **recovery phase** characteriz
 
 ---
 
-## 3 State of Sleep and Wakefulness
+## 3 Homeostasis and Hormesis
+
+### From Homeostatic Regulation to Hormetic Adaptation
+
+The acute physiological responses described in Section 2 restore internal equilibrium through negative feedback — a process canonically attributed to Claude Bernard and Walter Cannon [2]. However, the observation that repeated exercise bouts lead not merely to restoration of the original baseline but to a *higher* functional set-point demands a second explanatory framework: **hormesis** [3, 4].
+
+Hormesis describes the biphasic dose-response relationship in which low-to-moderate doses of a stressor produce beneficial effects opposite to those observed at high doses [3]. In exercise physiology, this means that the very inflammatory mediators serving as homeostatic error signals — IL-6, reactive oxygen species (ROS), NF-κB — simultaneously function as dose-dependent adaptive triggers when present at appropriate magnitudes and durations [4].
+
+More formally, "hormesis refers to adaptive responses of biological systems to moderate environmental or self-imposed challenges through which the system improves its functionality and/or tolerance to more severe challenges. In other words, hormesis is a coordinated response of cells and organisms to an imposed or intrinsically generated challenge that involves multiple integrative signal-transduction processes, each of which is quantitatively hormetic, to coordinate a final holistic response" [15].
+
+### Hormetic Stress Response
+
+Skeletal muscle and the broader physiological system perpetually encounter intrinsic mechanical and metabolic challenges imposed by physical activity. To cope with exercise-induced stressors — including mechanical loading, metabolic perturbation, oxidative stress, hypoxia, muscle damage, and thermal stress arising from sustained exertion — living organisms have evolved adaptive, protective training responses. At the molecular, cellular, and whole-organism levels, these responses share common regulatory features collectively termed 'exercise stress' and rely on evolutionarily conserved, exercise-responsive transcriptional networks [16]. The pattern of exercise-induced adaptations is dictated not only by the specific type of training stimulus (e.g., resistance, endurance, or concurrent exercise) but also by its intensity, frequency, and duration — variables central to exercise programming. Each of these factors, alone or in combination, can transiently disrupt physiological homeostasis and impair functional capacity. Sub-maximal training loads, however, elicit beneficial adaptive responses — including muscle hypertrophy, mitochondrial biogenesis, and improved cardiovascular function — that attenuate the physiological cost of subsequent bouts of the same or related exercise stress. This dose-dependent, biphasic adaptive property is known as 'hormesis' [15, 16]. A hallmark of exercise-induced hormesis is that the adaptive response to a given exercise stressor can extend cross-protective effects against future, and apparently unrelated, forms of physiological stress. The architecture of the exercise-responsive transcriptional network, whereby distinct modes of training regulate overlapping profiles of effector genes — including those encoding heat shock proteins, pro- and anti-inflammatory immune responses, antioxidant enzymes, and angiogenic factors — provides a compelling mechanistic explanation for this phenomenon [16].
+
+<Figure src={fig1} srcDark={fig1Dark} alt="Homeostasis time-course">
+**Figure 1 — Homeostasis time-course: the IL-6 peak, delayed IL-10/IL-1Ra counter-response, functional capacity dip, and the set-point reference line, with annotated phase zones.**
+</Figure>
+
+<Figure src={fig1} srcDark={fig1Dark} alt="Hormesis dose-response">
+**Figure 2 — Hormesis dose-response: the full J-curve (URTI risk), bell-shaped adaptive benefit, and monotonically rising inflammatory load, with the three dose zones (sub-threshold / hormetic / overload) shaded.**
+</Figure>
+
+### The Dual Identity of Inflammatory Mediators
+
+The juxtaposition of homeostasis and hormesis reveals that the same molecular entities serve different functional roles depending on dose and context [5]:
+
+- **Interleukin-6 (IL-6)** functions as a homeostatic error signal communicating perturbation magnitude to the hypothalamus and liver, yet simultaneously acts as a myokine with insulin-sensitising, lipolytic, and anti-inflammatory properties that drive long-term adaptation [6].
+- **Reactive oxygen species (ROS)** act as homeostatic damage markers activating NF-κB-driven repair programs at low concentrations, while simultaneously triggering Nrf2-mediated antioxidant upregulation through a hormetic pathway [7].
+- **NF-κB** activates both pro-inflammatory gene targets (TNF-α, IL-1β, COX-2) and protective ones (antioxidant enzymes, anti-apoptotic factors), with the net outcome determined by the intensity and duration of its activation [5].
+
+### Molecular Mediators of the Hormetic Response
+
+At the molecular level, the hormetic response to exercise is mediated by overlapping stress-response pathways [3, 4]:
+
+- **Nrf2** (nuclear factor erythroid 2-related factor 2): activated by exercise-generated ROS; drives the transcription of antioxidant enzymes (SOD, catalase, glutathione peroxidase) and phase II detoxification enzymes.
+- **PGC-1α** (peroxisome proliferator-activated receptor gamma coactivator 1-alpha): activated by AMP/ATP ratio, intracellular calcium, and ROS; orchestrates mitochondrial biogenesis, fibre type transition, and VEGF-driven angiogenesis.
+- **Heat-shock proteins (HSPs)**, particularly HSP70 and HSP90: upregulated in response to thermal and oxidative stress; act as molecular chaperones protecting structural and contractile proteins.
+- **Autophagy induction**: exercise activates AMPK-mediated autophagy, clearing dysfunctional organelles and misfolded proteins, contributing to cellular quality control.
+
+A crucial insight is that complete suppression of inflammation — for example through NSAIDs or antioxidants immediately post-exercise — may blunt the adaptive signal and attenuate training-induced gains [8, 9].
+
+### Biphasic Dose-Response and the J-Curve of Immune Function
+
+The hormesis framework organises the exercise dose-response into three operationally distinct zones [5, 10]:
+
+1. **Sub-threshold zone** (sedentary to light activity): insufficient stimulus for meaningful adaptive programming.
+2. **Hormetic zone** (moderate to vigorous exercise): net adaptive benefit peaks; URTI risk falls approximately 38 % below population average [10]; Nrf2 and PGC-1α pathways are maximally activated.
+3. **Overload zone** (extreme training load): inflammatory load overwhelms adaptive reserves; immune suppression ensues consistent with the open-window hypothesis [10, 11].
+
+The J-curve of upper respiratory tract infection (URTI) risk across the exercise intensity spectrum, first articulated by Nieman [10], is the most widely cited empirical anchor for the hormetic dose-response in exercise immunology. At the moderate exercise level, URTI risk reaches its nadir; at the heavy-to-extreme transition, URTI risk exceeds the sedentary baseline, marking the operational equivalent of the hormetic toxicity threshold.
+
+### Complementary Temporal Scales
+
+Homeostasis and hormesis are not competing theories but complementary descriptions of the same biology at different temporal scales [5]:
+
+- In the **acute window (0–24 h post-exercise)**, the homeostatic frame predominates: the organism's priority is to restore internal equilibrium through negative feedback.
+- In the **sub-acute and chronic adaptation window (24 h to multiple training cycles)**, the hormetic frame becomes operative: if the inflammatory signal was of appropriate magnitude and the resolution phase was complete, molecular memory — in the form of elevated Nrf2 target gene expression, increased mitochondrial density, and epigenetic modification of stress-response promoters — shifts the set-point upward (supercompensation).
+
+| Dimension | Homeostasis framework | Hormesis framework |
+|---|---|---|
+| Primary signal role of IL-6/ROS | Error signal (perturbation magnitude) | Adaptive stimulus (dose-dependent trigger) |
+| Feedback direction | Negative (corrective) | Forward at low dose; negative at overload |
+| Set-point outcome | Preserved at baseline | Elevated (supercompensation) |
+| Dose-response shape | Linear / monotonic resolution | Biphasic / inverted-U |
+| Inflammation framing | Perturbation to be resolved | Necessary adaptive trigger |
+| Key regulatory node | IL-10 axis, HPA cortisol | Nrf2, PGC-1α, HSPs, autophagy |
+| Optimal treatment strategy | Anti-inflammatory resolution support | Preserve signal; avoid premature blunting |
+| Failure mode | Unresolved chronic inflammation | Overtraining / immunosuppression |
+
+*Table 1. Mechanistic contrast between homeostasis and hormesis frameworks applied to exercise-induced inflammation (adapted from [5]).*
+
+### Pathological Contexts: ME/CFS, Long COVID, and Post-Exertional Malaise
+
+In populations with myalgic encephalomyelitis/chronic fatigue syndrome (ME/CFS) and Long COVID, post-exertional malaise (PEM) represents a pathological exaggeration of the post-exercise inflammatory state [12, 13]. Within the dual-framework model, PEM can be conceptualised as a combination of two discrete abnormalities [5]:
+
+1. **Failure of homeostatic resolution**: the counter-regulatory response (IL-10, IL-1Ra) is either insufficient, delayed, or overridden by persistent upstream activation, leaving the inflammatory perturbation unresolved beyond 24–48 h.
+2. **Right-shift or inversion of the hormetic dose-response curve**: the threshold between the sub-threshold and overload zones narrows critically, such that exercise doses producing adaptive benefits in healthy individuals fall within or above the overload zone for the affected individual.
+
+This model provides a theoretical basis for the observation that graded exercise therapy (GET) — predicated on the homeostatic assumption that graduated perturbations will lead to adaptive set-point elevation — is not only ineffective but actively harmful in ME/CFS, because the hormetic adaptive machinery is unavailable or compromised [5, 12, 13].
+
+**Practical insight:** Homeostasis governs the immediate inflammatory resolution following exercise, while hormesis explains the long-term adaptive gains. Recognising their complementary nature is essential for optimal exercise prescription — particularly in clinical populations where resolution capacity may be impaired and the hormetic dose-response curve may be critically altered.
+
+---
+
+## 4 State of Sleep and Wakefulness
 
 ### Sleep Architecture and Physiology
 
@@ -155,5 +251,23 @@ Sleep serves multiple critical functions:
 
 **Practical insight:** A bidirectional relationship exists between exercise and sleep. Regular physical activity improves sleep quality, and adequate sleep enhances exercise performance and training adaptations. Prioritizing both is essential for optimal health outcomes.
 
+---
+
 ## References
+
 - [1] Caspersen CJ, Powell KE, Christenson GM. Physical activity, exercise, and physical fitness: definitions and distinctions for health-related research. *Public Health Reports*. 1985;100(2):126–131. ISSN 0033-3549.
+- [2] Cannon WB. *The Wisdom of the Body*. W. W. Norton & Company; 1932.
+- [3] Calabrese EJ, Baldwin LA. Defining hormesis. *Human & Experimental Toxicology*. 2002;21(2):91–97.
+- [4] Calabrese EJ, Mattson MP. How does hormesis impact biology, toxicology and medicine? *npj Aging and Mechanisms of Disease*. 2017;3:13.
+- [5] Puta C, Gabriel H. Homeostasis and hormesis as complementary frameworks for exercise-induced inflammation: a conceptual simulation analysis. Friedrich-Schiller-Universität Jena, Institute for Sports Science; 2025.
+- [6] Pedersen BK, Febbraio MA. Muscle as an endocrine organ: focus on muscle-derived interleukin-6. *Physiological Reviews*. 2008;88(4):1379–1406.
+- [7] Ristow M, Zarse K, Oberbach A, et al. Antioxidants prevent health-promoting effects of physical exercise in humans. *Proceedings of the National Academy of Sciences*. 2009;106(21):8665–8670.
+- [8] Paulsen G, Cumming KT, Holden G, et al. Vitamin C and E supplementation hampers cellular adaptation to endurance training in humans. *Journal of Physiology*. 2014;592(8):1887–1901.
+- [9] Selye H. The general adaptation syndrome and the diseases of adaptation. *Journal of Clinical Endocrinology and Metabolism*. 1946;6(2):117–230.
+- [10] Nieman DC. Exercise, infection, and immunity. *International Journal of Sports Medicine*. 1994;15(S3):S131–S141.
+- [11] Nieman DC, Wentz LM. The compelling link between physical activity and the body's defense system. *Journal of Sport and Health Science*. 2019;8(3):201–217.
+- [12] Carruthers BM, van de Sande MI, De Meirleir KL, et al. Myalgic encephalomyelitis: International consensus criteria. *Journal of Internal Medicine*. 2011;270(4):327–338.
+- [13] Komaroff AL, Lipkin WI. Insights from myalgic encephalomyelitis/chronic fatigue syndrome may help unravel the pathogenesis of post-acute COVID-19 syndrome. *Trends in Molecular Medicine*. 2021;27(9):895–906.
+- [14] Gleeson M, Bishop NC, Stensel DJ, Lindley MR, Mastana SS, Nimmo MA. The anti-inflammatory effects of exercise: mechanisms and implications for the prevention and treatment of disease. *Nature Reviews Immunology*. 2011;11(9):607–615.
+- [15] Calabrese EJ, Mattson MP. How does hormesis impact biology, toxicology, and medicine? *npj Aging and Mechanisms of Disease*. 2017;3:13. doi:10.1038/s41514-017-0013-z.
+- [16] Bauer M, Ermolaeva M, Singer M, Wetzker R, Soares MP. Hormesis as an adaptive response to infection. *Trends in Molecular Medicine*. 2024;30(7):633–642. doi:10.1016/j.molmed.2024.04.012.
