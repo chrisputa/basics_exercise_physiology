@@ -1,0 +1,640 @@
+<!DOCTYPE html><html lang="en" class="antialiased break-words"> <head><!-- High Priority Global Metadata --><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Energy Expenditure, MET-concept, Thresholds, Determine Exercise Intensity | Basics Exercise Physiology</title><meta name="generator" content="Astro v5.16.0"><!-- Fonts --><link rel="preload" as="font" type="font/woff2" href="/basics_exercise_physiology/_astro/inter-latin-wght-normal.Dx4kXJAl.woff2" crossorigin="anonymous"><link rel="preload" as="font" type="font/woff2" href="/basics_exercise_physiology/_astro/newsreader-latin-wght-normal.CCVVNp6i.woff2" crossorigin="anonymous"><!-- Low Priority Global Metadata --><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="sitemap" href="/sitemap-index.xml"><link rel="alternate" type="application/rss+xml" href="/rss.xml" title="RSS"><!-- Page Metadata --><link rel="canonical" href="https://chrisputa.github.io/basics_exercise_physiology/lectures/lecture-3/"><meta name="description" content><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="https://chrisputa.github.io/basics_exercise_physiology/lectures/lecture-3/"><meta property="og:title" content="Energy Expenditure, MET-concept, Thresholds, Determine Exercise Intensity | Basics Exercise Physiology"><meta property="og:description" content><!-- X/Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://chrisputa.github.io/basics_exercise_physiology/lectures/lecture-3/"><meta property="twitter:title" content="Energy Expenditure, MET-concept, Thresholds, Determine Exercise Intensity | Basics Exercise Physiology"><meta property="twitter:description" content><script>
+  (function () {
+    try {
+      const mql = window.matchMedia('(prefers-color-scheme: dark)');
+      const getStored = () => localStorage.getItem('theme');
+      const apply = (dark) => {
+        document.documentElement.classList.toggle('dark', !!dark);
+        if (typeof syncWidgetDarkMode === 'function') syncWidgetDarkMode(!!dark);
+      };
+
+      // Persisted preference; default to 'light'
+      const pref = localStorage.getItem('theme') || 'light';
+      document.documentElement.classList.toggle('dark', pref === 'dark');
+
+      // Optional: keep in sync if you add a theme toggle elsewhere
+      window.addEventListener('storage', (e) => {
+        if (e.key === 'theme') {
+          document.documentElement.classList.toggle('dark', e.newValue === 'dark');
+        }
+      });
+
+      // Initial apply: stored preference wins, else system
+      const stored = getStored();
+      apply(stored ? stored === 'dark' : mql.matches);
+
+      // Follow system changes only when no stored preference
+      if (!stored) mql.addEventListener('change', (e) => apply(e.matches));
+
+      // React to changes from other tabs/windows
+      window.addEventListener('storage', (e) => {
+        if (e.key === 'theme') apply(e.newValue === 'dark');
+      });
+
+      // Re-apply after Astro client-side transitions
+      document.addEventListener('astro:after-swap', () => {
+        const s = getStored();
+        apply(s ? s === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches);
+      });
+    } catch {}
+  })();
+</script><!-- <ClientRouter /> --><link rel="stylesheet" href="/basics_exercise_physiology/_astro/index.PehNagx2.css">
+<style>/*! tailwindcss v4.1.10 | MIT License | https://tailwindcss.com */@layer properties{@supports (((-webkit-hyphens:none)) and (not (margin-trim:inline))) or ((-moz-orient:inline) and (not (color:rgb(from red r g b)))){*,:before,:after,::backdrop{--tw-translate-x:0;--tw-translate-y:0;--tw-translate-z:0}}}@media (max-width:767px){.menu[data-astro-cid-dmqpwcec]{visibility:hidden;opacity:0;width:calc(100% + 1.25rem)}.menu[data-astro-cid-dmqpwcec].is-visible{visibility:visible;opacity:1;transition:opacity .25s cubic-bezier(.4,0,.2,1) .2s}.menu-toggle-icon[data-astro-cid-dmqpwcec]{transition:width .1s cubic-bezier(.4,0,.2,1) .3s}.menu-toggle[data-astro-cid-dmqpwcec].is-active .menu-toggle-icon[data-astro-cid-dmqpwcec]{width:calc(var(--spacing,.25rem)*0);transition:width .1s cubic-bezier(.4,0,.2,1)}.menu-toggle-icon[data-astro-cid-dmqpwcec]:before,.menu-toggle-icon[data-astro-cid-dmqpwcec]:after{top:calc(var(--spacing,.25rem)*0);height:1px;width:calc(var(--spacing,.25rem)*6);transform-origin:50%;--tw-translate-x: -50% ;translate:var(--tw-translate-x)var(--tw-translate-y);content:"";background-color:currentColor;transition:rotate .2s cubic-bezier(.4,0,.2,1),margin .2s cubic-bezier(.4,0,.2,1) .2s;position:absolute;left:50%}.menu-toggle-icon[data-astro-cid-dmqpwcec]:before{margin-top:calc(var(--spacing,.25rem)*-1.5)}.menu-toggle-icon[data-astro-cid-dmqpwcec]:after{margin-top:calc(var(--spacing,.25rem)*1.5)}.menu-toggle[data-astro-cid-dmqpwcec].is-active .menu-toggle-icon[data-astro-cid-dmqpwcec]:before,.menu-toggle[data-astro-cid-dmqpwcec].is-active .menu-toggle-icon[data-astro-cid-dmqpwcec]:after{margin-top:calc(var(--spacing,.25rem)*0);transition:margin .2s cubic-bezier(.4,0,.2,1) .1s,rotate .2s cubic-bezier(.4,0,.2,1) .3s}.menu-toggle[data-astro-cid-dmqpwcec].is-active .menu-toggle-icon[data-astro-cid-dmqpwcec]:before{rotate:45deg}.menu-toggle[data-astro-cid-dmqpwcec].is-active .menu-toggle-icon[data-astro-cid-dmqpwcec]:after{rotate:-45deg}}@property --tw-translate-x{syntax:"*";inherits:false;initial-value:0}@property --tw-translate-y{syntax:"*";inherits:false;initial-value:0}@property --tw-translate-z{syntax:"*";inherits:false;initial-value:0}
+</style></head> <body class="bg-main text-main sm:px-14"> <div class="flex flex-col min-h-screen px-4 md:px-8 "> <nav class="min-h-10  w-full max-w-5xl mx-auto pt-4 pb-12 relative sm:min-h-14 sm:pb-24 md:pt-8" data-astro-cid-dmqpwcec> <div class="w-full  mx-auto relative" data-astro-cid-dmqpwcec> <button class="menu-toggle cursor-pointer w-8 h-8 -ml-1 flex items-center justify-center relative z-30 md:hidden" aria-label="Open Menu" aria-expanded="false" aria-controls="menu-items" data-astro-cid-dmqpwcec> <span class="menu-toggle-icon w-6 h-px relative bg-current" data-astro-cid-dmqpwcec></span> </button> <ul id="menu-items" class="menu flex flex-wrap gap-6 items-center max-md:flex-col max-md:gap-1 max-md:absolute max-md:-top-2.5 max-md:-left-2.5 max-md:max-w-64 max-md:px-3 max-md:pt-16 max-md:pb-10 max-md:z-20 max-md:bg-main max-md:border max-md:border-dashed max-md:border-main" data-astro-cid-dmqpwcec> <li data-astro-cid-dmqpwcec> <a href="/basics_exercise_physiology/" data-astro-cid-dmqpwcec> <img src="/basics_exercise_physiology/_astro/logo.BOxXENlm.png" alt="t-cell logo" class="max-h-12  dark:hidden" data-astro-cid-dmqpwcec> <img src="/basics_exercise_physiology/_astro/logo_dark.CQjdzMrG.png" alt="t-cell logo dark" class="max-h-12 hidden dark:block" data-astro-cid-dmqpwcec> </a> </li> <li class="py-1 " data-astro-cid-dmqpwcec> <a class="uppercase text-xl font-serif text-main hover:underline hover:underline-offset-2 hover:decoration-1 md:text-base" href="/basics_exercise_physiology/" data-astro-cid-dmqpwcec="true">Home</a> </li><li class="py-1 " data-astro-cid-dmqpwcec> <a class="uppercase text-xl font-serif text-main hover:underline hover:underline-offset-2 hover:decoration-1 md:text-base" href="/basics_exercise_physiology/lectures" data-astro-cid-dmqpwcec="true">Lectures</a> </li><li class="py-1 " data-astro-cid-dmqpwcec> <a class="uppercase text-xl font-serif text-main hover:underline hover:underline-offset-2 hover:decoration-1 md:text-base" href="/basics_exercise_physiology/dashboards" data-astro-cid-dmqpwcec="true">Dashboards</a> </li><li class="py-1 " data-astro-cid-dmqpwcec> <a class="uppercase text-xl font-serif text-main hover:underline hover:underline-offset-2 hover:decoration-1 md:text-base" href="/basics_exercise_physiology/tutorials" data-astro-cid-dmqpwcec="true">Tutorials</a> </li><li class="py-1 " data-astro-cid-dmqpwcec> <a class="uppercase text-xl font-serif text-main hover:underline hover:underline-offset-2 hover:decoration-1 md:text-base" href="/basics_exercise_physiology/contact" data-astro-cid-dmqpwcec="true">Contact</a> </li> </ul> </div> <!-- <div class="absolute right-0 top-3 z-10 md:top-8">
+        <a href="/">
+            <img src={siteConfig.logo.src} alt={siteConfig.logo.alt || ''} class="max-h-12 block dark:hidden" />
+            <img src={siteConfig.logoDark.src} alt={siteConfig.logoDark.alt || ''} class="max-h-12 hidden dark:block" />
+        </a>
+    </div> --> </nav>  <script type="module">function n(){const s=document.querySelector(".menu"),e=document.querySelector(".menu-toggle");e?.addEventListener("click",()=>{const t=e.getAttribute("aria-expanded")==="true";e.classList.toggle("is-active"),e.setAttribute("aria-expanded",t?"false":"true"),e.setAttribute("aria-label",t?"Open Menu":"Close Menu"),s?.classList.toggle("is-visible")})}n();document.addEventListener("astro:after-swap",n);</script>  <main class="grow w-full max-w-5xl mx-auto ">  <article class="mb-16 sm:mb-24"> <header class="mb-8"> <h1 class="text-3xl leading-tight font-serif font-medium sm:text-5xl sm:leading-tight">Energy Expenditure, MET-concept, Thresholds, Determine Exercise Intensity</h1> <div class="mt-2 font-serif"> <time datetime="2026-04-27T00:00:00.000Z"> April 27, 2026 </time> </div> </header> <div class="max-w-none prose sm:prose-lg">  <h2 id="lecture-3-table-of-contents">Lecture 3 Table of Contents</h2>
+<ol>
+<li><a href="#1-energy-expenditure">Energy Expenditure</a>
+<ul>
+<li>1.1 <a href="#11-basal-metabolic-rate-bmr">Basal Metabolic Rate (BMR)</a></li>
+<li>1.2 <a href="#12-basal-vs-resting-metabolic-rate">Basal vs. Resting Metabolic Rate</a></li>
+<li>1.3 <a href="#13-total-daily-energy-expenditure-tdee">Total Daily Energy Expenditure (TDEE)</a></li>
+<li>1.4 <a href="#14-energy-and-physical-activity">Energy and Physical Activity</a></li>
+<li>1.5 <a href="#15-energy-expenditure-measurement">Energy Expenditure Measurement</a></li>
+<li>1.6 <a href="#16-v%CC%87o%E2%82%82-and-energy">V̇O₂ and Energy</a></li>
+<li>1.7 <a href="#17-energy-expenditure-calculation--weir-formula">Energy Expenditure Calculation — Weir Formula</a></li>
+<li>1.8 <a href="#18-rq-vs-rer">RQ vs. RER</a></li>
+</ul>
+</li>
+<li><a href="#2-behaviour-and-v%CC%87o%E2%82%82">Behaviour and V̇O₂</a>
+<ul>
+<li>2.1 <a href="#21-physical-performance-activity-and-behaviour">Physical Performance, Activity and Behaviour</a></li>
+<li>2.2 <a href="#22-oxygen--essential-for-energy-supply">Oxygen — Essential for Energy Supply</a></li>
+<li>2.3 <a href="#23-v%CC%87o%E2%82%82-and-daily-behaviour">V̇O₂ and Daily Behaviour</a></li>
+<li>2.4 <a href="#24-v%CC%87o%E2%82%82-as-a-measure-of-energy-expenditure">V̇O₂ as a Measure of Energy Expenditure</a></li>
+<li>2.5 <a href="#25-normoxia-and-energy-supply">Normoxia and Energy Supply</a></li>
+<li>2.6 <a href="#26-o%E2%82%82-deficiency-and-energy-supply">O₂ Deficiency and Energy Supply</a></li>
+<li>2.7 <a href="#27-breathing-and-gas-exchange">Breathing and Gas Exchange</a></li>
+<li>2.8 <a href="#28-met--metabolic-equivalents-of-task">MET — Metabolic Equivalents of Task</a></li>
+<li>2.9 <a href="#29-met-min">MET-min</a></li>
+</ul>
+</li>
+<li><a href="#3-threshold-concepts">Threshold Concepts</a></li>
+<li><a href="#4-how-to-determine-and-monitor-the-different-exercise-intensities">How to Determine and Monitor the Different Exercise Intensities</a></li>
+</ol>
+<hr/>
+<h2 id="1-energy-expenditure">1 Energy Expenditure</h2>
+<p>Any physical activity consumes energy. Even in an apparently inactive state, the organism needs energy. The energy consumption during physical inactivity and physical activity can be estimated and measured. Both exact measurements and estimates can be useful and valuable in practice, depending on the goal.</p>
+<h3 id="11-basal-metabolic-rate-bmr">1.1 Basal Metabolic Rate (BMR)</h3>
+<p>The <strong>basal metabolic rate (BMR)</strong> reflects the sum total of the body’s many avenues for heat production — measured under stringent laboratory conditions (postabsorptive state, no prior physical activity, supine rest for 30 min in a thermoneutral environment). Oxygen consumption values for BMR typically range between 160–290 mL·min⁻¹ (0.8–1.43 kcal·min⁻¹) depending on gender, age, body size, and fat-free body mass (FFM).</p>
+<p><strong>BMR prediction formulae (FAO/WHO):</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Sex</th><th>Age (years)</th><th>Formula (MJ·day⁻¹)</th></tr></thead><tbody><tr><td>Women</td><td>10–18</td><td>BMR = 0.056 × body mass [kg] + 2.898</td></tr><tr><td>Women</td><td>19–30</td><td>BMR = 0.062 × body mass [kg] + 2.036</td></tr><tr><td>Women</td><td>31–60</td><td>BMR = 0.034 × body mass [kg] + 3.538</td></tr><tr><td>Women</td><td>&gt;60</td><td>BMR = 0.038 × body mass [kg] + 2.755</td></tr><tr><td>Men</td><td>10–18</td><td>BMR = 0.074 × body mass [kg] + 2.754</td></tr><tr><td>Men</td><td>19–30</td><td>BMR = 0.063 × body mass [kg] + 2.896</td></tr><tr><td>Men</td><td>31–60</td><td>BMR = 0.048 × body mass [kg] + 3.653</td></tr><tr><td>Men</td><td>&gt;60</td><td>BMR = 0.049 × body mass [kg] + 2.459</td></tr></tbody></table>
+<p><em>To convert to kcal·day⁻¹: multiply result by 239.</em></p>
+<h3 id="12-basal-vs-resting-metabolic-rate">1.2 Basal vs. Resting Metabolic Rate</h3>
+<p>The <strong>resting metabolic rate (RMR)</strong> is measured 3–4 hours after a light meal without prior physical activity. BMR is always slightly lower than RMR. Both show high reproducibility under standardised conditions. RMR, like BMR, decreases with age from variations in fat-free body mass (FFM). The RMR for men generally exceeds values for women of similar body size.</p>
+<h3 id="13-total-daily-energy-expenditure-tdee">1.3 Total Daily Energy Expenditure (TDEE)</h3>
+<p>Five major factors affect metabolic rate:</p>
+<ol>
+<li>Physical activity</li>
+<li>Diet-induced thermogenesis</li>
+<li>Calorigenic effect of food on exercise metabolism</li>
+<li>Climate</li>
+<li>Pregnancy</li>
+</ol>
+<p>Physical activity exerts the greatest effect on metabolic rate. At rest, muscles generate about 20 % of the body’s total energy expenditure. During all-out effort, skeletal muscle energy expenditure can increase more than 100 times above resting value to account for nearly 85 % of total EE.</p>
+<p><strong>TDEE averages:</strong> 2,900 kcal for men and 2,200 kcal for women aged 19–50 years.</p>
+<h3 id="14-energy-and-physical-activity">1.4 Energy and Physical Activity</h3>
+<p>Different classification systems rate the strenuousness of physical activities based on: (1) ratio of energy cost to resting energy requirement; (2) oxygen requirement in mL·kg⁻¹·min⁻¹; or (3) multiples of resting metabolism as METs. Heavier individuals expend more total energy, particularly in weight-bearing activities.</p>
+<h3 id="15-energy-expenditure-measurement">1.5 Energy Expenditure Measurement</h3>
+<p><strong>Direct calorimetry</strong> measures heat production in an insulated calorimeter. <strong>Indirect calorimetry</strong> infers EE from O₂ consumption and CO₂ production using open- or closed-circuit spirometry. The <strong>doubly labelled water technique</strong> estimates EE in free-living conditions and serves as a gold standard for validating long-term EE estimates.</p>
+<h3 id="16-v̇o-and-energy">1.6 V̇O₂ and Energy</h3>
+<p>Oxygen uptake directly measures energy expenditure. Average caloric yield:</p>
+<ul>
+<li>1 litre O₂ from mixed diet ≈ <strong>4.8 kcal (≈20 kJ)</strong></li>
+<li>1 litre O₂ from glucose exclusively ≈ <strong>5.0 kcal (≈21 kJ)</strong> — caloric equivalent of glucose</li>
+<li>1 litre O₂ from fat ≈ <strong>4.7 kcal (≈19.6 kJ)</strong></li>
+<li>1 litre O₂ from protein ≈ <strong>4.67 kcal (≈18.8 kJ)</strong></li>
+</ul>
+<h3 id="17-energy-expenditure-calculation--weir-formula">1.7 Energy Expenditure Calculation — Weir Formula</h3>
+<p>John Brash de Vere Weir (1949) presented a simple method accurate to within ±1 % of the traditional RQ method:</p>
+<p><strong>kcal·min⁻¹ = V̇E(STPD) × (1.044 − 0.0499 × %O₂E)</strong></p>
+<p>where V̇E(STPD) = expired minute ventilation (L·min⁻¹) corrected to STPD conditions, and %O₂E = expired oxygen percentage. The value in parentheses is the “Weir factor.”</p>
+<p>Alternatively:
+<strong>kcal·min⁻¹ = ([1.1 × RQ] + 3.9) × V̇O₂</strong></p>
+<h3 id="18-rq-vs-rer">1.8 RQ vs. RER</h3>
+<p>The <strong>respiratory quotient (RQ)</strong> reflects macronutrient catabolism at the cellular level:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Substrate</th><th>Reaction</th><th>RQ</th></tr></thead><tbody><tr><td>Carbohydrate</td><td>C₆H₁₂O₆ + 6 O₂ → 6 CO₂ + 6 H₂O</td><td>1.00</td></tr><tr><td>Fat (palmitic acid)</td><td>C₁₆H₃₂O₂ + 23 O₂ → 16 CO₂ + 16 H₂O</td><td>0.696</td></tr><tr><td>Protein (albumin)</td><td>C₇₂H₁₁₂N₂O₂₂S + 77 O₂ → 63 CO₂ + …</td><td>0.818</td></tr></tbody></table>
+<p>The <strong>respiratory exchange ratio (RER)</strong> reflects pulmonary gas exchange and may diverge from RQ during hyperventilation or exhaustive exercise (RER &gt; 1.00). RER does not fully mirror the macronutrient mixture catabolised under all physiological conditions.</p>
+<hr/>
+<h2 id="2-behaviour-and-v̇o">2 Behaviour and V̇O₂</h2>
+<h3 id="21-physical-performance-activity-and-behaviour">2.1 Physical Performance, Activity and Behaviour</h3>
+<p>From a biological point of view, movement is a vital skill enabling physical performance, physical activity, and behaviour. A minimum level of physical fitness is required to be physically active. Physical performance and physical activity are the main determining factors for behaviour in everyday life, at work, and in leisure time.</p>
+<h3 id="22-oxygen--essential-for-energy-supply">2.2 Oxygen — Essential for Energy Supply</h3>
+<p>Oxygen (O₂) is essential for the energy supply of cells. A prolonged lack of O₂ — usually the result of a circulatory disorder — initially leads to functional failures and later to irreversible cell and organ damage. There are no significant oxygen stores in cells, and oxygen-independent metabolism is insufficient for energy requirements. Therefore, sufficient O₂ must be constantly supplied via the circulatory system.</p>
+<p><strong>O₂ utilisation by organ:</strong></p>
+<ul>
+<li>Kidneys: ~25 % O₂ utilisation</li>
+<li>Cerebral cortex, skeletal muscles, myocardium (rest): 40–60 %</li>
+<li>Working skeletal muscles and myocardium (heavy exercise): up to ~90 %</li>
+</ul>
+<p>During exercise, O₂ consumption of cardiac muscle tissue increases 3–4 times above resting conditions; working skeletal muscle groups increase to more than 20–50 times the resting value.</p>
+<p><strong>Adaptation to O₂ deficiency:</strong> Depending on duration and extent, O₂ deficiency leads to limitations in organ function or cell death. In neurons, irreversible damage occurs after less than 10 minutes of anoxia; in skeletal muscles only after several hours. For the whole organism, the resuscitation time is approximately 4 minutes at normal body temperature.</p>
+<p><strong>Too much oxygen can be harmful</strong> — oxygen radicals damage cell membranes, enzymes and DNA. Reactive oxygen species continuously formed in cells play an important role as signalling molecules at low concentrations but cause cell damage at high concentrations.</p>
+<h3 id="23-v̇o-and-daily-behaviour">2.3 V̇O₂ and Daily Behaviour</h3>
+<p>Any type of physical activity and therefore behaviour requires energy. The amount of oxygen required for energy metabolism is supplied via pulmonary respiration and transported via blood to organs such as skeletal muscles.</p>
+<p><strong>Exercise intensity classification by V̇O₂ (ACSM Guidelines):</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Intensity Level</th><th>V̇O₂ (mL·kg⁻¹·min⁻¹)</th></tr></thead><tbody><tr><td>Very light</td><td>&lt; 7.0</td></tr><tr><td>Light</td><td>≥ 7.0 and &lt; 10.5</td></tr><tr><td>Moderate</td><td>≥ 10.5 and &lt; 21.0</td></tr><tr><td>Vigorous</td><td>≥ 21.0 and &lt; 30.8</td></tr><tr><td>Near-maximal to maximal</td><td>≥ 30.8</td></tr></tbody></table>
+<h3 id="24-v̇o-as-a-measure-of-energy-expenditure">2.4 V̇O₂ as a Measure of Energy Expenditure</h3>
+<p>Oxygen uptake provides information about the energy requirements and energy consumption of the organism. When providing energy, oxygen consumption depends on the type of energy source: fats require more oxygen to burn than carbohydrates or proteins, resulting in different physiological calorific values.</p>
+<h3 id="25-normoxia-and-energy-supply">2.5 Normoxia and Energy Supply</h3>
+<p><strong>Normoxia</strong> means that sufficient O₂ is available at all times for all tasks of a cell, tissue or organ. Under normoxic conditions the O₂ requirement for the respiratory chain is covered by a corresponding O₂ supply.</p>
+<p>The short-term increase in O₂ supply can be achieved through increased blood flow; in the medium term through increased O₂ capacity of the blood. Various hormones, body temperature, and mitochondrial uncoupling proteins (e.g. UCP1) influence basal O₂ consumption. Consumption-increasing hormones include catecholamines and thyroid hormones.</p>
+<h3 id="26-o-deficiency-and-energy-supply">2.6 O₂ Deficiency and Energy Supply</h3>
+<p>O₂ deficiency leads to severely restricted ATP formation. Anaerobic glycolysis cannot compensate for a disruption in O₂ supply in the long term. The resulting lactate and protons transported from cells into the extracellular space can lead to <strong>tissue acidosis</strong>.</p>
+<p><strong>Air composition and partial pressures at sea level (dry air):</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Component</th><th>Volume (%)</th><th>Partial pressure (mmHg)</th></tr></thead><tbody><tr><td>N₂</td><td>78.09</td><td>593.45</td></tr><tr><td>O₂</td><td>20.95</td><td>159.21</td></tr><tr><td>Ar</td><td>0.927</td><td>7.04</td></tr><tr><td>CO₂</td><td>0.039</td><td>0.293</td></tr></tbody></table>
+<h3 id="27-breathing-and-gas-exchange">2.7 Breathing and Gas Exchange</h3>
+<p>Gas exchange occurs in the alveoli by diffusion. After ventilation transports O₂-rich gas into the alveoli, O₂ is absorbed into the blood and CO₂ released. The <strong>1st Fick diffusion law</strong> describes pulmonary gas exchange: diffusion current is proportional to the partial pressure difference and exchange area, and inversely proportional to layer thickness. The Krogh diffusion constant for CO₂ is approximately 20 times that of O₂.</p>
+<p>At rest:</p>
+<ul>
+<li>Alveolar O₂ fraction: 14 % by volume; O₂ partial pressure: ~100 mmHg</li>
+<li>Alveolar CO₂ fraction: 5.6 % by volume; CO₂ partial pressure: ~40 mmHg</li>
+</ul>
+<p>The diffusion capacity for adults at rest is normally 30 mL·min⁻¹·mmHg⁻¹. Contact time for equilibration of partial pressures in the pulmonary capillaries: approximately 0.3–0.7 s.</p>
+<h3 id="28-met--metabolic-equivalents-of-task">2.8 MET — Metabolic Equivalents of Task</h3>
+<h4 id="281-physical-activity-levels">2.8.1 Physical Activity Levels</h4>
+<p>The metabolic equivalent (MET) is an index of energy expenditure. One MET is the rate of EE while sitting at rest; by scientific convention, 1 MET = 3.5 mL·kg⁻¹·min⁻¹ O₂ uptake = 1 kcal·kg·h⁻¹ body weight.</p>
+<p><strong>Physical activity (PA) classification by MET (Compendium of Physical Activities):</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>PA Level</th><th>MET range</th></tr></thead><tbody><tr><td>Sedentary behaviour</td><td>1.0–1.5</td></tr><tr><td>Light</td><td>1.6–2.9</td></tr><tr><td>Moderate</td><td>3.0–5.9</td></tr><tr><td>Vigorous</td><td>≥ 6</td></tr></tbody></table>
+<h4 id="282-what-is-met">2.8.2 What Is MET?</h4>
+<p>1 MET corresponds to 3.5 mL·kg⁻¹·min⁻¹. Most source studies catalogued in the 2011 Compendium reported energy costs as either V̇O₂ (mL·kg⁻¹·min⁻¹) or MET using 3.5 as the denominator. There are differences between the standard denominator and the real RMR. For an individual with a predicted RMR = 2.8 mL·kg⁻¹·min⁻¹, the corrected MET would be 3.5/2.8 = 125 % of Compendium values.</p>
+<h4 id="283-met--met">2.8.3 MET ≠ MET?</h4>
+<p>1 MET is not always the same amount of V̇O₂. The standard 3.5 mL·kg⁻¹·min⁻¹ is a convention; individual resting metabolic rate differs. The Compendium MET level for any PA can be multiplied by the ratio (standard MET / individual predicted RMR) for individual correction.</p>
+<h3 id="29-met-min">2.9 MET-min</h3>
+<p><strong>MET-minutes</strong> quantify the total amount of physical activity performed in a standardised manner. Calculated as: METs × duration in minutes.</p>
+<p>Example: Jogging at 7 METs for 30 min on 3 days/week = <strong>7 × 30 × 3 = 630 MET·min·wk⁻¹</strong></p>
+<p>MET-minutes are usually standardised per week or per day and used in physical activity guidelines and epidemiological studies.</p>
+<hr/>
+<h2 id="3-threshold-concepts">3 Threshold Concepts</h2>
+<h3 id="background">Background</h3>
+<p>The <strong>anaerobic threshold</strong> is a conceptual approach developed to determine the exercise intensity at which arterial blood lactate concentration begins to increase sharply during an incremental exercise test. During such tests, blood lactate accumulation is attributed to inadequate oxygen delivery to contracting muscle resulting in increased rates of glycolysis and lactate production.</p>
+<p>The anaerobic threshold represents the maximum lactate steady state — the metabolic point at which muscular lactate formation and elimination from skeletal muscles are just about balanced. From the perspective of gas exchange, this point also represents the maximum equilibrium of oxygen uptake in the organism.</p>
+<h3 id="physiological-responses-above-the-anaerobic-threshold">Physiological Responses Above the Anaerobic Threshold</h3>
+<ol>
+<li>Accelerated muscle glycogen utilisation and anaerobic regeneration of ATP</li>
+<li>Reduced exercise endurance</li>
+<li>Metabolic acidosis</li>
+<li>Delay in V̇O₂ steady state</li>
+<li>Increased V̇CO₂ over that predicted from aerobic metabolism</li>
+<li>Increased PaCO₂ and PETCO₂ with time</li>
+<li>Bohr effect — increasing O₂ extraction from blood rather than decreasing capillary PO₂</li>
+<li>Increased plasma electrolyte concentration</li>
+<li>Hemoconcentration</li>
+<li>Increased production of metabolic intermediaries (e.g. glycerol phosphate, alanine)</li>
+<li>Increased catecholamine levels</li>
+<li>Increased double product (systolic blood pressure × heart rate)</li>
+</ol>
+<h3 id="threshold-concepts--overview">Threshold Concepts — Overview</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Threshold</th><th>Concept</th><th>Description</th></tr></thead><tbody><tr><td>T1</td><td>Lactate threshold</td><td>Blood lactate begins to rise above baseline; upper boundary for nearly exclusive aerobic metabolism</td></tr><tr><td>T1</td><td>Gas exchange threshold</td><td>Transition from steady-state to excess CO₂ production</td></tr><tr><td>T1</td><td>Ventilatory threshold</td><td>First breakpoint of systematic increase in V̇E/V̇O₂</td></tr><tr><td>T2</td><td>Critical power</td><td>Asymptote of the power–duration relationship</td></tr><tr><td>T2</td><td>Maximum lactate steady-state</td><td>Highest constant workload with equilibrium between lactate production and elimination</td></tr><tr><td>T2</td><td>Respiratory compensation point (RCP)</td><td>Second breakpoint of systematic increase in V̇E/V̇O₂</td></tr></tbody></table>
+<h3 id="key-references-section-8">Key References (Section 8)</h3>
+<ul>
+<li>Wassermann K, McIlroy MB. Detecting the threshold of anaerobic metabolism in cardiac patients during exercise. <em>Am J Cardiol</em>. 1964;14:844–852.</li>
+<li>Faude O, Kindermann W, Meyer T. Lactate threshold concepts: how valid are they? <em>Sports Medicine</em>. 2009;39(6):469–490.</li>
+<li>Poole DC, Rossiter HB, Brooks GA, Gladden LB. The anaerobic threshold: 50+ years of controversy. <em>J Physiol</em>. 2021;599(3):737–767.</li>
+<li>Meyer T, Lucía A, Earnest CP, Kindermann W. A conceptual framework for performance diagnosis and training prescription from submaximal gas exchange parameters. <em>Int J Sports Med</em>. 2005;26(S1):S38–S48.</li>
+</ul>
+<hr/>
+<h2 id="4-how-to-determine-and-monitor-the-different-exercise-intensities">4 How to Determine and Monitor the Different Exercise Intensities</h2>
+<p>There is currently no consensus regarding which of the many commonly used methods to establish different exercise intensities for different populations is best [1]. Traditional methods for determining exercise intensity include: (a) threshold-based approaches, using the first and second metabolic thresholds (MT1 and MT2) to demarcate exercise domains; (b) percentages of different anchor measurements, such as %VO₂max, %HRmax, or %HRR, which — despite widespread use — do not achieve category-specific cardiovascular and metabolic responses in all individuals; (c) fixed values, such as metabolic equivalents (METs), which do not adequately consider individual differences in age, sex, body mass, and fitness; and (d) perceptual measures, most notably the Rating of Perceived Exertion (RPE), which integrates feelings of effort, strain, and fatigue from peripheral muscles, the cardiopulmonary system, and the central nervous system [1]. A joint American College of Sports Medicine (ACSM) Expert Statement and Exercise and Sports Science Australia (ESSA) Consensus Statement proposed a standardised five-level exercise intensity terminology — Very Low, Low, Moderate, High, and Very High — applicable to both cardiorespiratory and resistance exercise, together with five corresponding perception-of-effort descriptors: very easy, easy, somewhat hard, hard, and very hard [1]. The preferred method for prescribing cardiorespiratory exercise intensity is the direct measurement of metabolic thresholds and the work rate associated with the attainment of VO₂max during a graded exercise test (GXT), as this produces similar physiological stresses across individuals with different exercise capacities [1]. For resistance exercise, the statement recommends prescribing intensity via repetitions in reserve (RIR) rather than percentage of one-repetition maximum (%1-RM), since RIR better captures both load and proximity to neuromuscular failure [1]. RPE is recommended as a useful adjunct method to help monitor both cardiorespiratory and resistance exercise, particularly when laboratory-based assessments are not available [1]. Table 2 summarises the current descriptors and criteria from leading organisations, while Table 3 presents the proposed standardised classifications anchored to metabolic thresholds, RIR, and RPE scales [1].</p>
+<h3 id="table-2a--current-descriptors-and-criteria-for-cardiorespiratory-exercise-intensity">Table 2a — Current descriptors and criteria for cardiorespiratory exercise intensity</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Intensity descriptor</th><th>% VO₂max (ESSA 2010)</th><th>% VO₂max (ACSM 2020)</th><th>% HRR (ESSA 2010)</th><th>% HRR (ACSM 2020)</th><th>% HRmax (ESSA 2010)</th><th>% HRmax (ACSM 2020)</th><th>RPE₂₀ (ESSA 2010)</th><th>RPE₂₀ (ACSM 2020)</th><th>METs (ESSA 2010)</th><th>METs (ACSM 2020)</th></tr></thead><tbody><tr><td>Sedentary</td><td>&lt; 20</td><td>—</td><td>&lt; 20</td><td>—</td><td>&lt; 40</td><td>—</td><td>&lt; 8</td><td>—</td><td>&lt; 1.6</td><td>—</td></tr><tr><td>Very light</td><td>&lt; 37</td><td>&lt; 28</td><td>&lt; 30</td><td>&lt; 20</td><td>&lt; 57</td><td>&lt; 50</td><td>&lt; 9</td><td>&lt; 10</td><td>&lt; 2.0</td><td>&lt; 2.8</td></tr><tr><td>Light</td><td>20–40</td><td>37–45</td><td>20–40</td><td>28–45</td><td>40–55</td><td>57–63</td><td>8–10</td><td>9–11</td><td>1.6–3</td><td>2.8–4.5</td></tr><tr><td>Moderate</td><td>40–60</td><td>46–63</td><td>40–60</td><td>45–63</td><td>55–70</td><td>64–76</td><td>11–13</td><td>12–13</td><td>3–6</td><td>4.6–6.3</td></tr><tr><td>Hard</td><td>—</td><td>64–86</td><td>—</td><td>—</td><td>60–84</td><td>77–93</td><td>—</td><td>14–16</td><td>6.4–8.6</td><td>—</td></tr><tr><td>Vigorous</td><td>60–85</td><td>64–90</td><td>60–85</td><td>≥ 87</td><td>70–90</td><td>77–95</td><td>14–16</td><td>14–17</td><td>6–9</td><td>6–8.7</td></tr><tr><td>Near-max to maximal</td><td>≥ 91</td><td>—</td><td>≥ 90</td><td>—</td><td>≥ 86</td><td>—</td><td>≥ 18</td><td>—</td><td>≥ 8.8</td><td>—</td></tr><tr><td>Maximal</td><td>100</td><td>100</td><td>100</td><td>100</td><td>100</td><td>100</td><td>20</td><td>20</td><td>—</td><td>—</td></tr></tbody></table>
+<p><em>Suggested values assume VO₂max = 10 METs or 35 mL O₂·kg⁻¹·min⁻¹. Sources: ESSA position statement (2010); ACSM Guidelines for Exercise Testing and Prescription (2020); Howley (2001). Adapted from Bishop et al. [1].</em></p>
+<h3 id="table-2b--current-descriptors-and-criteria-for-resistance-exercise-intensity">Table 2b — Current descriptors and criteria for resistance exercise intensity</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Intensity descriptor</th><th>% 1-RM (ESSA 2010)</th><th>% 1-RM (ACSM 2020)</th><th>% 1-RM (Howley 2001)</th></tr></thead><tbody><tr><td>Very light</td><td>&lt; 30</td><td>&lt; 30</td><td>&lt; 30</td></tr><tr><td>Light</td><td>30–49</td><td>30–49</td><td>30–49</td></tr><tr><td>Moderate</td><td>50–69</td><td>50–69</td><td>50–69</td></tr><tr><td>Hard</td><td>70–84</td><td>—</td><td>70–84</td></tr><tr><td>Very hard / Vigorous</td><td>≥ 85</td><td>≥ 85</td><td>≥ 85</td></tr><tr><td>Maximal</td><td>100</td><td>100</td><td>100</td></tr></tbody></table>
+<p><em>Sources: ESSA position statement (2010); ACSM Guidelines for Exercise Testing and Prescription (2020); Howley (2001). Adapted from Bishop et al. [1].</em></p>
+<h3 id="table-3--proposed-standardised-classifications-for-exercise-intensity">Table 3 — Proposed standardised classifications for exercise intensity</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Category</th><th>Cardiorespiratory Exercise (Physiological Reference)</th><th>Resistance Exercise (Reps in Reserve, RIR)</th><th>RPE₁₀</th><th>RPE₂₀</th></tr></thead><tbody><tr><td>Inactive</td><td>Inactive</td><td>Inactive</td><td>0</td><td>6</td></tr><tr><td>Very Low</td><td>No current measure</td><td>&gt; 8</td><td>&lt; 2</td><td>≤ 9</td></tr><tr><td>Low</td><td>&lt; MT1</td><td>7–8</td><td>2–3</td><td>10–11</td></tr><tr><td>Moderate</td><td>&gt; MT1 but &lt; MT2</td><td>4–6</td><td>4–5</td><td>12–14</td></tr><tr><td>High</td><td>&gt; MT2 but &lt; W_max</td><td>2–3</td><td>6–7</td><td>15–16</td></tr><tr><td>Very High</td><td>&gt; W_max</td><td>&lt; 2</td><td>8–10</td><td>≥ 17</td></tr></tbody></table>
+<p><em>MT1, the first metabolic threshold; MT2, the second metabolic threshold; W_max, the work rate associated with VO₂max attainment during a graded exercise test. Source: Bishop et al. [1].</em></p>
+<p><strong>Practical insight:</strong> The direct measurement of metabolic thresholds via GXT remains the gold standard for individualised exercise prescription in cardiorespiratory exercise, because percentage-based anchors (%VO₂max, %HRmax, %HRR, METs) do not reliably elicit the same metabolic stress across individuals. For resistance exercise, RIR provides a more ecologically valid measure of intensity than %1-RM alone. When laboratory assessment is unavailable, RPE serves as a practical adjunct for monitoring both exercise modalities.</p>
+<hr/>
+<h2 id="references">References</h2>
+<ul>
+<li>[1] Bishop DJ, Beck B, Biddle SJH, Denay KL, Ferri A, Jones AM, Jung M, Lee MJ-C, Moholdt T, Newton RU, Nimphius S, Pescatello LS, Saner NJ, Tzarimas C. Physical activity and exercise intensity terminology: a joint American College of Sports Medicine (ACSM) Expert Statement and Exercise and Sport Science Australia (ESSA) Consensus Statement. <em>Med Sci Sports Exerc</em>. 2025;57(11):2599–2613. doi:10.1016/j.jsams.2024.11.004.</li>
+</ul>  </div> </article>  </main> <footer class="w-full max-w-5xl mx-auto pt-12 pb-10 sm:pt-24 sm:pb-14"> <div class="mb-4 flex flex-wrap gap-x-6 gap-y-1"> <a class="font-serif hover:underline hover:underline-offset-2" href="/basics_exercise_physiology/contact">Contact</a><a class="font-serif hover:underline hover:underline-offset-2" href="/basics_exercise_physiology/terms">Terms</a> </div> <div class="pt-6 flex flex-col gap-4 border-t border-dashed border-main">  <p class="text-sm">
+&copy; 2026&nbsp;<a class="hover:underline hover:underline-offset-2" href="/">Christian Puta</a>. All rights reserved.<br>Template generated by Dirk Brockmann.
+</p> </div> </footer> </div> </body></html>
