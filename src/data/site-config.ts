@@ -67,8 +67,8 @@ const siteConfig: SiteConfig = {
         alt: 't-cell logo dark'
     },
     website: 'https://chrisputa.github.io/',
-    base: '/applied_sportsmedicine/',
-    title: 'Applied Sportsmedicine',
+    base: '/basics_exercise_physiology/',
+    title: 'Basics Exercise Physiology',
     author: {
         name: 'Christian Puta',
         url: 'https://chrisputa.github.io/'

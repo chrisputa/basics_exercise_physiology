@@ -1,13 +1,13 @@
 {
-    "name": "applied_sportsmedicine",
+    "name": "basics_exercise_physiology",
     "type": "module",
     "description": "",
     "license": "CC-BY-4.0",
     "author": "CHRISTIAN PUTA",
-    "homepage": "https://chrisputa.github.io/applied_sportsmedicine", 
+    "homepage": "https://chrisputa.github.io/basics_exercise_physiology", 
     "repository": {
         "type": "git",
-        "url": "https://github.com/chrisputa/applied_sportsmedicine",
+        "url": "https://github.com/chrisputa/basics_exercise_physiology",
         "version": "1.0.0"
     },
     "scripts": {
