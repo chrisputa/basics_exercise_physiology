@@ -11,10 +11,16 @@ tags:
 ---
 
 import Figure from '../../../components/Figure.astro';
-import fig1 from '../../../assets/figure1_homeostasis_timecourse_bw.png';
-import fig1Dark from '../../../assets/generated/figure1_homeostasis_timecourse_bw_dark.png';
-import fig2 from '../../../assets/figure2_hormesis_doseresponse_bw.png';
-import fig2Dark from '../../../assets/generated/figure2_hormesis_doseresponse_bw_dark.png';
+import fig1 from '../../../assets/figure1_Homeostasis_Immune_color.png';
+import fig1Dark from '../../../assets/generated/figure1_Homeostasis_Immune_color_dark.png';
+import fig2 from '../../../assets/figure2_ID40_Heart_rate.png';
+import fig2Dark from '../../../assets/figure2_ID40_Heart_rate.png';
+import fig3 from '../../../assets/figure3_ID40_Ventilation.png';
+import fig3Dark from '../../../assets/figure3_ID40_Ventilation.png';
+import fig4 from '../../../assets/figure4_homeostasis_timecourse_bw.png';
+import fig4Dark from '../../../assets/generated/figure4_homeostasis_timecourse_bw_dark.png';
+import fig5 from '../../../assets/figure5_hormesis_doseresponse_bw.png';
+import fig5Dark from '../../../assets/generated/figure5_hormesis_doseresponse_bw_dark.png';
 
 
 ## Lecture 1 Table of Contents
@@ -74,9 +80,23 @@ The organism responds to metabolic strain through acute physiological adjustment
 
 ### Concept of Homeostasis
 
-**Homeostasis** refers to the dynamic equilibrium of the internal environment, maintained through regulatory mechanisms that counteract disturbances. Physical activity is a significant disturbance to homeostasis, triggering rapid regulatory responses.
+<Figure src={fig1} srcDark={fig1Dark} alt="Homeostasis">
+**Figure 1 - Homeostasis refers to the dynamic equilibrium of the internal environment, maintained through regulatory mechanisms that counteract disturbances. Physical activity is a significant disturbance to homeostasis, triggering rapid regulatory responses.**
+</Figure>
 
 ### Acute Responses to Exercise
+
+Acute physical stress, for example through physical activity, leads to a disruption of homeostasis. 
+The disruption of homeostasis is rebalanced by physiological mechanisms and
+returns to a state of rest. For example, physical exertion leads to increased breathing in
+order to absorb more oxygen. In order for the oxygen in the blood to be transported to
+the muscles, the blood circulation must be increased. In order for the blood circulation to
+increase, the duration of the heartbeats must be shortened with a simultaneous increase
+in the stroke volume. In order to increase ventilation, the depth of the breath and
+the respiratory rate must be increased. The increase in circulation and ventilation leads
+to increased oxygen intake in the organism. Ventilation and duration of heart beats are typical 
+physiological parameters to describe the functions of the respiratory and cardiovascular
+system
 
 When the organism engages in physical activity, multiple physiological systems are activated simultaneously:
 
@@ -85,6 +105,11 @@ When the organism engages in physical activity, multiple physiological systems a
 - **Stroke volume increases** — the heart pumps more blood per beat.
 - **Blood pressure rises** — systolic increases more than diastolic.
 - **Blood flow redistribution** — 20–25 % of cardiac output at rest goes to muscles; during exercise, this increases to 85–90 %.
+
+<Figure src={fig2} srcDark={fig2Dark} alt="Heart rate">
+**Figure 2 & 3 - Example for acute disturbance of the homeostasis by acute physical stress. Heart rate and ventilation increase during exercise and return after the end of the exercise. Light blue lines: Physical rest before exercise, red lines: Incremental graded maximal cycle ergometer exercise, dark blue lines: physical rest after the end of exercise.**
+</Figure>
+<Figure src={fig3} srcDark={fig3Dark} alt="Ventilation"/>
 
 #### Respiratory Response
 - **Breathing frequency increases** to enhance gas exchange.
@@ -131,12 +156,12 @@ More formally, "hormesis refers to adaptive responses of biological systems to m
 
 Skeletal muscle and the broader physiological system perpetually encounter intrinsic mechanical and metabolic challenges imposed by physical activity. To cope with exercise-induced stressors — including mechanical loading, metabolic perturbation, oxidative stress, hypoxia, muscle damage, and thermal stress arising from sustained exertion — living organisms have evolved adaptive, protective training responses. At the molecular, cellular, and whole-organism levels, these responses share common regulatory features collectively termed 'exercise stress' and rely on evolutionarily conserved, exercise-responsive transcriptional networks [16]. The pattern of exercise-induced adaptations is dictated not only by the specific type of training stimulus (e.g., resistance, endurance, or concurrent exercise) but also by its intensity, frequency, and duration — variables central to exercise programming. Each of these factors, alone or in combination, can transiently disrupt physiological homeostasis and impair functional capacity. Sub-maximal training loads, however, elicit beneficial adaptive responses — including muscle hypertrophy, mitochondrial biogenesis, and improved cardiovascular function — that attenuate the physiological cost of subsequent bouts of the same or related exercise stress. This dose-dependent, biphasic adaptive property is known as 'hormesis' [15, 16]. A hallmark of exercise-induced hormesis is that the adaptive response to a given exercise stressor can extend cross-protective effects against future, and apparently unrelated, forms of physiological stress. The architecture of the exercise-responsive transcriptional network, whereby distinct modes of training regulate overlapping profiles of effector genes — including those encoding heat shock proteins, pro- and anti-inflammatory immune responses, antioxidant enzymes, and angiogenic factors — provides a compelling mechanistic explanation for this phenomenon [16].
 
-<Figure src={fig1} srcDark={fig1Dark} alt="Homeostasis time-course">
-**Figure 1 — Homeostasis time-course: the IL-6 peak, delayed IL-10/IL-1Ra counter-response, functional capacity dip, and the set-point reference line, with annotated phase zones.**
+<Figure src={fig4} srcDark={fig4Dark} alt="Homeostasis time-course">
+**Figure 4 — Homeostasis time-course: the IL-6 peak, delayed IL-10/IL-1Ra counter-response, functional capacity dip, and the set-point reference line, with annotated phase zones.**
 </Figure>
 
-<Figure src={fig1} srcDark={fig1Dark} alt="Hormesis dose-response">
-**Figure 2 — Hormesis dose-response: the full J-curve (URTI risk), bell-shaped adaptive benefit, and monotonically rising inflammatory load, with the three dose zones (sub-threshold / hormetic / overload) shaded.**
+<Figure src={fig5} srcDark={fig5Dark} alt="Hormesis dose-response">
+**Figure 5 — Hormesis dose-response: the full J-curve (URTI risk), bell-shaped adaptive benefit, and monotonically rising inflammatory load, with the three dose zones (sub-threshold / hormetic / overload) shaded.**
 </Figure>
 
 ### The Dual Identity of Inflammatory Mediators
