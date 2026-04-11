@@ -134,6 +134,11 @@ html.dark {
         @apply font-bold;
     }
 
+    .prose pre {
+        white-space: pre-wrap;
+        overflow-x: unset;
+    }
+
     .prose p {
         @apply text-justify;
     }
