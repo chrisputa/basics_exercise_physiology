@@ -1,0 +1,376 @@
+<!DOCTYPE html><html lang="en" class="antialiased break-words"> <head><!-- High Priority Global Metadata --><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Exercise Snacks | Basics in Exercise Physiology</title><meta name="generator" content="Astro v5.16.0"><!-- Fonts --><link rel="preload" as="font" type="font/woff2" href="/basics_exercise_physiology/_astro/inter-latin-wght-normal.Dx4kXJAl.woff2" crossorigin="anonymous"><link rel="preload" as="font" type="font/woff2" href="/basics_exercise_physiology/_astro/newsreader-latin-wght-normal.CCVVNp6i.woff2" crossorigin="anonymous"><!-- Low Priority Global Metadata --><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="sitemap" href="/sitemap-index.xml"><link rel="alternate" type="application/rss+xml" href="/rss.xml" title="RSS"><!-- Page Metadata --><link rel="canonical" href="https://chrisputa.github.io/basics_exercise_physiology/lectures/lecture-7/"><meta name="description" content><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="https://chrisputa.github.io/basics_exercise_physiology/lectures/lecture-7/"><meta property="og:title" content="Exercise Snacks | Basics in Exercise Physiology"><meta property="og:description" content><!-- X/Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://chrisputa.github.io/basics_exercise_physiology/lectures/lecture-7/"><meta property="twitter:title" content="Exercise Snacks | Basics in Exercise Physiology"><meta property="twitter:description" content><script>
+  (function () {
+    try {
+      const mql = window.matchMedia('(prefers-color-scheme: dark)');
+      const getStored = () => localStorage.getItem('theme');
+      const apply = (dark) => {
+        document.documentElement.classList.toggle('dark', !!dark);
+        if (typeof syncWidgetDarkMode === 'function') syncWidgetDarkMode(!!dark);
+      };
+
+      // Persisted preference; default to 'light'
+      const pref = localStorage.getItem('theme') || 'light';
+      document.documentElement.classList.toggle('dark', pref === 'dark');
+
+      // Optional: keep in sync if you add a theme toggle elsewhere
+      window.addEventListener('storage', (e) => {
+        if (e.key === 'theme') {
+          document.documentElement.classList.toggle('dark', e.newValue === 'dark');
+        }
+      });
+
+      // Initial apply: stored preference wins, else system
+      const stored = getStored();
+      apply(stored ? stored === 'dark' : mql.matches);
+
+      // Follow system changes only when no stored preference
+      if (!stored) mql.addEventListener('change', (e) => apply(e.matches));
+
+      // React to changes from other tabs/windows
+      window.addEventListener('storage', (e) => {
+        if (e.key === 'theme') apply(e.newValue === 'dark');
+      });
+
+      // Re-apply after Astro client-side transitions
+      document.addEventListener('astro:after-swap', () => {
+        const s = getStored();
+        apply(s ? s === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches);
+      });
+    } catch {}
+  })();
+</script><!-- <ClientRouter /> --><link rel="stylesheet" href="/basics_exercise_physiology/_astro/index.C8AnhY5P.css">
+<style>/*! tailwindcss v4.1.10 | MIT License | https://tailwindcss.com */@layer properties{@supports (((-webkit-hyphens:none)) and (not (margin-trim:inline))) or ((-moz-orient:inline) and (not (color:rgb(from red r g b)))){*,:before,:after,::backdrop{--tw-translate-x:0;--tw-translate-y:0;--tw-translate-z:0}}}@media (max-width:767px){.menu[data-astro-cid-dmqpwcec]{visibility:hidden;opacity:0;width:calc(100% + 1.25rem)}.menu[data-astro-cid-dmqpwcec].is-visible{visibility:visible;opacity:1;transition:opacity .25s cubic-bezier(.4,0,.2,1) .2s}.menu-toggle-icon[data-astro-cid-dmqpwcec]{transition:width .1s cubic-bezier(.4,0,.2,1) .3s}.menu-toggle[data-astro-cid-dmqpwcec].is-active .menu-toggle-icon[data-astro-cid-dmqpwcec]{width:calc(var(--spacing,.25rem)*0);transition:width .1s cubic-bezier(.4,0,.2,1)}.menu-toggle-icon[data-astro-cid-dmqpwcec]:before,.menu-toggle-icon[data-astro-cid-dmqpwcec]:after{top:calc(var(--spacing,.25rem)*0);height:1px;width:calc(var(--spacing,.25rem)*6);transform-origin:50%;--tw-translate-x: -50% ;translate:var(--tw-translate-x)var(--tw-translate-y);content:"";background-color:currentColor;transition:rotate .2s cubic-bezier(.4,0,.2,1),margin .2s cubic-bezier(.4,0,.2,1) .2s;position:absolute;left:50%}.menu-toggle-icon[data-astro-cid-dmqpwcec]:before{margin-top:calc(var(--spacing,.25rem)*-1.5)}.menu-toggle-icon[data-astro-cid-dmqpwcec]:after{margin-top:calc(var(--spacing,.25rem)*1.5)}.menu-toggle[data-astro-cid-dmqpwcec].is-active .menu-toggle-icon[data-astro-cid-dmqpwcec]:before,.menu-toggle[data-astro-cid-dmqpwcec].is-active .menu-toggle-icon[data-astro-cid-dmqpwcec]:after{margin-top:calc(var(--spacing,.25rem)*0);transition:margin .2s cubic-bezier(.4,0,.2,1) .1s,rotate .2s cubic-bezier(.4,0,.2,1) .3s}.menu-toggle[data-astro-cid-dmqpwcec].is-active .menu-toggle-icon[data-astro-cid-dmqpwcec]:before{rotate:45deg}.menu-toggle[data-astro-cid-dmqpwcec].is-active .menu-toggle-icon[data-astro-cid-dmqpwcec]:after{rotate:-45deg}}@property --tw-translate-x{syntax:"*";inherits:false;initial-value:0}@property --tw-translate-y{syntax:"*";inherits:false;initial-value:0}@property --tw-translate-z{syntax:"*";inherits:false;initial-value:0}
+</style></head> <body class="bg-main text-main sm:px-14"> <div class="flex flex-col min-h-screen px-4 md:px-8 "> <nav class="min-h-10  w-full max-w-5xl mx-auto pt-4 pb-12 relative sm:min-h-14 sm:pb-24 md:pt-8" data-astro-cid-dmqpwcec> <div class="w-full  mx-auto relative" data-astro-cid-dmqpwcec> <button class="menu-toggle cursor-pointer w-8 h-8 -ml-1 flex items-center justify-center relative z-30 md:hidden" aria-label="Open Menu" aria-expanded="false" aria-controls="menu-items" data-astro-cid-dmqpwcec> <span class="menu-toggle-icon w-6 h-px relative bg-current" data-astro-cid-dmqpwcec></span> </button> <ul id="menu-items" class="menu flex flex-wrap gap-6 items-center max-md:flex-col max-md:gap-1 max-md:absolute max-md:-top-2.5 max-md:-left-2.5 max-md:max-w-64 max-md:px-3 max-md:pt-16 max-md:pb-10 max-md:z-20 max-md:bg-main max-md:border max-md:border-dashed max-md:border-main" data-astro-cid-dmqpwcec> <li data-astro-cid-dmqpwcec> <a href="/basics_exercise_physiology/" data-astro-cid-dmqpwcec> <img src="/basics_exercise_physiology/_astro/logo.gFlQnIg7.png" alt="t-cell logo" class="max-h-12  dark:hidden" data-astro-cid-dmqpwcec> <img src="/basics_exercise_physiology/_astro/logo_dark.DsJ4_7fZ.png" alt="t-cell logo dark" class="max-h-12 hidden dark:block" data-astro-cid-dmqpwcec> </a> </li> <li class="py-1 " data-astro-cid-dmqpwcec> <a class="uppercase text-xl font-serif text-main hover:underline hover:underline-offset-2 hover:decoration-1 md:text-base" href="/basics_exercise_physiology/" data-astro-cid-dmqpwcec="true">Home</a> </li><li class="py-1 " data-astro-cid-dmqpwcec> <a class="uppercase text-xl font-serif text-main hover:underline hover:underline-offset-2 hover:decoration-1 md:text-base" href="/basics_exercise_physiology/lectures" data-astro-cid-dmqpwcec="true">Lectures</a> </li><li class="py-1 " data-astro-cid-dmqpwcec> <a class="uppercase text-xl font-serif text-main hover:underline hover:underline-offset-2 hover:decoration-1 md:text-base" href="/basics_exercise_physiology/dashboards" data-astro-cid-dmqpwcec="true">Dashboards</a> </li><li class="py-1 " data-astro-cid-dmqpwcec> <a class="uppercase text-xl font-serif text-main hover:underline hover:underline-offset-2 hover:decoration-1 md:text-base" href="/basics_exercise_physiology/tutorials" data-astro-cid-dmqpwcec="true">Tutorials</a> </li><li class="py-1 " data-astro-cid-dmqpwcec> <a class="uppercase text-xl font-serif text-main hover:underline hover:underline-offset-2 hover:decoration-1 md:text-base" href="/basics_exercise_physiology/contact" data-astro-cid-dmqpwcec="true">Contact</a> </li> </ul> </div> <!-- <div class="absolute right-0 top-3 z-10 md:top-8">
+        <a href="/">
+            <img src={siteConfig.logo.src} alt={siteConfig.logo.alt || ''} class="max-h-12 block dark:hidden" />
+            <img src={siteConfig.logoDark.src} alt={siteConfig.logoDark.alt || ''} class="max-h-12 hidden dark:block" />
+        </a>
+    </div> --> </nav>  <script type="module">function n(){const s=document.querySelector(".menu"),e=document.querySelector(".menu-toggle");e?.addEventListener("click",()=>{const t=e.getAttribute("aria-expanded")==="true";e.classList.toggle("is-active"),e.setAttribute("aria-expanded",t?"false":"true"),e.setAttribute("aria-label",t?"Open Menu":"Close Menu"),s?.classList.toggle("is-visible")})}n();document.addEventListener("astro:after-swap",n);</script>  <main class="grow w-full max-w-5xl mx-auto ">  <article class="mb-16 sm:mb-24"> <header class="mb-8"> <h1 class="text-3xl leading-tight font-serif font-medium sm:text-5xl sm:leading-tight">Exercise Snacks</h1> <div class="mt-2 font-serif"> <time datetime="2026-05-25T00:00:00.000Z"> May 25, 2026 </time> </div> </header> <div class="max-w-none prose sm:prose-lg">  <p><strong>From:</strong> Puta C, Reuken P, Katzer K, Gabriel M, Dudziak D, Stallmach A. <em>Exercise Snacks.</em> Friedrich-Schiller-University Jena / University Hospital Jena, 2025.</p>
+<p>¹ Friedrich-Schiller-University Jena, Chair for Sports Medicine and Health Promotion
+² Department of Internal Medicine IV (Gastroenterology, Hepatology, Infectious Diseases, Interdisciplinary Endoscopy), University Hospital Jena, Germany
+³ Interdisciplinary Centre for Post-Infectious Long-Term Consequences, University Hospital Jena, Germany
+⁴ Institute for Immunology, University Hospital Jena, Germany</p>
+<hr/>
+<h2 id="lecture-6-table-of-contents">Lecture 6 Table of Contents</h2>
+<ol>
+<li><a href="#1-introduction">Introduction</a></li>
+<li><a href="#2-definition-and-characterisation">Definition and Characterisation</a></li>
+<li><a href="#3-effects-of-exercise-snacks-energy-metabolism-musculature-cardiovascular-aspects-immunological-signalling-pathways">Effects of Exercise Snacks</a>
+<ul>
+<li>3.1 <a href="#31-exercise-snacks-and-energy-metabolism-glucose-regulation-and-insulin-sensitivity">Exercise Snacks and Energy Metabolism</a></li>
+<li>3.2 <a href="#32-exercise-snacks-and-muscular-adaptations">Exercise Snacks and Muscular Adaptations</a></li>
+<li>3.3 <a href="#33-exercise-snacks-and-cardiovascular-diseases">Exercise Snacks and Cardiovascular Diseases</a></li>
+<li>3.4 <a href="#34-effects-on-immune-function-and-inflammatory-markers">Effects on Immune Function and Inflammatory Markers</a></li>
+</ul>
+</li>
+<li><a href="#4-exercise-snacks--physiological-effects-of-short-training-bouts">Exercise Snacks — Physiological Effects of Short Training Bouts</a>
+<ul>
+<li>4.1 <a href="#41-energy-metabolism">Energy Metabolism</a></li>
+<li>4.2 <a href="#42-muscle-structure--function">Muscle Structure &amp; Function</a></li>
+<li>4.3 <a href="#43-aerobic-capacity">Aerobic Capacity</a></li>
+<li>4.4 <a href="#44-immunological-signalling-pathways">Immunological Signalling Pathways</a></li>
+<li>4.5 <a href="#45-interactive-dashboard--physiological-mechanisms">Interactive Dashboard — Physiological Mechanisms</a></li>
+<li>4.6 <a href="#46-summary">Summary</a></li>
+</ul>
+</li>
+<li><a href="#5-conclusion">Conclusion</a></li>
+<li><a href="#6-example-exercise-snack-protocol">Example Exercise Snack Protocol</a></li>
+</ol>
+<hr/>
+<h2 id="1-introduction">1 Introduction</h2>
+<p>Imagine the following situation: A 53-year-old patient with arterial hypertension, a prediabetic metabolic state (HbA1c 6.4% or 47 mmol/l) at a BMI of 31.4 kg/m² (105 kg at 183 cm), waist circumference ~100 cm (notable visceral abdominal fat), engages in only light physical activity in daily life (approx. 2000–4000 steps per day). Your patient works as a deputy branch manager in banking. You discuss the importance of physical activity in the context of prediabetes, arterial hypertension, and recommend “Exercise Snacks” as a starting point for a meaningful prevention programme. The patient says: “No, I unfortunately don’t have time for that! You know, I have so much to do professionally?” Your answer: Start with “Exercise Snacks.” The patient says: “What is that? — I have never heard of that.”</p>
+<p><strong>Aim</strong> of this article is to present the significance of small exercise bouts — “Exercise Snacks” or “Exercise Bouts” — in an evidence-based manner and to provide an exemplary case. In particular, the cardiorespiratory, cardiometabolic and immunological adaptations through “Exercise Snacks” should motivate the integration of brief, repeated strenuous exertions into everyday life [1, 2, 3]. The implementation of “Exercise Snacks” could be a <em>key strategy for starting</em> or resuming physical activity [1].</p>
+<hr/>
+<h2 id="2-definition-and-characterisation">2 Definition and Characterisation</h2>
+<p>Without doubt, there is a need for practical recommendations for physical activity that simultaneously improve cardiorespiratory fitness and reduce the effects of physical inactivity on cardiometabolic health. “Exercise Snacks” are defined as isolated, brief, intense exertions that can be performed multiple times per day [4]. They are particularly effective around mealtimes to maximise metabolic effects. Implementing Exercise Snacks can not only promote physical fitness but also provide significant benefits for immuno-metabolic and cardiometabolic health, as demonstrated in a comprehensive meta-analysis [5].</p>
+<p><strong>Typical format:</strong> One of the first protocols for Exercise Snacks comprised an 11-minute bout of exertion (6 × 1-minute snacks with 1-minute recovery phases) plus a 5-minute warm-up and a 3-minute cool-down, performed three times per day before meals [2]. Exercise Snacks involve brief phases (≤1 min) of physical activity at high intensity (≥64% VO₂peak, ≥77% of maximal heart rate) [5]. Later studies extended the concept to short (&lt;10-minute) phases distributed across the morning and afternoon [1, 2, 3, 6].</p>
+<p><strong>Simple execution:</strong> Simple exercise forms include stair climbing, short sprints, intensive uphill walking intervals, or exercises using one’s own body weight (e.g. 1 minute of sit-to-stand) [1].</p>
+<hr/>
+<h2 id="3-effects-of-exercise-snacks-energy-metabolism-musculature-cardiovascular-aspects-immunological-signalling-pathways">3 Effects of Exercise Snacks: Energy Metabolism, Musculature, Cardiovascular Aspects, Immunological Signalling Pathways</h2>
+<p>Figure 1 summarises the evidence-based effects of “Exercise Snacks.”</p>
+<figure class="m-0"> <figcaption class="hidden md:block md:mr-[-53%] md:float-right md:clear-end md:w-[53%] px-6"> <p><strong>Figure 1.</strong> Summary of evidence-based effects on energy metabolism, muscular adaptations, aerobic capacity and immunological signalling pathways of Exercise Snacks (Created in BioRender. Puta, C. (2025) <a href="https://BioRender.com/nvvnmmo">https://BioRender.com/nvvnmmo</a>).</p> </figcaption> <img src="/basics_exercise_physiology/_astro/L06_Fig01_ExerciseSnacks_bw_1.CQydluWi_ZljmCJ.webp" alt="Evidence-based effects of Exercise Snacks" loading="lazy" decoding="async" fetchpriority="auto" width="1440" height="930" class="w-full h-auto py-0 block dark:hidden"> <img src="/basics_exercise_physiology/_astro/L06_Fig01_ExerciseSnacks_bw_1_dark.DpkaTQ1a_ZgOEI9.webp" alt="Evidence-based effects of Exercise Snacks" loading="lazy" decoding="async" fetchpriority="auto" width="1440" height="930" class="w-full h-auto py-0 hidden dark:block"> <figcaption class="block md:hidden px-6 my-4"> <p><strong>Figure 1.</strong> Summary of evidence-based effects on energy metabolism, muscular adaptations, aerobic capacity and immunological signalling pathways of Exercise Snacks (Created in BioRender. Puta, C. (2025) <a href="https://BioRender.com/nvvnmmo">https://BioRender.com/nvvnmmo</a>).</p> </figcaption> </figure>
+<h3 id="31-exercise-snacks-and-energy-metabolism-glucose-regulation-and-insulin-sensitivity">3.1 Exercise Snacks and Energy Metabolism (Glucose Regulation and Insulin Sensitivity)</h3>
+<p>Brief, frequent, intensive physical exertions around mealtimes lead to reproducible improvements in postprandial glycaemia and insulin sensitivity. A crossover-design study on exercise around mealtimes reported a one-day and 24-hour reduction of mean blood glucose levels (e.g. ~0.7 mmol·L over 24 hours) and a reduction of the 3-hour postprandial blood glucose level after breakfast by ~1.4 mmol·L compared to continuous training in insulin-resistant adults [7]. Further studies confirm clinically significant benefits for blood glucose levels and more comprehensive cardiometabolic improvements. Meta-analyses demonstrate strong effects on maximal oxygen uptake (increase) and total and LDL cholesterol (decrease) [5, 8]. Protocols that reduce adipocyte size and improve glycaemic control lead to greater reductions of basal inflammatory markers [9], [10]. The superior benefit of multiple short daily snacks regarding insulin sensitivity can be lost with brief cessation of practice, indicating that chronic adaptations require continuous stimulation [10].</p>
+<p>Essential to understanding the metabolic effect of Exercise Snacks is that the brief, predominantly anaerobic lactacid exertions mostly transport glucose into the muscle cell <em>insulin-independently</em>. During exertion, GLUT4 is translocated from intracellular storage vesicles to the plasma membrane of skeletal muscle cells. The translocation is stimulated by muscle contractions and is insulin-independent. This means that both insulin and physical activity increase GLUT4 levels at the cell surface [11, 12, 13]. Studies have shown, for example, that acute physical exertion can lead to an increase in GLUT4 concentration of approximately 50% immediately after training at the cell surface [14].</p>
+<p>The practical insight is that brief, intensive “Exercise Snacks” before or shortly after meals are an evidence-based, time-efficient strategy for reducing postprandial glycaemia and improving insulin-related parameters in prediabetes and risk patients [7, 5, 8, 15]. Accordingly, it is possible to very effectively influence the prediabetic risk profile of our patient. Regarding weight reduction, it is important that the Exercise Snacks be expanded to: 3 times per week 4 × 4 min at 85–95% maximal heart rate / 3 min at 60–70% of maximal heart rate (total 30–40 min). The additive effect then results in an expected reduction of visceral fat and liver fat by approximately 3%.</p>
+<h3 id="32-exercise-snacks-and-muscular-adaptations">3.2 Exercise Snacks and Muscular Adaptations</h3>
+<p>4 weeks of daily 5 × 1 min mornings and 5 × 1 min evenings with 1-minute pauses between exercises (sit-to-stand, seated knee extension, alternating between walking on the spot and standing TV watching) showed a 31% improvement in the 1-minute sit-to-stand test, a 6% increase in maximal leg strength and a 2% increase in thigh muscle cross-sectional area [16]. Similar to other forms of short-duration, high-intensity exercises, Exercise Snacks of large muscle groups (see Fig. 1) can, despite their brevity, activate classical intracellular signalling pathways (such as AMPK) and transcriptional regulatory factors (such as peroxisome proliferator-activated receptor gamma coactivator 1-alpha) that are involved in oxidative remodelling of muscles [17].</p>
+<p>The practical insight is that simple exercises involving large muscle groups counteract age-associated or, where applicable, disease-related muscle wasting (sarcopenia). The preserved muscle mass is of particular importance for immuno-metabolic effects (e.g. prediabetes, metabolic syndrome). Accordingly, our patient can also benefit from Exercise Snacks in terms of entering physical activity and gaining strength and shifting towards fat-free mass regarding overweight and associated risk factors. Muscular effects are usually more quickly noticeable (e.g. more strength) compared to the longer-term effects of weight reduction.</p>
+<h3 id="33-exercise-snacks-and-cardiovascular-diseases">3.3 Exercise Snacks and Cardiovascular Diseases</h3>
+<p>Exercise Snacks correspond to the recently revised World Health Organisation (WHO) guidelines on physical activity and sedentary behaviour [18]. In recognition of the potential health benefits of brief strenuous physical activity, the updated recommendations of this and other organisations have removed the previous requirement that physical activity must occur in bouts of at least 10 minutes duration. The recommendations and underlying studies refer to “vigorous intermittent lifestyle physical activity (VILPA)” — i.e. strenuous intermittent physical activity in everyday life. It was impressively demonstrated using a sample of 25,241 non-athletes (mean age 61.8 years, 14,178 women / 11,063 men, UK Biobank) that [6]: i) compared to participants who did not practise “vigorous intermittent lifestyle physical activity (VILPA),” a frequency of 3 × 1–2-minute VILPA per day was associated with a 38–40% reduction in all-cause mortality risk, cancer mortality risk, and a 48–49% reduction in cardiovascular disease mortality risk; ii) a single daily duration of 4.4 minutes per day was associated with a 26–30% reduction in all-cause mortality risk, cancer mortality risk, and a 32–34% reduction in cardiovascular disease mortality risk [6]. These effects can be explained, among other things, by an increase in capillary density and mitochondrial content in the body (including in the musculature), leading to enhanced gas exchange in skeletal muscle and ultimately to increased oxygen uptake.</p>
+<p><strong>Accordingly, our patient benefits from daily 3 × 1–2-minute strenuous Exercise Snacks <em>also</em> as a non-athlete with a marked reduction in cardiovascular risk and/or cancer risk.</strong></p>
+<h3 id="34-effects-on-immune-function-and-inflammatory-markers">3.4 Effects on Immune Function and Inflammatory Markers</h3>
+<p>One of the most important medical discoveries of the past two decades was that the immune system and inflammatory processes are involved not only in some selected diseases but in a multitude of psychological and physical health problems that determine morbidity and mortality worldwide today [19, 20]. More than 50% of all deaths are attributable to inflammation-related diseases such as ischaemic heart disease, stroke, cancer, diabetes mellitus type 2, chronic kidney diseases, non-alcoholic fatty liver disease (NAFLD; i.e. metabolically associated fatty liver), as well as autoimmune and neurodegenerative diseases [21].</p>
+<h4 id="341-fundamental-effects-of-physical-activity-and-the-immune-system">3.4.1 Fundamental Effects of Physical Activity and the Immune System</h4>
+<p><strong>Cell mobilisation during exertion:</strong> Acute physical exertions (brief, interval-like, anaerobically lactacid, or continuous for at least ~20 minutes at the individual anaerobic threshold) are characterised by a transient increase of immune cells in the blood. This is based essentially on: i) the release of stress hormones adrenaline, noradrenaline and cortisol, ii) the increase in shear forces in blood vessels and tissues, and iii) the rise in blood pressure. This process depends on intensity, type and duration of the exertion.</p>
+<p><strong>Immune surveillance after exertion:</strong> At the end of the exertion, some of the mobilised immune cells (lymphocytes) migrate from the blood into tissues such as lungs, bone marrow or gastrointestinal tract and provide immune surveillance there. Other immune cells (e.g. neutrophils) continue to increase in number in the blood after strenuous exertions.</p>
+<p><strong>Myokines:</strong> Muscle contractions lead to the release of anti-inflammatory messenger substances from muscle tissue (myokines, exerkines). These act locally, for example by reducing insulin resistance of skeletal muscle. They also stimulate fat burning throughout the body and have anti-inflammatory effects.</p>
+<p><strong>Effects of regular physical activity on immune competence:</strong> Regular physical activity reduces the risk of chronic diseases, particularly those associated with low-grade inflammation, such as diabetes mellitus type 2 or cardiovascular diseases. These health-promoting effects are based on enhanced immunological tissue surveillance, the altered functional state of immune cells and the stimulation of anti-inflammatory signalling pathways.</p>
+<h4 id="342-exercise-snacks-pro--and-anti-inflammatory-effects">3.4.2 Exercise Snacks: Pro- and Anti-inflammatory Effects</h4>
+<p>The pro- and anti-inflammatory effects are context-dependent: After brief intensive exertions, there are transient interleukin-6 (IL-6) increases. With repeated “snacks,” longer-term reductions of IL-6 and CRP are observed, while the effects of TNF-α are inconsistent. Brief, intensive “Exercise Snacks” can also have positive effects on immune function and inflammatory markers [2]. Studies show that “Exercise Snacks” induce acute modulation of immune signals, gene expression and microbiome-mediated signalling pathways. Review articles and mechanistic studies conceptually indicate that repeated short training can alter immunometabolic status [22, 23, 24, 25, 26].</p>
+<p><strong>Acute exertion-induced effects (see Fig. 2):</strong> Exertion-induced IL-6 (myokine, exerkine) released from the muscle acts as a metabolic signal that promotes hepatic glucose production and lipolysis and, instead of promoting classical NF-κB/TNF-driven inflammation pathways in disease states, promotes anti-inflammatory mediators (IL-10, soluble TNF receptors, IL-1ra) [9]. This effect lasts approximately up to 6 hours after exertion [27], [28], [9].</p>
+<p><strong>Longer-term changes from Exercise Snacks:</strong> Systematic reviews show that training programmes with Exercise Snacks can lower resting IL-6 and CRP in overweight/obese youth and adults. Combined training with calorie restriction lowers CRP and can positively influence IL-6 and TNF-α in non-sedentary adults [29], [30], [31].</p>
+<p><strong>Accordingly, our patient benefits from the anti-inflammatory effects of daily Exercise Snacks after exertion. This means that the signalling effect of muscle-expressed interleukin 6 is different from that of IL-6 in non-exertion-induced inflammation. Muscle-expressed IL-6 stimulates hepatic glucose production and lipolysis and induces anti-inflammatory signalling pathways (see Fig. 2). Overall, a reduction of the systemic inflammatory state is achieved.</strong></p>
+<figure class="m-0"> <figcaption class="hidden md:block md:mr-[-53%] md:float-right md:clear-end md:w-[53%] px-6"> <p><strong>Figure 2.</strong> Exercise Snack protocols and anti-inflammatory efficacy (Data: Literature analysis). HIIT: high intensity interval training.</p> </figcaption> <img src="/basics_exercise_physiology/_astro/L06_Fig02_ExerciseSnack_bw.BjHunv-p_1M0cbj.webp" alt="Exercise Snack protocols and anti-inflammatory efficacy" loading="lazy" decoding="async" fetchpriority="auto" width="2374" height="1748" class="w-full h-auto py-0 block dark:hidden"> <img src="/basics_exercise_physiology/_astro/L06_Fig02_ExerciseSnack_bw_dark.B2qhvvrP_1iiv69.webp" alt="Exercise Snack protocols and anti-inflammatory efficacy" loading="lazy" decoding="async" fetchpriority="auto" width="2374" height="1748" class="w-full h-auto py-0 hidden dark:block"> <figcaption class="block md:hidden px-6 my-4"> <p><strong>Figure 2.</strong> Exercise Snack protocols and anti-inflammatory efficacy (Data: Literature analysis). HIIT: high intensity interval training.</p> </figcaption> </figure>
+<hr/>
+<h2 id="4-exercise-snacks--physiological-effects-of-short-training-bouts">4 Exercise Snacks — Physiological Effects of Short Training Bouts</h2>
+<blockquote>
+<p><strong>Definition:</strong> Exercise snacks are brief, structured bouts of physical activity (typically 2–10 minutes) performed multiple times throughout the day as a substitute for or complement to continuous exercise sessions.</p>
+</blockquote>
+<h3 id="41-energy-metabolism">4.1 Energy Metabolism</h3>
+<p><strong>Key outcomes:</strong> ↓ Blood glucose · ↓ Triglycerides</p>
+<p>Short bouts of exercise activate two parallel, insulin-independent metabolic axes that together lower plasma glucose and triglycerides within minutes.</p>
+<h4 id="glut4-translocation">GLUT4 Translocation</h4>
+<p>Muscle contractions raise the AMP/ATP ratio and activate Ca²⁺/calmodulin-dependent kinases, both of which trigger AMPK. Activated AMPK phosphorylates downstream targets that drive GLUT4 vesicles from intracellular depots to the plasma membrane — entirely without insulin. The result is rapid skeletal muscle glucose uptake and a fall in blood glucose. The effect sets in within minutes and persists for 1–4 hours post-exercise, making exercise snacks particularly valuable for postprandial glycaemic control in T2DM and insulin-resistant populations.</p>
+<h4 id="lpl-activity">LPL Activity</h4>
+<p>Lipoprotein lipase (LPL) sits on the capillary endothelium of skeletal muscle and cleaves triglycerides from VLDL and chylomicron particles into free fatty acids. Muscle contractions increase LPL activity via AMPK phosphorylation and simultaneously enhance capillary perfusion, increasing substrate contact. Consequences: falling plasma triglycerides and VLDL concentrations, increased fatty acid oxidation in muscle.</p>
+<h4 id="convergence">Convergence</h4>
+<p>Both axes share AMPK as the central sensor and converge on reduced insulin resistance and lower cardiovascular risk — the core metabolic protective effect of exercise snacks.</p>
+<figure class="m-0"> <figcaption class="hidden md:block md:mr-[-53%] md:float-right md:clear-end md:w-[53%] px-6"> <p><strong>Figure 3.</strong> Exercise Snacks — Energy Metabolism Signaling. Both GLUT4 and LPL axes operate insulin-independently via AMPK activation, converging on reduced insulin resistance and lower cardiovascular risk.</p> </figcaption> <img src="/basics_exercise_physiology/_astro/L06_Fig03_energy_metabolism_bw.C_psY1kC_gV1sv.webp" alt="Energy Metabolism Signaling" loading="lazy" decoding="async" fetchpriority="auto" width="1366" height="1186" class="w-full h-auto py-0 block dark:hidden"> <img src="/basics_exercise_physiology/_astro/L06_Fig03_energy_metabolism_bw_dark.CYY-q89a_1h0elh.webp" alt="Energy Metabolism Signaling" loading="lazy" decoding="async" fetchpriority="auto" width="1366" height="1186" class="w-full h-auto py-0 hidden dark:block"> <figcaption class="block md:hidden px-6 my-4"> <p><strong>Figure 3.</strong> Exercise Snacks — Energy Metabolism Signaling. Both GLUT4 and LPL axes operate insulin-independently via AMPK activation, converging on reduced insulin resistance and lower cardiovascular risk.</p> </figcaption> </figure>
+<h3 id="42-muscle-structure--function">4.2 Muscle Structure &amp; Function</h3>
+<p><strong>Key outcomes:</strong> ↑ Maximal leg strength · ↑ Muscle cross-sectional area</p>
+<p>Muscular adaptations to exercise snacks unfold across three temporally staggered phases.</p>
+<h4 id="acute-phase-minuteshours-ampkpgc-1α-axis">Acute Phase (minutes–hours): AMPK/PGC-1α Axis</h4>
+<p>Muscle contractions activate AMPK, which phosphorylates PGC-1α and drives its nuclear translocation. In the nucleus, PGC-1α co-activates PPARγ and initiates transcription of mitochondrial and myofibrillar genes. Simultaneously, neuromuscular recruitment improves fiber conduction velocity.</p>
+<h4 id="subacute-phase-hoursdays-myofibrillar-protein-synthesis">Subacute Phase (hours–days): Myofibrillar Protein Synthesis</h4>
+<p>mTORC1 is activated via mechanical stress and IGF-1, increasing translation of ribosomal mRNAs for myosin heavy chain (MHC) and actin. The PPARγ/PGC-1α complex amplifies this effect through higher mitochondrial ATP availability. Critically, even short bouts are sufficient to open the anabolic signalling window provided mechanical tension is adequate.</p>
+<h4 id="chronic-phase-weeksmonths-satellite-cell-activation--hypertrophy">Chronic Phase (weeks–months): Satellite Cell Activation &amp; Hypertrophy</h4>
+<p>Mechanical stress activates satellite cells via Hepatocyte Growth Factor (HGF) and Mechano Growth Factor (MGF). Satellite cells proliferate, differentiate, and fuse with existing muscle fibres, increasing myonuclei number and cross-sectional area. This is the slowest but structurally most durable adaptation.</p>
+<blockquote>
+<p><strong>Clinical note (ME/CFS / Post-COVID):</strong> mTORC1 activation through exercise may trigger post-exertional malaise rather than hypertrophy in populations with mitochondrial dysfunction — highlighting the need for wearable-based PEM monitoring as a safeguard.</p>
+</blockquote>
+<figure class="m-0"> <figcaption class="hidden md:block md:mr-[-53%] md:float-right md:clear-end md:w-[53%] px-6"> <p><strong>Figure 4.</strong> Exercise Snacks — Muscle Structure &amp; Function Signaling. Three temporally staggered phases from acute AMPK/PGC-1α activation through mTORC1-driven protein synthesis to satellite cell–mediated hypertrophy.</p> </figcaption> <img src="/basics_exercise_physiology/_astro/L06_Fig04_chart2_muscle_signaling_bw.8Xm5wUj3_7Ru7g.webp" alt="Muscle Structure &#38; Function Signaling" loading="lazy" decoding="async" fetchpriority="auto" width="1366" height="1312" class="w-full h-auto py-0 block dark:hidden"> <img src="/basics_exercise_physiology/_astro/L06_Fig04_chart2_muscle_signaling_bw_dark.CtuWp5ul_zVvYd.webp" alt="Muscle Structure &#38; Function Signaling" loading="lazy" decoding="async" fetchpriority="auto" width="1366" height="1312" class="w-full h-auto py-0 hidden dark:block"> <figcaption class="block md:hidden px-6 my-4"> <p><strong>Figure 4.</strong> Exercise Snacks — Muscle Structure &amp; Function Signaling. Three temporally staggered phases from acute AMPK/PGC-1α activation through mTORC1-driven protein synthesis to satellite cell–mediated hypertrophy.</p> </figcaption> </figure>
+<h3 id="43-aerobic-capacity">4.3 Aerobic Capacity</h3>
+<p><strong>Key outcomes:</strong> ↑ Oxygen uptake · ↑ Performance</p>
+<p>Aerobic capacity gains from exercise snacks operate through two coupled systems framed by the Fick equation.</p>
+<h4 id="fick-equation-framework">Fick Equation Framework</h4>
+<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover accent="true"><mi>V</mi><mo>˙</mo></mover><msub><mi>O</mi><mn>2</mn></msub><mo>=</mo><mtext>CO</mtext><mo>×</mo><mo stretchy="false">(</mo><msub><mi>C</mi><mi>a</mi></msub><msub><mi>O</mi><mn>2</mn></msub><mo>−</mo><msub><mi>C</mi><mover accent="true"><mi>v</mi><mo>ˉ</mo></mover></msub><msub><mi>O</mi><mn>2</mn></msub><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\dot{V}O_2 = \text{CO} \times (C_aO_2 - C_{\bar{v}}O_2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0702em;vertical-align:-0.15em"></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.9202em"><span style="top:-3em"><span class="pstrut" style="height:3em"></span><span class="mord mathnormal" style="margin-right:0.22222em">V</span></span><span style="top:-3.2523em"><span class="pstrut" style="height:3em"></span><span class="accent-body" style="left:-0.1389em"><span class="mord">˙</span></span></span></span></span></span></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em">O</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em"><span style="top:-2.55em;margin-left:-0.0278em;margin-right:0.05em"><span class="pstrut" style="height:2.7em"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em"></span></span><span class="base"><span class="strut" style="height:0.7667em;vertical-align:-0.0833em"></span><span class="mord text"><span class="mord">CO</span></span><span class="mspace" style="margin-right:0.2222em"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em"></span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07153em">C</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em"><span style="top:-2.55em;margin-left:-0.0715em;margin-right:0.05em"><span class="pstrut" style="height:2.7em"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">a</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em">O</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em"><span style="top:-2.55em;margin-left:-0.0278em;margin-right:0.05em"><span class="pstrut" style="height:2.7em"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07153em">C</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2474em"><span style="top:-2.55em;margin-left:-0.0715em;margin-right:0.05em"><span class="pstrut" style="height:2.7em"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord accent mtight"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.5678em"><span style="top:-2.7em"><span class="pstrut" style="height:2.7em"></span><span class="mord mathnormal mtight" style="margin-right:0.03588em">v</span></span><span style="top:-2.7em"><span class="pstrut" style="height:2.7em"></span><span class="accent-body" style="left:-0.2222em"><span class="mord mtight">ˉ</span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em">O</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em"><span style="top:-2.55em;margin-left:-0.0278em;margin-right:0.05em"><span class="pstrut" style="height:2.7em"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em"><span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span></p>
+<p>Exercise snacks act on <strong>both sides</strong>: centrally (cardiac output, CO) and peripherally (arteriovenous oxygen difference, a-vO₂ diff).</p>
+<h4 id="central-adaptations">Central Adaptations</h4>
+<p>Repeated bouts increase heart rate and stroke volume acutely. Over time, baroreceptor training improves autonomic cardiac regulation (HRV), and cardiac remodelling yields a higher resting stroke volume.</p>
+<h4 id="peripheral-adaptations">Peripheral Adaptations</h4>
+<p>This is the dominant adaptation pathway for exercise snacks:</p>
+<ul>
+<li><strong>Mitochondrial biogenesis</strong> (via PGC-1α): higher oxidative capacity per fibre</li>
+<li><strong>Capillary angiogenesis</strong> (via VEGF): shorter O₂ diffusion distance</li>
+<li><strong>Myoglobin concentration</strong> ↑: intracellular O₂ buffering</li>
+</ul>
+<p>Together these widen the a-vO₂ diff — the muscle extracts more O₂ per unit blood flow.</p>
+<blockquote>
+<p><strong>Contrast with continuous exercise training</strong>, which primarily raises CO. Exercise snacks disproportionately target the peripheral side — relevant for populations where cardiac adaptation is limited (e.g. deconditioning, autonomic dysfunction in Long COVID).</p>
+</blockquote>
+<figure class="m-0"> <figcaption class="hidden md:block md:mr-[-53%] md:float-right md:clear-end md:w-[53%] px-6"> <p><strong>Figure 5.</strong> Exercise Snacks — Aerobic Capacity Signaling. Central (cardiac output) and peripheral (a-vO₂ diff) adaptations framed by the Fick equation, with exercise snacks disproportionately targeting the peripheral side.</p> </figcaption> <img src="/basics_exercise_physiology/_astro/L06_Fig05_chart3_aerobic_capacity_bw.PTYrsrpO_XarEj.webp" alt="Aerobic Capacity Signaling" loading="lazy" decoding="async" fetchpriority="auto" width="1366" height="1276" class="w-full h-auto py-0 block dark:hidden"> <img src="/basics_exercise_physiology/_astro/L06_Fig05_chart3_aerobic_capacity_bw_dark.BLrptv_v_Z2uqkIS.webp" alt="Aerobic Capacity Signaling" loading="lazy" decoding="async" fetchpriority="auto" width="1366" height="1276" class="w-full h-auto py-0 hidden dark:block"> <figcaption class="block md:hidden px-6 my-4"> <p><strong>Figure 5.</strong> Exercise Snacks — Aerobic Capacity Signaling. Central (cardiac output) and peripheral (a-vO₂ diff) adaptations framed by the Fick equation, with exercise snacks disproportionately targeting the peripheral side.</p> </figcaption> </figure>
+<h3 id="44-immunological-signalling-pathways">4.4 Immunological Signalling Pathways</h3>
+<p><strong>Key outcomes:</strong> ↑ Cytokine release (myokines) · ↑ Transcriptional reprogramming of immune cells</p>
+<p>The immunological effect of exercise snacks is mechanistically the most complex domain, connecting muscle, immune system, and gut across three parallel axes — all converging on NF-κB suppression.</p>
+<h4 id="axis-1-muscle-as-endocrine-organ-myokines">Axis 1: Muscle as Endocrine Organ (Myokines)</h4>
+<p>Contracting skeletal muscle secretes a broad spectrum of cytokines (myokines). IL-6 is the most prominent: released transiently from myofibrils, it acts anti-inflammatorily (distinct from the chronically elevated IL-6 in obesity), stimulates IL-10 production, and suppresses TNF-α. IL-15 promotes NK cell proliferation; irisin influences T-cell differentiation. <strong>Kinetics are decisive</strong> — brief transient peaks are immunoprotective, whereas chronically elevated levels are pro-inflammatory.</p>
+<h4 id="axis-2-transcriptional-reprogramming-of-immune-cells">Axis 2: Transcriptional Reprogramming of Immune Cells</h4>
+<p>Mechanical loading and myokines activate, in immune cells:</p>
+<ul>
+<li><strong>NF-κB suppression</strong> via IL-10 signalling → ↓ TNF-α, IL-1β</li>
+<li><strong>Nrf2 induction</strong> → antioxidant enzymes, HO-1 (competes with NF-κB for co-activators)</li>
+<li><strong>M1 → M2 macrophage polarisation</strong> → shift from pro-inflammatory to reparative phenotype</li>
+<li><strong>Treg expansion</strong> via IL-10 and TGF-β → immune tolerance</li>
+</ul>
+<h4 id="axis-3-microbiome-mediated-metabolites">Axis 3: Microbiome-Mediated Metabolites</h4>
+<p>Regular short bouts increase gut microbiome diversity and the production of short-chain fatty acids (SCFAs: butyrate, propionate). SCFAs bind GPR41/GPR43 on immune cells, inhibit HDAC, and epigenetically modulate cytokine production. Butyrate directly suppresses NF-κB in colonocytes and macrophages.</p>
+<blockquote>
+<p><strong>Research connection (ME/CFS / Long COVID):</strong> Dysbiosis with reduced SCFA producers (<em>Faecalibacterium prausnitzii</em>, <em>Roseburia</em>) is consistently reported. Exercise snacks may rehabilitate this axis. The SCFA–NF-κB–EV miRNA triangle is a direct entry point for EV-associated miRNA biomarker studies: exercise snacks could shift EV cargo toward anti-inflammatory miRNA profiles (NF-κB, Nrf2 regulators), measurable and clinically meaningful.</p>
+</blockquote>
+<figure class="m-0"> <figcaption class="hidden md:block md:mr-[-53%] md:float-right md:clear-end md:w-[53%] px-6"> <p><strong>Figure 6.</strong> Exercise Snacks — Immunological Signalling Pathways. Three parallel axes (myokines, transcriptional reprogramming, microbiome metabolites) converge on NF-κB suppression and systemic anti-inflammatory effects.</p> </figcaption> <img src="/basics_exercise_physiology/_astro/L06_Fig06_chart4_immune_signaling_bw.BMmfw-Jv_ueqnn.webp" alt="Immunological Signalling Pathways" loading="lazy" decoding="async" fetchpriority="auto" width="1456" height="1456" class="w-full h-auto py-0 block dark:hidden"> <img src="/basics_exercise_physiology/_astro/L06_Fig06_chart4_immune_signaling_bw_dark.C01ocDhr_1tqmxI.webp" alt="Immunological Signalling Pathways" loading="lazy" decoding="async" fetchpriority="auto" width="1456" height="1456" class="w-full h-auto py-0 hidden dark:block"> <figcaption class="block md:hidden px-6 my-4"> <p><strong>Figure 6.</strong> Exercise Snacks — Immunological Signalling Pathways. Three parallel axes (myokines, transcriptional reprogramming, microbiome metabolites) converge on NF-κB suppression and systemic anti-inflammatory effects.</p> </figcaption> </figure>
+<h3 id="45-interactive-dashboard--physiological-mechanisms">4.5 Interactive Dashboard — Physiological Mechanisms</h3>
+<p>An interactive HTML dashboard provides a detailed, navigable visualisation of all four physiological domains (energy metabolism, muscle signalling, aerobic capacity, immunological pathways) with animated pathway diagrams, tabbed panels, and integrated source references.</p>
+<p><a href="/basics_exercise_physiology/dashboards/exercise-snacks">→ Interactive Dashboard</a> - Exercise Snacks</p>
+<h3 id="46-summary">4.6 Summary</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Domain</th><th>Primary Outcomes</th><th>Central Mediators</th><th>Timeframe</th></tr></thead><tbody><tr><td>Energy Metabolism</td><td>↓ Blood glucose, ↓ Triglycerides</td><td>AMPK, GLUT4, LPL</td><td>Minutes–hours</td></tr><tr><td>Muscle Structure</td><td>↑ Strength, ↑ CSA</td><td>AMPK, mTORC1, PGC-1α, satellite cells</td><td>Hours–months</td></tr><tr><td>Aerobic Capacity</td><td>↑ VO₂max, ↑ Performance</td><td>PGC-1α, VEGF, Fick CO × a-vO₂</td><td>Weeks–months</td></tr><tr><td>Immune Signalling</td><td>↓ Inflammation, ↑ Tolerance</td><td>IL-6/IL-10, Nrf2, NF-κB, SCFAs</td><td>Hours–weeks</td></tr></tbody></table>
+<hr/>
+<h2 id="5-conclusion">5 Conclusion</h2>
+<p>Exercise Snacks are a highly promising, time-efficient strategy for improving cardiometabolic health, particularly in inactive individuals. They have local and systemic effects on energy metabolism, musculature, cardiovascular, cardiometabolic and immunological (dys)regulation. They provide a low-threshold entry into physical activity and are characterised by brief strenuous exertions that can be integrated into everyday life. Clinical practice could benefit greatly from the minimal effort with highly effective results (see Fig. 3). It should be noted that in pre-existing conditions (e.g. type 2 diabetes), Exercise Snacks may have an additive effect to medication (e.g. insulin) and often do not produce significant effects on weight loss alone through movement “snacks” without dietary intervention. For sustainable weight reduction, a combination is recommended: movement (including Exercise Snacks), controlled nutrition, and, where applicable, behavioural and environmental interventions.</p>
+<hr/>
+<h2 id="6-example-exercise-snack-protocol">6 Example Exercise Snack Protocol</h2>
+<p><strong>Example Exercise Snack protocol for the patient presented (see Introduction)</strong></p>
+<ul>
+<li>This protocol is designed to maximise the health benefit in a time-efficient manner, supported by current research findings.</li>
+<li>Each one-minute Exercise Snack should be performed at high to very high intensity. The target is a maximal heart rate of ≥75–85% (211 − 0.65 × age; for calculation see also: <a href="https://www.ntnu.edu/cerg/hrmax">https://www.ntnu.edu/cerg/hrmax</a>) or an RPE scale of 7–10 (CR10 scale; 7–10 corresponds to “very hard” to “maximal” exertion; you should feel like you are working hard and not be able to speak in full sentences).</li>
+<li>Rest phases serve recovery and should be low-intensity or passive.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Step/Exercise</th><th>Duration</th><th>Exercise Example</th><th>Intensity Recommendation</th></tr></thead><tbody><tr><td>Exercise 1</td><td>1 min</td><td>Stair climbing</td><td>Strong to very strong: ≥75–85% of maximal heart rate, ≥85% VO₂max, RPE 7–10 (CR10), “as intense as possible”</td></tr><tr><td>Pause</td><td>45 min</td><td>Passive recovery</td><td>Low (active or passive recovery)</td></tr><tr><td>Exercise 2</td><td>1 min</td><td>Squats</td><td>Strong to very strong: ≥75–85% of maximal heart rate, ≥85% VO₂max, RPE 7–10 (CR10), “as intense as possible”</td></tr><tr><td>Pause</td><td>45 min</td><td>Passive recovery</td><td>Low (active or passive recovery)</td></tr><tr><td>Exercise 3</td><td>1 min</td><td>Brisk walking (uphill)</td><td>Strong: ≥75% of maximal heart rate, RPE 7–8 (CR10), “as fast as possible”</td></tr><tr><td>Pause</td><td>45 min</td><td>Passive recovery</td><td>Low (active or passive recovery)</td></tr><tr><td>Exercise 4</td><td>1 min</td><td>Step-ups</td><td>Strong to very strong: ≥75–85% of maximal heart rate, RPE 7–10 (CR10)</td></tr><tr><td>Pause</td><td>45 min</td><td>Passive recovery</td><td>Low (active or passive recovery)</td></tr><tr><td>Exercise 5</td><td>1 min</td><td>Jumping jacks</td><td>Strong to very strong: ≥75–85% of maximal heart rate, RPE 7–10 (CR10)</td></tr><tr><td>Pause</td><td>45 min</td><td>Passive recovery</td><td>Low (active or passive recovery)</td></tr><tr><td>Exercise 6</td><td>1 min</td><td>Lunges</td><td>Strong to very strong: ≥75–85% of maximal heart rate, RPE 7–10 (CR10)</td></tr></tbody></table>
+<p>RPE: Rating of Perceived Exertion (Rating of perceived exertion on the Borg CR-10 Scale [32]), Borg CR10 Scale (Category rating 0–10: 0 = no exertion at all, 2 = light, 5 = heavy, 7 = very heavy, 10 = extremely strenuous / nearly maximal)</p>
+<hr/>
+<h2 id="7-interactive-dashboard--exercise-effects-on-blood--serum-parameters">7 Interactive Dashboard — Exercise Effects on Blood &amp; Serum Parameters</h2>
+<p>An interactive HTML dashboard outlining metabolic, inflammatory and trace elements.</p>
+<p><a href="/basics_exercise_physiology/dashboards/exercise-effects">→ Interactive Dashboard</a> - Exercise Effects on Blood &amp; Serum Parameters</p>
+<hr/>
+<h2 id="references">References</h2>
+<p>[1] Shen MM. Exercise snacks a novel strategy to improve cardiometabolic health. Exerc Sport Sci Rev. 2022. doi: 10.1249/jes.0000000000000275.</p>
+<p>[2] Francois ME, Little JP, Bookman E, Jakovljevic DG, Yoshida Y, McGlory C, et al. ‘Exercise snacks’ before meals a novel strategy to improve glycaemic control in individuals with insulin resistance. Diabetologia. 2014;57:1437-1445. doi: 10.1007/S00125-014-3244-6.</p>
+<p>[3] Wang T, Laher I, Li S. Exercise snacks and physical fitness in sedentary populations. Sports Med Health Sci. 2024. doi: 10.1016/j.smhs.2024.02.006.</p>
+<p>[4] Islam H, Gibala MJ, Little JP. Exercise snacks: a novel strategy to improve cardiometabolic health. Exerc Sport Sci Rev. 2022 Jan 1;50(1):31-37. doi: 10.1249/JES.0000000000000275. PMID: 34669625.</p>
+<p>[5] Chen J, Zhang Y, Li X, Wang Y, Liu H, et al. The effectiveness of exercise snacks as a time-efficient treatment for improving cardiometabolic health in adults: a systematic review and meta-analysis. Front Cardiovasc Med. 2025. doi: 10.3389/fcvm.2025.1643153.</p>
+<p>[6] Stamatakis E, Ahmadi MN, Gill JMR, Thøgersen-Ntoumani C, Gibala MJ, Doherty A, Hamer M. Association of wearable device-measured vigorous intermittent lifestyle physical activity with mortality. Nat Med. 2022 Dec;28(12):2521-2529. doi: 10.1038/s41591-022-02100-x. PMID: 36482104. PMCID: PMC9800274.</p>
+<p>[7] Carter S, Solomon TPJ. Exercise-induced improvements in postprandial glucose response are blunted by pre-exercise hyperglycemia: a randomized crossover trial in healthy individuals. Front Endocrinol (Lausanne). 2020. doi: 10.3389/FENDO.2020.566548.</p>
+<p>[8] Wan K, Lee S, Chen J, et al. Effects of exercise snacks on cardiometabolic health and body composition in adults: a systematic review and meta-analysis. Scand J Med Sci Sports. 2025. doi: 10.1111/sms.70114.</p>
+<p>[9] Metsios GS, Kitas GD. Physical activity, exercise and rheumatoid arthritis: effectiveness, mechanisms and implementation. Best Pract Res Clin Rheumatol. 2018. doi: 10.1016/J.BERH.2019.03.013.</p>
+<p>[10] Costa Pereira LV, Silva J, Oliveira M, et al. Cardiometabolic and cellular adaptations to multiple vs single daily HIIT sessions in Wistar rats: impact of short-term detraining. Metabolites. 2024. doi: 10.3390/metabo14080447.</p>
+<p>[11] Lawrence RD. The effect of exercise on insulin action in diabetes. Br Med J. 1926 Apr 10;1(3406):648-650. doi: 10.1136/bmj.1.3406.648. PMID: 20772477. PMCID: PMC2523697.</p>
+<p>[12] Roy D, Marette A. Exercise induces the translocation of GLUT4 to transverse tubules from an intracellular pool in rat skeletal muscle. Biochem Biophys Res Commun. 1996 Jun 5;223(1):147-52. doi: 10.1006/bbrc.1996.0860. PMID: 8660361.</p>
+<p>[13] Flores-Opazo M, McGee SL, Hargreaves M. Exercise and GLUT4. Exerc Sport Sci Rev. 2020 Jul;48(3):110-118. doi: 10.1249/JES.0000000000000224. PMID: 32568924.</p>
+<p>[14] Schnurr TM, Reynolds AJ, Komac AM, Duffy LK, Dunlap KL. The effect of acute exercise on GLUT4 levels in peripheral blood mononuclear cells of sled dogs. Biochem Biophys Rep. 2015 Jul 1;2:45-49. doi: 10.1016/j.bbrep.2015.05.002. PMID: 26339686. PMCID: PMC4554329.</p>
+<p>[15] Bellini A, Rossi F, Bianchi M, et al. Exercise prescription for postprandial glycemic management. Nutrients. 2024. doi: 10.3390/nu16081170.</p>
+<p>[16] Perkin OJ, McGuigan PM, Stokes KA. Exercise snacking to improve muscle function in healthy older adults: a pilot study. J Aging Res. 2019 Oct 3;2019:7516939. doi: 10.1155/2019/7516939. PMID: 31687210. PMCID: PMC6794984.</p>
+<p>[17] Babir FJ, Smith L, Patel R, et al. Technology-enabled exercise ‘snacks’ are feasible to perform in a real-world setting: a randomized controlled trial. Scand J Med Sci Sports. 2025. doi: 10.1111/sms.70117.</p>
+<p>[18] Bull FC, Al-Ansari SS, Biddle S, Borodulin K, Buman MP, Cardon G, Carty C, Chaput JP, Chastin S, Chou R, Dempsey PC, DiPietro L, Ekelund U, Firth J, Friedenreich CM, Garcia L, Gichu M, Jago R, Katzmarzyk PT, Lambert E, Leitzmann M, Milton K, Ortega FB, Ranasinghe C, Stamatakis E, Tiedemann A, Troiano RP, van der Ploeg HP, Wari V, Willumsen JF. World Health Organization 2020 guidelines on physical activity and sedentary behaviour. Br J Sports Med. 2020 Dec;54(24):1451-1462. doi: 10.1136/bjsports-2020-102955. PMID: 33239350. PMCID: PMC7719906.</p>
+<p>[19] Slavich GM. Understanding inflammation, its regulation, and relevance for health: a top scientific and public priority. Brain Behav Immun. 2015 Mar;45:13-14. doi: 10.1016/j.bbi.2014.10.012. PMID: 25449576. PMCID: PMC4361086.</p>
+<p>[20] Netea MG, Balkwill F, Chonchol M, Cominelli F, Donath MY, Giamarellos-Bourboulis EJ, Golenbock D, Gresnigt MS, Heneka MT, Hoffman HM, Hotchkiss R, Joosten LAB, Kastner DL, Korte M, Latz E, Libby P, Mandrup-Poulsen T, Mantovani A, Mills KHG, Nowak KL, O’Neill LA, Pickkers P, van der Poll T, Ridker PM, Schalkwijk J, Schwartz DA, Siegmund B, Steer CJ, Tilg H, van der Meer JWM, van de Veerdonk FL, Dinarello CA. A guiding map for inflammation. 2017 Jul 19;18(8):826-831. doi: 10.1038/ni.3790. PMID: 28722720. PMCID: PMC5939996.</p>
+<p>[21] GBD 2017 Causes of Death Collaborators. Global, regional, and national age-sex-specific mortality for 282 causes of death in 195 countries and territories, 1980-2017: a systematic analysis for the Global Burden of Disease Study 2017. Lancet. 2018 Nov 10;392(10159):1736-1788. doi: 10.1016/S0140-6736(18)32203-7. PMID: 30496103. PMCID: PMC6227606.</p>
+<p>[22] Soltani N, Ghasemi A, Asadi M, et al. The exercise training modulatory effects on the obesity-induced immunometabolic dysfunctions. Diabetes Metab Syndr Obes. 2020. doi: 10.2147/DMSO.S234992.</p>
+<p>[23] Sohail MU, Yassine HM, Sohail A, et al. Impact of physical exercise on gut microbiome, inflammation, and the pathobiology of metabolic disorders. Rev Diabet Stud. 2019. doi: 10.1900/RDS.2019.15.35.</p>
+<p>[24] Radom-Aizik S, Zaldivar F, Haddad F, Cooper DM. Impact of brief exercise on circulating monocyte gene and microRNA expression: implications for atherosclerotic vascular disease. Brain Behav Immun. 2014. doi: 10.1016/j.bbi.2014.01.003.</p>
+<p>[25] Haunhorst S, Bloch W, Ringleb M, Fennen L, Wagner H, Gabriel HHW, Puta C. Acute effects of heavy resistance exercise on biomarkers of neuroendocrine-immune regulation in healthy adults: a systematic review. Exerc Immunol Rev. 2022;28:36-52. PMID: 35452397.</p>
+<p>[26] Ringleb M, Javelle F, Haunhorst S, Bloch W, Fennen L, Baumgart S, Drube S, Reuken PA, Pletz MW, Wagner H, Gabriel HHW, Puta C. Beyond muscles: investigating immunoregulatory myokines in acute resistance exercise - a systematic review and meta-analysis. FASEB J. 2024 Apr 15;38(7):e23596. doi: 10.1096/fj.202301619R. PMID: 38597350.</p>
+<p>[27] Kliszczewicz B, Snarr RL, Esco MR, et al. Acute inflammatory responses to high-intensity functional training programming: an observational study. J Hum Sport Exerc. 2019. doi: 10.14198/JHSE.2019.144.18.</p>
+<p>[28] Radom-Aizik S, Zaldivar F, Haddad F, Cooper DM. Impact of brief exercise on circulating monocyte gene and microRNA expression: implications for atherosclerotic vascular disease. Brain Behav Immun. 2014. doi: 10.1016/j.bbi.2014.01.003.</p>
+<p>[29] Khalafi M, Mohebbi H, Symonds ME, et al. The effects of exercise training on inflammatory markers in children and adolescents: a systematic review and meta-analysis. Physiol Behav. 2024. doi: 10.1016/j.physbeh.2024.114524.</p>
+<p>[30] Guo Y, Qian HZ, Xu X, Liu Q. Effects of different exercise modalities on inflammatory markers in the obese and overweight populations: unraveling the mystery of exercise and inflammation. Front Physiol. 2024. doi: 10.3389/fphys.2024.1405094.</p>
+<p>[31] Liu Y, Wang Y, Chen X, et al. Calorie restriction with exercise intervention improves inflammatory response in overweight and obese adults: a systematic review and meta-analysis. Front Physiol. 2021. doi: 10.3389/FPHYS.2021.754731.</p>
+<p>[32] Hareendran A, Leidy NK, Monz BU, Winnette R, Becker K, Mahler DA. Proposing a standardized method for evaluating patient report of the intensity of dyspnea during exercise testing in COPD. Int J Chron Obstruct Pulmon Dis. 2012;7:345-55. doi: 10.2147/COPD.S29571. Epub 2012 May 28. PMID: 22745534; PMCID: PMC3379870.</p>
+<hr/>
+<h2 id="one-minute-paper-topics">One-Minute-Paper Topics</h2>
+<div class="marginnote m-0 md:mr-[-53%] md:float-right md:clear-end md:w-[53%] px-8 pb-4"> <p>A <strong>One-Minute-Paper</strong> (OMP) is a short, focused prompt that students answer in ~60 seconds at the end of a session to consolidate learning, surface misconceptions, and provide formative feedback.  When answering, be concise, specific, and use terminology from today’s session.</p> </div>
+<ol>
+<li>Define “Exercise Snack” in one sentence including duration and frequency.</li>
+<li>What is the rationale for distributing short bouts of activity throughout the day rather than consolidating them?</li>
+<li>Explain how muscle contraction triggers insulin-independent GLUT4 translocation.</li>
+<li>Why is insulin-independent glucose uptake clinically relevant for people with insulin resistance?</li>
+<li>Name two muscular adaptations that can be elicited by repeated short, intense bouts.</li>
+<li>Summarise the VILPA evidence: 3×1–2 min bouts/day were associated with what mortality reduction?</li>
+<li>Why might VILPA be especially valuable for non-exercisers?</li>
+<li>Explain the Fick equation in one sentence and identify which term is most affected by Exercise Snacks.</li>
+<li>How can brief intense bouts improve aerobic capacity despite their short duration?</li>
+<li>Describe one myokine released during muscle contraction and one of its immune effects.</li>
+<li>How does exercise-induced NF-κB suppression contribute to anti-inflammatory effects?</li>
+<li>Compare Exercise Snacks with traditional moderate-to-vigorous physical activity guidelines in terms of feasibility.</li>
+<li>Sketch a sample one-day Exercise Snack protocol for a sedentary office worker.</li>
+<li>What safety considerations apply when prescribing Exercise Snacks to a cardiac rehabilitation patient?</li>
+<li>Could Exercise Snacks be appropriate for patients with post-exertional malaise (PEM)? Justify your answer.</li>
+<li>What measurement strategy could capture the cumulative effect of Exercise Snacks across a day?</li>
+<li>Identify one limitation of the current Exercise Snack evidence base.</li>
+<li>How would you design a randomised trial to test Exercise Snacks vs. one continuous session of equal total duration?</li>
+<li>What was the most surprising mechanistic insight from today’s lecture, and why?</li>
+<li>Which open question about Exercise Snacks would you most like to investigate yourself?</li>
+</ol>  </div> </article>  </main> <footer class="w-full max-w-5xl mx-auto pt-12 pb-10 sm:pt-24 sm:pb-14"> <div class="mb-4 flex flex-wrap gap-x-6 gap-y-1"> <a class="font-serif hover:underline hover:underline-offset-2" href="/basics_exercise_physiology/contact">Contact</a><a class="font-serif hover:underline hover:underline-offset-2" href="/basics_exercise_physiology/terms">Terms</a> </div> <div class="pt-6 flex flex-col gap-4 border-t border-dashed border-main">  <p class="text-sm">
+&copy; 2026&nbsp;<a class="hover:underline hover:underline-offset-2" href="/">Christian Puta</a>. All rights reserved.<br>Template generated by Dirk Brockmann.
+</p> </div> </footer> </div> </body></html>
