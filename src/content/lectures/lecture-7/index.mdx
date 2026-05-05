@@ -1,211 +1,535 @@
 ---
-title: Cardiorespiratory Fitness measured in metabolic equivalent task
-description: Evidence-based comparison of cardiorespiratory fitness (CRF) measured in METs versus VO₂ max, based on Eric Topol's *Ground Truths* analysis and reconstructed figures from major cohort studies.
-  Demonstrates that CRF/METs underpins >99% of the outcome literature linking fitness to all-cause and cardiovascular mortality, drawing on the JAMA 2009 meta-analysis (n=102,980), the Cleveland Clinic cohort (n=122,007), and the Veterans Affairs cohort (n=750,302).
-  Critically evaluates consumer wearable VO₂ max estimates (7–16% MAPE) and the data imbalance between METs-based and direct VO₂ max evidence, concluding that METs are clinically superior for most healthy adults.
+title: Long-Term Athlete Development - A Conceptual Model for Resistance Training Across Biological Maturation
+description: Resistance training should be implemented across all stages of athlete development, guided by biological age (PHV, Tanner staging) rather than chronological age. The Youth Physical Development model confirms that all fitness components are trainable at every maturational stage — with emphasis shifting from neuromotor coordination in childhood to complex, heavy, and sport-specific loading in adulthood. Free weight training produces the largest gains in muscular strength (ES = 2.97), while complex training (RT + plyometrics) yields the greatest improvements in power and athletic performance. Early specialisation, inadequate tendon-load monitoring, and neglected immunological stress recovery represent the central risks to safe and effective youth athletic development.
 publishDate: '2026-05-25'
 draft: false
 tags:
   - Lecture
 ---
 
-import Figure from '../../../components/Figure.astro';
-import fig1 from '../../../assets/L05_Fig01_Measurement_bw.png';
-import fig1Dark from '../../../assets/generated/L05_Fig01_Measurement_bw_dark.png';
-import fig2a from '../../../assets/L05_Fig02a_METs_Intensity 2_bw.png';
-import fig2aDark from '../../../assets/generated/L05_Fig02a_METs_Intensity 2_bw_dark.png';
-import fig2b from '../../../assets/L05_Fig02b_METs_HR_Formula_bw.png';
-import fig2bDark from '../../../assets/generated/L05_Fig02b_METs_HR_Formula_bw_dark.png';
-import fig3a from '../../../assets/L05_Fig3a_WearableAccuracy_BarChart_bw.png';
-import fig3aDark from '../../../assets/generated/L05_Fig3a_WearableAccuracy_BarChart_bw_dark.png';
-import fig3b from '../../../assets/L05_Fig3b_Fig12b_WearableAccuracy_MAPERange_bw.png';
-import fig3bDark from '../../../assets/generated/L05_Fig3b_Fig12b_WearableAccuracy_MAPERange_bw_dark.png';
-import fig4 from '../../../assets/L05_Fig4_JAMA2009_HazardRatio_bw.png';
-import fig4Dark from '../../../assets/generated/L05_Fig4_JAMA2009_HazardRatio_bw_dark.png';
-import fig5a from '../../../assets/L05_Fig5a_CC_Mortality_MenVsWomen_bw.png';
-import fig5aDark from '../../../assets/generated/L05_Fig5a_CC_Mortality_MenVsWomen_bw_dark.png';
-import fig5b from '../../../assets/L05_Fig5b_CC_Mortality_Gradient_bw.png';
-import fig5bDark from '../../../assets/generated/L05_Fig5b_CC_Mortality_Gradient_bw_dark.png';
-import fig6a from '../../../assets/L05_Fig6a_Kokkinos2022_BarChart_bw.png';
-import fig6aDark from '../../../assets/generated/L05_Fig6a_Kokkinos2022_BarChart_bw_dark.png';
-import fig6b from '../../../assets/L05_Fig6b_Kokkinos2022_LogScale_bw.png';
-import fig6bDark from '../../../assets/generated/L05_Fig6b_Kokkinos2022_LogScale_bw_dark.png';
-import fig7a from '../../../assets/L05_Fig7a_Meta2024_Participants_bw.png';
-import fig7aDark from '../../../assets/generated/L05_Fig7a_Meta2024_Participants_bw_dark.png';
-import fig7b from '../../../assets/L05_Fig7b_Meta2024_Studies_bw.png';
-import fig7bDark from '../../../assets/generated/L05_Fig7b_Meta2024_Studies_bw_dark.png';
-import fig7c from '../../../assets/L05_Fig7c_Meta2024_EffectSize_bw.png';
-import fig7cDark from '../../../assets/generated/L05_Fig7c_Meta2024_EffectSize_bw_dark.png';
 import { Note } from '../../../components/MarginNote/index.js';
 
 
-**Based on:** *Ground Truths* by Eric Topol, MD  
-**Published:** February 23, 2026  
-**URL:** [https://erictopol.substack.com/p/the-flawed-v02-max-craze](https://erictopol.substack.com/p/the-flawed-v02-max-craze)
-
-*Structured evidence summary with reconstructed figures from cited data sources.*
-*Original author: Eric Topol (Scripps Research Translational Institute, La Jolla, CA)*
-
----
-
-**Clinical Takeaway**
-
-**Cardiorespiratory fitness (CRF)**, measured in metabolic equivalents of task (METs) on a treadmill or bicycle ergometer, is the evidence-based metric underpinning more than 99 % of the outcome literature linking physical fitness to all-cause and cardiovascular mortality. **VO₂ max** — especially as estimated by consumer wearables — is poorly validated, frequently inaccurate, and conflated with CRF in popular health narratives. METs are free, universally accessible, and clinically superior for most healthy adults.
-
-*Document structured for scientific/educational use. Figures are reconstructed from published data; they are not reproductions of the original article graphics.*
-
----
-
 ## Lecture 7 Table of Contents
 
-1. [Introduction and Clinical Context](#1-introduction-and-clinical-context)
-2. [Definitions and Measurement Methods](#2-definitions-and-measurement-methods)
-   - 2.1 [Cardiorespiratory Fitness (CRF)](#21-cardiorespiratory-fitness-crf)
-   - 2.2 [VO₂ Max — Direct Laboratory Measurement](#22-vo₂-max--direct-laboratory-measurement)
-   - 2.3 [VO₂ Max — Wearable Estimation](#23-vo₂-max--wearable-estimation)
-3. [Evidence Linking CRF (METs) to Health Outcomes](#3-evidence-linking-crf-mets-to-health-outcomes)
-   - 3.1 [Meta-Analysis: 33 Studies, 102,980 Participants (JAMA 2009)](#31-meta-analysis-33-studies-102980-participants-jama-2009)
-   - 3.2 [Cleveland Clinic Cohort: 122,007 Patients (JAMA Network Open 2018)](#32-cleveland-clinic-cohort-122007-patients-jama-network-open-2018)
-   - 3.3 [Veterans Affairs Cohort: 750,000+ Veterans (Kokkinos et al. 2022)](#33-veterans-affairs-cohort-750000-veterans-kokkinos-et-al-2022)
-4. [Evidence Linking VO₂ Max to Health Outcomes](#4-evidence-linking-vo₂-max-to-health-outcomes)
-   - 4.1 [Meta-Analysis: 42 Studies, CRF vs. VO₂ Max (2024)](#41-meta-analysis-42-studies-crf-vs-vo₂-max-2024)
-   - 4.2 [Critical Finding: Data Imbalance](#42-critical-finding-data-imbalance)
-   - 4.3 [Specific Clinical Applications of VO₂ Max](#43-specific-clinical-applications-of-vo₂-max)
-5. [Practical Recommendations](#5-practical-recommendations)
-6. [Summary Comparison: CRF vs. VO₂ Max](#6-summary-comparison-crf-vs-vo₂-max)
+1. [Introduction — Why LTAD Matters](#1-introduction--why-ltad-matters)
+2. [The LTAD Framework — Seven Sequential Stages](#2-the-ltad-framework--seven-sequential-stages)
+3. [Biological Age vs. Chronological Age](#3-biological-age-vs-chronological-age)
+   - 3.1 [Peak Height Velocity as the Central Reference Point](#31-peak-height-velocity-as-the-central-reference-point)
+   - 3.2 [Tanner Staging and Training Adaptations](#32-tanner-staging-and-training-adaptations)
+4. [The Youth Physical Development Model (YPD)](#4-the-youth-physical-development-model-ypd)
+   - 4.1 [Physical Qualities Across Maturation](#41-physical-qualities-across-maturation)
+   - 4.2 [Training Structure: From Unstructured to Very High Structure](#42-training-structure-from-unstructured-to-very-high-structure)
+5. [Table 2 — Conceptual Model for RT Implementation Across LTAD Stages](#5-table-2--conceptual-model-for-rt-implementation-across-ltad-stages)
+   - 5.1 [Early Childhood: FUNdamentals Stage](#51-early-childhood-fundamentals-stage)
+   - 5.2 [Late Childhood: Learning to Train Stage](#52-late-childhood-learning-to-train-stage)
+   - 5.3 [Adolescents: Training to Train Stage](#53-adolescents-training-to-train-stage)
+   - 5.4 [Adulthood: Training to Compete Stage](#54-adulthood-training-to-compete-stage)
+6. [Evidence Summary — Effect Sizes by Training Type](#6-evidence-summary--effect-sizes-by-training-type)
+   - 6.1 [Muscular Strength](#61-muscular-strength)
+   - 6.2 [Muscular Power](#62-muscular-power)
+   - 6.3 [Athletic Performance](#63-athletic-performance)
+   - 6.4 [Age- and Sex-Specific Effects](#64-age--and-sex-specific-effects)
+7. [Practical Implications for Coaches and Fitness Professionals](#7-practical-implications-for-coaches-and-fitness-professionals)
+   - 7.1 [Balance Training as a Foundational Element](#71-balance-training-as-a-foundational-element)
+   - 7.2 [Sequencing: Balance, Plyometric, and Strength Training](#72-sequencing-balance-plyometric-and-strength-training)
+   - 7.3 [Concurrent Training — Strength and Endurance](#73-concurrent-training--strength-and-endurance)
+   - 7.4 [Muscle–Tendon Unit: Individualised Training Control](#74-muscletendon-unit-individualised-training-control)
+8. [Risks of Early Specialisation](#8-risks-of-early-specialisation)
+9. [Exercise-Induced Immunological Stress Response in Youth Athletes](#9-exercise-induced-immunological-stress-response-in-youth-athletes)
+10. [Conclusion](#10-conclusion)
+11. [One-Minute-Paper Topics](#one-minute-paper-topics)
 
 ---
 
-## 1 Introduction and Clinical Context
+## 1 Introduction — Why LTAD Matters
 
-Wearable fitness devices increasingly report VO₂ max values to consumers, prompting anxiety and clinical inquiries when those values decline. Topol describes two recent patients who contacted him concerned about a falling VO₂ max displayed by their smartwatches — a scenario that illustrates a far broader problem: the widespread conflation of **VO₂ max** (maximal oxygen uptake) with **cardiorespiratory fitness (CRF)**, two related but methodologically and evidentially distinct constructs.
+The pool of youth with athletic potential available for long-term athlete development (LTAD) has been shrinking in western industrialised countries due to two converging forces: **demographic decline** and **secular deterioration of motor performance**. In Germany, for instance, the proportion of the population under 20 years of age fell from 30% in 1950 to 18% in 2013 (German Federal Statistical Office, 2015). Alongside this demographic shift, a meta-analysis tracking aerobic endurance in 6–19-year-olds across developed countries between 1981 and 2000 documented a decline of approximately 0.43% per year — with the most pronounced losses in older age groups (Tomkinson et al., 2003). Comparable secular declines have been reported for muscular fitness: Dutch children aged 9–12 years showed reductions of 16–49% in muscular endurance over 26 years (Runhaar et al., 2010), and English children aged 10–11 years exhibited decreases of 6–27% across grip strength, sit-ups, and bent-arm hang over a 10-year period (Cohen et al., 2011).
 
-This structured summary distils Topol's critical analysis into an evidence-based framework covering: (1) how each metric is defined and measured; (2) the strength and size of the supporting outcome datasets; (3) the origin and consequences of conflation in popular media; and (4) practical recommendations grounded in peer-reviewed evidence.
+These trends are not merely athletic concerns. Meta-analytic evidence links lower muscular fitness to increased total and central adiposity, cardiovascular disease risk, and metabolic risk factors in youth (Smith et al., 2014). Muscular fitness is therefore simultaneously a health marker and a performance prerequisite — which is precisely why **resistance training (RT)** occupies a central position across all stages of LTAD.
 
----
+Three overarching goals define why youth athletes should implement RT throughout their development (Granacher et al., 2016; Lloyd et al., 2015; Faigenbaum et al., 2016):
 
-## 2 Definitions and Measurement Methods
+1. **Stimulating athletic development** — building the neuromuscular foundation for sport-specific performance
+2. **Tolerating training and competition demands** — reducing the risk of acute and overuse injuries
+3. **Inducing long-term health-promoting effects** — adaptations that are robust over time and track into adulthood (LTAD Stage 7: Active for Life)
 
-<Figure src={fig1} srcDark={fig1Dark} alt="Measurement Comparison: CRF/METs vs VO₂ Max vs Wearable">
-**Figure 1.** Conceptual comparison of CRF/METs vs. VO₂ max measurement approaches. CRF can be assessed freely on any treadmill or ergometer, requires no specialist, and represents >99 % of the mortality outcome literature. VO₂ max requires a calibrated metabolic cart, exhaled-gas mask, and trained staff.
-</Figure>
-
-### 2.1 Cardiorespiratory Fitness (CRF)
-
-CRF reflects the integrated capacity of the cardiovascular, pulmonary, and musculoskeletal systems to sustain aerobic exercise [1]. It is assessed via graded exercise testing and expressed as metabolic equivalents of task (METs), where 1 MET equals the resting metabolic rate.
-
-<Figure src={fig2a} srcDark={fig2aDark} alt="MET Intensity Classification">
-**Figure 2a, b.** MET intensity classification and heart-rate estimation formula. MET ≈ 0.05 × HR_bpm + 2; every 10-bpm HR increment corresponds to approximately 1 additional MET. Light &lt;3, Moderate 3–6, Vigorous >6 METs [2].
-</Figure>
-<Figure src={fig2b} srcDark={fig2bDark} alt="MET Heart-Rate Estimation Formula"/>
-
-### 2.2 VO₂ Max — Direct Laboratory Measurement
-
-Maximal oxygen uptake (VO₂ max) is the ceiling of aerobic power, determined via *direct gas exchange* during a ramp-protocol exercise test to volitional exhaustion [2]. Requirements: calibrated metabolic cart, tight mask, and trained exercise physiologist. Cost: ~$150 per test. Result expressed in mL O₂ · kg⁻¹ · min⁻¹.
-
-### 2.3 VO₂ Max — Wearable Estimation
-
-<Figure src={fig3a} srcDark={fig3aDark} alt="Wearable Accuracy">
-**Figure 3a, b.** Consumer smartwatches impute VO₂ max from population-based algorithms (heart rate + GPS/accelerometry), not gas exchange [3]. Accuracy is poor.
-</Figure>
-<Figure src={fig3b} srcDark={fig3bDark} alt="Wearable Accuracy"/>
+The present lecture introduces the conceptual model developed by Granacher et al. (2016) — with co-authorship by Christian Puta — for implementing RT during the stages of LTAD, grounded in the Youth Physical Development (YPD) model of Lloyd and Oliver (2012) and its 2018 update (Lloyd, *Leistungssport* 5/2018).
 
 ---
 
-## 3 Evidence Linking CRF (METs) to Health Outcomes
+## 2 The LTAD Framework — Seven Sequential Stages
 
-### 3.1 Meta-Analysis: 33 Studies, 102,980 Participants (JAMA 2009)
+The LTAD model (Balyi, Way & Higgs, 2013) provides a structured pathway from first movement experiences to lifelong athletic participation. It comprises **seven sequential stages** that consider **maturational level rather than chronological age** as the primary organising principle:
 
-<Figure src={fig4} srcDark={fig4Dark} alt="CRF and Mortality Risk — JAMA 2009">
-**Figure 4.** Cardiorespiratory fitness and mortality risk. Each 1-MET increment in exercise capacity is associated with a **14–15 % reduction in all-cause mortality**. Individuals achieving ≥7.9 METs showed markedly lower all-cause and cardiovascular mortality. Shaded area = 95 % CI. Meta-analysis of 33 studies (n = 102,980) [4].
-</Figure>
-
-The landmark Kodama et al. [4] meta-analysis established METs as a potent and graded prognostic variable for all-cause and cardiovascular mortality.
-
-### 3.2 Cleveland Clinic Cohort: 122,007 Patients (JAMA Network Open 2018)
-
-<Figure src={fig5a} srcDark={fig5aDark} alt="Cleveland Clinic: All-Cause Mortality Men vs Women">
-**Figure 5a, b.** All-cause mortality hazard ratios by fitness category, Cleveland Clinic cohort. The above-average vs. below-average hazard ratio of 1.41 equates to the excess mortality risk of **smoking or diabetes**. The Low-to-Elite gradient exceeds 5-fold. The protective effect is more pronounced in women. No upper mortality risk at any fitness level [5].
-</Figure>
-<Figure src={fig5b} srcDark={fig5bDark} alt="Cleveland Clinic: Mortality Gradient"/>
-
-> **Cleveland Clinic Key Results**
->
-> - Five MET strata: Low, Below-Average, Above-Average, High, Elite.
-> - HR (above-average vs. below-average): **1.41** — equivalent to **smoking or diabetes**.
-> - HR (Low vs. Elite): **>5-fold**.
-> - Protective effect **more pronounced in women** at every stratum.
-> - **No ceiling mortality risk** even at elite fitness.
-
-### 3.3 Veterans Affairs Cohort: 750,000+ Veterans (Kokkinos et al. 2022)
-
-<Figure src={fig6a} srcDark={fig6aDark} alt="VA Cohort: Kokkinos 2022 Bar Chart">
-**Figure 6a, b.** All-cause mortality hazard ratios across six fitness categories in the US Veterans Affairs cohort (n = 750,302; mean follow-up 10.2 years). The Very-Low to Very-High gradient is ≈4-fold. No ceiling mortality risk at highest fitness. Error bars = 95 % CI [4].
-</Figure>
-<Figure src={fig6b} srcDark={fig6bDark} alt="VA Cohort: Kokkinos 2022 Log Scale"/>
-
----
-
-## 4 Evidence Linking VO₂ Max to Health Outcomes
-
-### 4.1 Meta-Analysis: 42 Studies, CRF vs. VO₂ Max (2024)
-
-<Figure src={fig7a} srcDark={fig7aDark} alt="Meta-Analysis 2024: Participants">
-**Figure 7a, b, c.** Data imbalance between METs-based CRF and direct VO₂ max evidence. **a**: >99 % of outcome-linked participants contributed MET data; &lt;1 % contributed direct VO₂ max data. **b**: Study count comparison. **c**: Point estimates for cardiovascular mortality reduction are remarkably similar (≈14 %), confirming construct validity — but the evidence base rests almost entirely on METs. (Swain & Franklin, *J Sci Med Sport* 2024 [4]; 234-fold more participants in the MET arm.)
-</Figure>
-<Figure src={fig7b} srcDark={fig7bDark} alt="Meta-Analysis 2024: Studies"/>
-<Figure src={fig7c} srcDark={fig7cDark} alt="Meta-Analysis 2024: Effect Size"/>
-
-> **Critical Finding: Data Imbalance**
->
-> **234-fold more participants** contributed data via METs than via direct VO₂ max measurement. Over 99 % of all evidence linking fitness to mortality derives from **METs-based CRF** — not VO₂ max [4].
-
-### 4.2 Critical Finding: Data Imbalance
-
-The evidence base is profoundly imbalanced. The 2024 meta-analysis by Swain & Franklin comparing CRF and VO₂ max across 42 studies revealed that 234-fold more study participants contributed METs-based CRF data than direct VO₂ max data. This asymmetry reflects both the practical accessibility of METs testing and the specialized requirements for direct VO₂ max measurement.
-
-### 4.3 Specific Clinical Applications of VO₂ Max
-
-In selected clinical populations, direct VO₂ max measurement has demonstrated utility: in heart failure for risk stratification and transplant listing [4]; in pulmonary hypertension as a prognostic marker; and in pre-operative evaluation for predicting post-surgical cardiopulmonary complications [6].
-
----
-
-## 5 Practical Recommendations
-
-**Evidence-Based Fitness Monitoring — Summary Table**
-
-**Metric** | **Recommendation** |
-|---|---|
-| **METs (CRF)** | **Preferred for most healthy adults.** Free, universally accessible, best studied for all-cause and cardiovascular mortality outcomes (>99 % of evidence base). Use treadmill/bicycle speed-incline charts, Bruce protocol, or HR formula. |
-| **VO₂ Max (lab)** | Reserve for: (a) high-performance athletes; (b) heart failure/pulmonary hypertension risk stratification; (c) pre-operative evaluation. |
-| **Wearable VO₂ Max** | **Not recommended** for clinical or lifestyle decision-making. MAPE 7–16 %, directional biases, and extrinsic confounders render it unreliable. |
-| **Strength & Balance** | Include alongside CRF. Combined aerobic + strength training is superior to aerobic training alone for mortality reduction [5]. |
-
-Topol's bottom line: *"Perhaps the better strategy is to be as physically active as possible and **not worry about any metric**!"* The emphasis should be on building a comprehensive, enjoyable activity habit rather than chasing a single number from a device whose accuracy is demonstrably limited.
-
----
-
-## 6 Summary Comparison: CRF vs. VO₂ Max
-
-| **Dimension** | **CRF / METs** | **VO₂ Max** |
+| Stage | Name | Focus |
 |---|---|---|
-| Measurement | Treadmill/bike; HR formula | Direct gas exchange in metabolic lab |
-| Cost | Free | ≈$150/test |
-| Accessibility | Universal | Specialist lab only |
-| Wearable estimate | Indirect (step count, HR) | Algorithmic imputation (MAPE 7–16 %) |
-| Evidence base | >750,000 per large study | &lt;1,300 per study (direct measure) |
-| Fraction of outcome data | >99 % | &lt;1 % |
-| AHA recommendation | Clinical vital sign [1] | Niche clinical/sports use |
-| Target population | All healthy adults | Elite athletes; HF/PH patients; pre-op |
-| AI platform misuse | Rare | Frequent |
+| 1 | **Active Start** | Foundational movement exploration; joy of physical activity |
+| 2 | **FUNdamentals** | ABC of athleticism: Agility, Balance, Coordination, Speed |
+| 3 | **Learn to Train** | Window of accelerated adaptation for motor skills; introduce RT with own bodyweight |
+| 4 | **Train to Train** | Consolidate fitness and skills; begin specialised RT as maturation advances |
+| 5 | **Train to Compete** | Sport-specific conditioning; high-intensity and high-volume RT |
+| 6 | **Train to Win** | Optimise performance for elite competition |
+| 7 | **Active for Life** | Maintain health benefits established throughout career |
+
+The model explicitly challenges the myth that children must wait for puberty or a specific chronological age before engaging in structured RT. Current evidence is unambiguous: **when a child is old enough to participate in organised sport, they are old enough to participate in a form of resistance training** (Lloyd, *Leistungssport* 5/2018; Behm et al., 2008).
+
+---
+
+## 3 Biological Age vs. Chronological Age
+
+### 3.1 Peak Height Velocity as the Central Reference Point
+
+A fundamental principle of LTAD is that **biological age** — not chronological age — governs trainability, adaptation, and injury risk. The primary biological anchor point is **peak height velocity (PHV)**: the moment of maximum linear growth during the pubertal growth spurt.
+
+PHV can be estimated from **anthropometric measurements** (sitting and standing height), allowing practitioners to classify athletes as:
+
+- **Pre-PHV** (years before the growth spurt) — predominantly neural adaptations dominate
+- **Mid-PHV / Pubertal** (during the growth spurt) — combined neural and hormonal adaptations; tissue plasticity is high
+- **Post-PHV** — hormonal, neural, muscular, tendinous, and skeletal adaptations are all accessible
+
+The distinction between early, typical, and late developers within the same chronological age cohort is substantial. Two 14-year-olds may differ by 3–4 years in biological age, with entirely different adaptive capacities, injury risk profiles, and appropriate training loads. Practitioners must therefore **monitor growth rates and training loads** concurrently (Oliver, *Leistungssport* 5/2018).
+
+### 3.2 Tanner Staging and Training Adaptations
+
+Tanner staging (I–V) provides a clinical measure of pubertal status. Its relationship to LTAD stages and dominant training adaptations is summarised below:
+
+| Developmental Period | Tanner Stage | Maturity | Dominant Training Adaptation |
+|---|---|---|---|
+| Early Childhood | I | Pre-pubertal (pre-PHV) | **Neuronal** |
+| Late Childhood | I–II | Pre-pubertal (pre-PHV) | **Neuronal** |
+| Adolescence | III–IV | Pubertal (mid-PHV) | **Hormonal + Neuronal + Muscular + Tendinous** |
+| Adulthood | V | Post-pubertal (post-PHV) | **Hormonal + Neuronal + Muscular + Tendinous + Skeletal** |
+
+The transition from exclusively neuronal to multi-system adaptation is not abrupt. The **pre-pubertal phase** corresponds to the period of greatest neuroplasticity in the central nervous system (CNS), making it an ideal window for acquiring diverse movement skills, developing coordination, and establishing motor patterns that will underpin later athletic performance (Lloyd, *Leistungssport* 5/2018; Gogtay et al., 2004). Loading during this phase should prioritise **technique, movement quality, and neuromuscular coordination** rather than maximal force production.
+
+---
+
+## 4 The Youth Physical Development Model (YPD)
+
+The **Youth Physical Development model** (Lloyd & Oliver, 2012; updated 2018) was developed to integrate current scientific understanding of training effectiveness in youth with practical programming across all stages of biological maturation. In contrast to earlier LTAD models that suggested "windows of optimal trainability" at specific ages, the YPD model asserts that **all components of fitness can be trained at all stages of development**, with emphasis and methods appropriately adjusted.
+
+### 4.1 Physical Qualities Across Maturation
+
+The YPD model maps the following physical qualities across the continuum from early childhood to adulthood (chronological age 2–21+):
+
+| Physical Quality | Early Childhood | Middle Childhood | Adolescence | Adulthood |
+|---|---|---|---|---|
+| **FMS** (fundamental movement skills) | ✓✓ | ✓✓ | ✓ | ✓ |
+| **SSS** (sport-specific skills) | ✓ | ✓✓ | ✓✓ | ✓ |
+| **Mobility** | ✓✓ | ✓✓ | — | ✓ |
+| **Agility** | ✓ | ✓✓ | ✓✓ | ✓✓ |
+| **Speed** | ✓ | ✓✓ | ✓✓ | ✓✓ |
+| **Power** | ✓ | ✓✓ | ✓✓ | ✓✓ |
+| **Strength** | ✓ | ✓✓ | ✓✓ | ✓✓ |
+| **Hypertrophy** | — | ✓ | ✓✓ | ✓✓ |
+| **Endurance & MC** | ✓✓ | ✓✓ | ✓✓ | ✓✓ |
+
+*Font weight in the original figure indicates priority; ✓✓ = high priority, ✓ = supported, — = not primary focus. MC = metabolic conditioning.*
+
+Key evidence underpinning the YPD model (Lloyd, *Leistungssport* 5/2018):
+- Running speed trainability across pre-, peri-, and post-pubertal phases (Moran et al., 2016; Rumpf et al., 2012)
+- Motor skill development through resistance training in children and adolescents (Behringer et al., 2011)
+- Muscular power gains independent of maturation level (Behm et al., 2017)
+- Aerobic endurance trainability at all maturational stages (Armstrong & Barker, 2011)
+
+**Adolescent athletes show larger absolute gains** compared to children, but this does not mean RT in childhood is ineffective — relative neuroplasticity in young children yields disproportionately large relative improvements that establish the neuromuscular foundation for later loading.
+
+### 4.2 Training Structure: From Unstructured to Very High Structure
+
+One of the YPD model's most practically important features is its framing of **training structure** across maturation:
+
+| Period | Training Structure |
+|---|---|
+| Early Childhood | Predominantly **unstructured** — free play, exploratory gymnastics, game-based movement |
+| Middle Childhood | **Low structure** — deliberate play, guided skill acquisition |
+| Adolescence | **Moderate to High structure** — periodised conditioning programs |
+| Adulthood | **Very High structure** — individualised, high-intensity, sport-specific RT periodization |
+
+This gradient reflects the principle that **early formalisation of training is counterproductive**. Unstructured play in early childhood activates neural plasticity and promotes diverse movement pattern acquisition more effectively than rigid conditioning programs. As biological maturation advances and the hormonal environment shifts, structured RT progressively becomes both necessary and safe.
+
+---
+
+## 5 Table 2 — Conceptual Model for RT Implementation Across LTAD Stages
+
+The following conceptual model (Granacher et al., 2016, *Front. Physiol.*, Table 2) provides evidence-based and expert-opinion-grounded recommendations for implementing RT programs during each stage of LTAD. RT programs were allocated to LTAD stages based on Lesinski et al. (2016), Faigenbaum et al. (2016), Lloyd et al. (2011, 2015), Balyi et al. (2013), and Kraemer & Fleck (2005).
+
+---
+
+### 5.1 Early Childhood: FUNdamentals Stage
+
+| Parameter | Specification |
+|---|---|
+| **Chronological Age** | Female: 6–8 years / Male: 6–9 years |
+| **Tanner Stage** | I |
+| **Maturity** | Pre-pubertal (pre-PHV) |
+| **LTAD Stage** | FUNdamentals |
+| **Dominant Adaptation** | Neuronal |
+
+**Recommended RT methods:**
+
+- **Coordination training** — multidirectional movement patterns, object manipulation, spatial awareness
+- **Agility training** — reactive changes of direction, sport-game contexts
+- **Balance training** — bilateral and unilateral static and dynamic tasks; forms the prerequisite for all subsequent RT
+- **Muscular endurance training** with own body mass or training tools (e.g., medicine balls) — *focus strictly on correct exercise technique*
+
+**Rationale:** The pre-pubertal CNS has exceptional neuroplasticity (Gogtay et al., 2004). This window should be used to establish diverse motor patterns, coordinate neuromuscular activation sequences, and build movement efficiency — not to maximise force production. Children who develop broad movement competency at this stage are better positioned to safely absorb higher training loads during adolescence and achieve greater absolute force production as adults (Faigenbaum et al., 2016).
+
+> **Key principle:** If a child is old enough to play a sport, they are old enough to participate in RT — with appropriate technique emphasis and low external loads.
+
+---
+
+### 5.2 Late Childhood: Learning to Train Stage
+
+| Parameter | Specification |
+|---|---|
+| **Chronological Age** | Female: 9–11 years / Male: 10–13 years |
+| **Tanner Stage** | I–II |
+| **Maturity** | Pre-pubertal (pre-PHV) |
+| **LTAD Stage** | Learning to Train |
+| **Dominant Adaptation** | Neuronal |
+
+**Recommended RT methods:**
+
+- **Balance training** — continued across all stages as a preparatory and concurrent training component
+- **Plyometric training as part of deliberate play** (e.g., rope skipping, bilateral jumps) — *focus on correct jumping and landing mechanics*
+- **Core strength training** — foundational trunk stability for all subsequent athletic movements
+- **Muscular endurance training** with own body mass or tools (e.g., medicine balls)
+- **Free weight training** — introduction of barbells and dumbbells *with exclusive focus on technique*; external load is secondary
+
+**Sequencing evidence (Hammami et al., 2016):** A 4-week balance training phase preceding 4 weeks of plyometric training led to significantly greater improvements in reactive strength index, leg stiffness, triple hop test, and Y-Balance test compared to the reversed sequence (plyometrics → balance) in 12–13-year-old male soccer players. **Balance before plyometrics** is the evidence-based recommendation at this stage.
+
+**Free weight introduction:** The meta-analysis by Lesinski et al. (2016) identified free weight training as producing the largest effects on muscular strength (ES = 2.97) in youth athletes — substantially larger than machine-based (ES = 0.36) or plyometric training alone (ES = 0.39). Introduction at this stage, with technique as the non-negotiable priority, builds the foundation for safe and effective loading in adolescence.
+
+---
+
+### 5.3 Adolescents: Training to Train Stage
+
+| Parameter | Specification |
+|---|---|
+| **Chronological Age** | Female: 12–18 years / Male: 14–18 years |
+| **Tanner Stage** | III–IV |
+| **Maturity** | Pubertal (mid-PHV) |
+| **LTAD Stage** | Training to Train |
+| **Dominant Adaptation** | Hormonal + Neuronal + Muscular + Tendinous |
+
+**Recommended RT methods:**
+
+- **Balance training** — maintained throughout; particularly important as rapid growth can temporarily disrupt balance and coordination during the growth spurt
+- **Plyometric training** — depth jumps from *low* drop heights; progressing to moderate with technique confirmation
+- **Core strength training** — progressing from stability to dynamic trunk loading
+- **Free weight training** at **light to moderate loads** (30–60% 1 RM initially, progressing)
+- **Heavy resistance strength training (hypertrophy focus)** — training programs of 5 sets × 6–10 RM; introduced once technique is consolidated
+- **Eccentric resistance training** — specifically targets the tendon and connective tissue, which adapt more slowly than muscle during rapid growth phases
+- **Sport-specific resistance training** — increasing integration of sport-relevant movement patterns
+
+**Critical consideration — the muscle–tendon unit during adolescence:** Adolescence is characterised by non-uniform development of muscle strength and tendon mechanical properties (Mersmann et al., 2014). Muscle strength can increase rapidly, while tendons adapt more slowly due to their low tissue renewal rate. This mismatch elevates the mechanical strain on tendons during maximal contractions and increases the risk of overuse injuries (tendinopathy). **Eccentric training** is the most targeted method for stimulating tendon adaptation and should be introduced systematically during this stage (Arampatzis et al., *Leistungssport* 5/2018).
+
+**Evidence highlight (Sander et al., 2013):** A 2-year longitudinal study with male elite soccer players across three age groups (U13, U15, U17) demonstrated the largest RT-induced strength gains in the youngest cohort (U13): ES = 1.9–2.0 for front and back squat, with relative percentage increases of 230–250%. This finding reflects the heightened neural plasticity and relative strength-gain potential that characterises the early Training to Train stage.
+
+---
+
+### 5.4 Adulthood: Training to Compete Stage
+
+| Parameter | Specification |
+|---|---|
+| **Chronological Age** | Female and Male: >18 years |
+| **Tanner Stage** | V |
+| **Maturity** | Post-pubertal (post-PHV) |
+| **LTAD Stage** | Training to Compete (and beyond) |
+| **Dominant Adaptation** | Hormonal + Neuronal + Muscular + Tendinous + Skeletal |
+
+**Recommended RT methods:**
+
+- **Balance training** — maintained as an integral component for injury prevention and motor control
+- **Plyometric training** — depth jumps from *moderate to high* drop heights; reactive strength development
+- **Core strength training** — high-intensity, sport-integrated trunk loading
+- **Free weight training** at **moderate to high loads** (>80% 1 RM for strength-focused phases)
+- **Heavy resistance strength training (neuromuscular activation + hypertrophy)**
+- **Sport-specific resistance training** — dominant modality; biomechanically congruent with competitive demands
+
+**Dose-response evidence (Lesinski et al., 2016):** Optimal parameters for muscular strength development in youth and young adult athletes include:
+- Training period: >23 weeks
+- Volume: 5 sets per exercise
+- Intensity: 80–89% of 1 RM
+- Repetitions: 6–8 per set
+- Rest: 3–4 min between sets
+
+These parameters represent the upper boundary of the LTAD progression and should only be applied when a solid technical and neuromuscular foundation has been established across the preceding stages.
+
+---
+
+## 6 Evidence Summary — Effect Sizes by Training Type
+
+The following section synthesises findings from Lesinski et al. (2016), a systematic review and meta-analysis of 43 studies on RT effects in youth athletes aged 6–18 years, as summarised and contextualised in Granacher et al. (2016).
+
+### 6.1 Muscular Strength
+
+Effect sizes (ES) from 16 studies, using Rhea's (2004) scale for trained individuals (trivial &lt;0.35; small 0.35–0.79; moderate 0.80–1.50; large ≥1.50):
+
+| Training Type | ES (Muscular Strength) | Magnitude |
+|---|---|---|
+| **Free weight training** | 2.97 | Large |
+| Machine + free weight combined | 1.16 | Moderate–Large |
+| Functional training | 0.62 | Small |
+| Plyometric training | 0.39 | Small |
+| Machine-based training | 0.36 | Small |
+| **Overall RT** | **1.09** | **Moderate** |
+
+The superiority of free weights is attributed to the greater muscular stabilisation of trunk and limb joints required for multi-planar movement with more degrees of freedom (Behm et al., 2010).
+
+### 6.2 Muscular Power
+
+Effect sizes (ES) from 33 studies:
+
+| Training Type | ES (Muscular Power) | Magnitude |
+|---|---|---|
+| **Complex training** (RT + plyometrics) | 1.66 | Large |
+| Machine-based training | 1.45 | Moderate–Large |
+| Free weight training | 0.90 | Moderate |
+| Plyometric training | 0.81 | Moderate |
+| Machine + free weight combined | 0.77 | Small–Moderate |
+| Functional training | 0.39 | Small |
+| **Overall RT** | **0.80** | **Moderate** |
+
+**Complex training** — combining heavy resistance exercises with biomechanically similar plyometric movements in the same session (post-activation potentiation principle) — produces the largest power gains. This is consistent with the velocity-specificity principle: both the force and velocity components of the power equation must be trained simultaneously for maximal adaptation.
+
+### 6.3 Athletic Performance
+
+Effect sizes (ES) from 20 studies:
+
+| Training Type | ES (Athletic Performance) | Magnitude |
+|---|---|---|
+| **Complex training** | 1.85 | Large |
+| Functional training | 0.79 | Small–Moderate |
+| Plyometric training | 0.74 | Small–Moderate |
+| Machine-based training | 0.30 | Trivial–Small |
+| **Overall RT** | **0.75** | **Small–Moderate** |
+
+Athletic performance shows smaller overall effects than muscular strength or power, reflecting the additional complexity of translating physical fitness gains to sport-specific outcomes.
+
+### 6.4 Age- and Sex-Specific Effects
+
+**Age effects:**
+
+| Outcome | Children | Adolescents |
+|---|---|---|
+| Muscular Strength | ES = 1.35 (large) | ES = 0.91 (moderate) |
+| Muscular Power | ES = 0.78 (moderate) | ES = 0.85 (moderate) |
+| Athletic Performance | ES = 0.50 (small) | ES = 1.03 (moderate) |
+
+Children show larger **relative strength gains** than adolescents, likely due to greater neural plasticity and larger relative percentage improvements. Adolescents show larger gains in **athletic performance**, attributable to greater muscle mass, more differentiated fiber-type composition (type II fibers increase with maturation), and a larger training state transition from early to more structured conditioning.
+
+**Sex effects (where data available):**
+
+| Outcome | Boys | Girls |
+|---|---|---|
+| Muscular Power | ES = 0.85 | ES = 0.61 |
+| Athletic Performance | ES = 0.72 | ES = 1.81 |
+
+The larger athletic performance effect in girls may reflect greater relative adaptive reserves in response to neural stimuli, particularly in populations where baseline RT exposure has historically been lower. **Both female youth athletes and child athletes remain significantly under-represented in the literature** — a key research gap identified by Granacher et al. (2016).
+
+---
+
+## 7 Practical Implications for Coaches and Fitness Professionals
+
+### 7.1 Balance Training as a Foundational Element
+
+Balance training deserves special emphasis across **all stages of LTAD** for three mechanistic reasons:
+
+1. **Balance capabilities are immature and not fully developed in children** (Payne & Isaacs, 2008; Behm et al., 2010). Unstable environments reduce force output compared to stable conditions — making inadequate balance a limiter of strength and power expression.
+
+2. **Balance training improves subsequent strength and power training outcomes.** A meta-analysis (Behm & Colado, 2012) showed that balance training alone increases performance by more than 30% on average. A 5-week balance training intervention improved jump height; correlations of 0.65 between static balance performance and maximal skating speed were reported in youth under-17 ice hockey players (Behm et al., 2005).
+
+3. **Balance training reduces injury risk.** It is an essential injury-prevention component, particularly for lower extremity injuries during rapid growth phases.
+
+> **Practical recommendation:** Incorporate balance training *prior to and concurrent with* all phases of RT. At the early and late childhood stages, it is the primary RT preparatory method.
+
+### 7.2 Sequencing: Balance, Plyometric, and Strength Training
+
+**At the mesocycle level (block periodisation):**
+Balance training should precede plyometric/reactive strength training in a sequential mesocycle arrangement. Hammami et al. (2016) demonstrated that balance → plyometrics sequencing produces significantly larger gains in reactive strength index, leg stiffness, triple hop, and Y-Balance tests than the reversed order in pubertal male soccer players.
+
+**Within the training session:**
+The sequencing of balance and plyometric exercises within a single session does not significantly affect outcomes (Chaouachi et al., 2017). Both alternating (balance–plyometric–balance) and block (30 min balance + 30 min plyometrics) arrangements yielded comparable improvements.
+
+**Strength and sport-specific sequencing:**
+When combining RT with sport-specific practice within a single training day, **RT should precede sport-specific practice** (Fernandez-Fernandez et al., 2018; Ramirez-Campillo et al., 2018). This applies particularly to reactive strength (plyometric) training before technical or tactical sport sessions.
+
+### 7.3 Concurrent Training — Strength and Endurance
+
+Many sports (soccer, tennis, rowing, kayaking) demand both high muscular strength and aerobic endurance, necessitating concurrent training — the combination of strength and endurance stimuli within a microcycle or training day.
+
+**Key evidence (Gäbler et al., 2018 meta-analysis):**
+
+- Concurrent training **surpasses isolated endurance training** for improving sport-specific endurance performance in youth athletes
+- Concurrent training **surpasses isolated strength training** for muscular power development
+- Both modalities produce **positive cross-effects**: strength training enhances aerobic endurance capacity, and endurance training supports muscular power development in youth athletes
+
+**Practical recommendation:** Both strength and endurance stimuli should be included within a microcycle. The order within a training day (when both occur in a single session) follows the priority of the primary training goal for that day.
+
+### 7.4 Muscle–Tendon Unit: Individualised Training Control
+
+Effective RT in youth athletes requires attention not only to the muscle but to the **muscle–tendon unit** as a functional whole (Arampatzis, Bohm & Mersmann, *Leistungssport* 5/2018).
+
+**The core problem:** During growth and RT, muscles may adapt faster than tendons. Increased muscle force applied to a relatively non-stiffened tendon increases peak tendon strain during maximal contractions. Above ~9% maximum strain, degenerative processes become likely; below ~4.5%, adaptation stimulus is insufficient.
+
+**Optimal tendon adaptation protocol (from the KINGS consortium):**
+- High-intensity isometric contractions: ~85–90% of maximum voluntary contraction
+- Contraction duration: ~3 seconds
+- Volume: 5 sets × 4 repetitions, 3–4 sessions/week
+
+**Individual monitoring principle:** Two athletes performing the same external load (e.g., 100 kg back squat) experience *identical mechanical load* but potentially very different *tendon strain* depending on their individual tendon stiffness. This necessitates individualised diagnostics — ideally ultrasound-based measurement of tendon deformation during standardised contractions — to identify dysfunctions and optimise training stimulus for each athlete.
+
+**Practical categories:**
+- Maximum tendon strain >9% → reduce loading, prioritise tendon stiffness training
+- Maximum tendon strain &lt;4.5% → increase muscular loading to restore balance
+
+---
+
+## 8 Risks of Early Specialisation
+
+Despite the benefits of well-structured RT across LTAD, a growing body of evidence documents significant risks associated with **early sport specialisation and premature competitive emphasis** in youth athletes (Oliver, *Leistungssport* 5/2018; Lloyd et al., 2014).
+
+Early specialisation — committing to a single sport before the age of 12 — is associated with the following interconnected risk cascade:
+
+```
+Early Specialisation
+       |
+       ↓
+Limited movement competency (reduced FMS breadth)
+       |
+       ↓
+Higher injury rates ←————— Excessive and rapidly progressing loads
+       |
+       ↓
+Overtraining / non-functional overreaching
+       |
+       ↓
+Burnout ———————→ Drop-out from sport
+```
+
+**Injury data (British professional soccer academies):** A tripling of injury rates over a study period has been documented, with competition injuries also reflecting non-functional overreaching in training (Read et al., 2018, cited in Oliver, *Leistungssport* 5/2018).
+
+**Monitoring as risk mitigation:** To individualise training and reduce injury and illness risk, **growth rates and training loads should be monitored concurrently**. Screening for strength and movement deficits that increase sport-specific injury risk is recommended. Athletic training components should be systematically included in youth training sessions.
+
+**Fundamental principle across the LTAD pyramid:**
+> Athletes, coaches, teachers, and sports administrators should ensure that young athletes enjoy sport and develop effective health behaviours, wellbeing, and sport-life balance — not only athletic performance metrics. (Armstrong, *Leistungssport* 5/2018)
+
+---
+
+## 9 Exercise-Induced Immunological Stress Response in Youth Athletes
+
+RT and intensive athletic training are not immunologically neutral. The acute exercise-induced immune response reflects the relationship between training load and recovery capacity — a relationship that, if mismanaged, can impair both performance and health in youth athletes (Puta & Gabriel, *Leistungssport* 5/2018).
+
+### The Acute Exercise-Induced Immunological Stress Response
+
+Intensive physical loading produces a characteristic immunological signature:
+
+- **Lymphocyte response:** Acute exercise mobilises lymphocytes (specific acquired immune response) into the bloodstream, followed by redistribution to peripheral tissues (surveillance function) during the recovery phase.
+- **Granulocyte response:** Particularly after strenuous sessions, granulocytes (unspecific innate immune response) continue to increase post-exercise.
+
+**The Acute Recovery and Stress Scale (AEB — Akutmaß für Erholung und Beanspruchung):**
+A validated subjective measure combining recovery and stress dimensions that correlates with objective immunological parameters. The load and recovery dimensions of the AEB are associated with the percentage proportions of:
+- **Lymphocytes** (specific acquired immunity)
+- **Granulocytes** (non-specific innate immunity)
+
+in the white blood cell differential count. This makes the AEB a practical monitoring tool for tracking exercise-induced immunological stress and recovery in youth athletes without requiring repeated blood sampling.
+
+### Practical Measures to Reduce Immunological Stress
+
+Emerging evidence from the KINGS consortium supports the following interventions (Puta & Gabriel, *Leistungssport* 5/2018):
+
+| Intervention | Recommendation | Mechanism |
+|---|---|---|
+| **Carbohydrates** | Peri-exercise intake | Reduces cortisol-mediated immune suppression |
+| **Omega-3 fatty acids** | Regular supplementation | Anti-inflammatory modulation of immune response |
+| **Zinc** | 8–11 mg/day | Supports immune cell function and reduces exercise-induced stress markers |
+| **Sleep** | 7–9 hours/night | Primary recovery driver; inadequate sleep amplifies immunological stress |
+
+**Connection to the broader LTAD framework:** The immunological dimension of RT in youth athletics is not merely a health concern — it is a **performance and development constraint**. Youth athletes who consistently train under immunological stress accumulate recovery deficits that directly impair neuromuscular adaptation and increase injury susceptibility. Monitoring AEB alongside training load represents a practical, non-invasive approach to maintaining the balance between training stimulus and recovery capacity.
+
+---
+
+## 10 Conclusion
+
+The conceptual model introduced by Granacher et al. (2016) — with co-authorship by Christian Puta — and updated through the YPD framework of Lloyd and Oliver (2012, 2018) provides a comprehensive, evidence-based framework for implementing RT across all stages of long-term athlete development. Several core principles emerge:
+
+1. **Biological age, not chronological age**, is the primary organising principle. PHV provides the key reference point; Tanner staging supports individual assessment.
+
+2. **All components of fitness are trainable at all maturational stages**, with appropriate emphasis and method selection. The YPD model refutes the myth of single "windows of opportunity."
+
+3. **Balance training is foundational** across all LTAD stages — it is a prerequisite for safe and effective RT and a primary injury-prevention strategy.
+
+4. **RT type and intensity progress systematically** from coordination and technique-focused in early childhood to complex, heavy, and sport-specific in adulthood. Free weights and complex training consistently produce the largest effects on muscular strength and power, respectively.
+
+5. **The muscle–tendon unit must be monitored individually.** Muscle and tendon adapt at different rates; dysfunctions — detectable through strain-based diagnostics — require individualised training adjustments.
+
+6. **Early specialisation carries significant risks** — injury, overtraining, burnout, and dropout — that systematically undermine the very goals of LTAD.
+
+7. **Immunological stress monitoring** (AEB, differential blood count) is a practical, non-invasive addition to training load management in youth athletes.
+
+The central challenge for sport science and practice is not whether to implement RT in youth athletes, but *how* to do so optimally — with the right modalities, loads, sequencing, and monitoring at each developmental stage.
+
+---
 
 ## References
-- [1] Ross R, Blair SN, Arena R, et al. Importance of assessing cardiorespiratory fitness in clinical practice: a case for fitness as a clinical vital sign — a scientific statement from the American Heart Association. *Circulation*. 2016;134(24):e653–e699. [https://doi.org/10.1161/CIR.0000000000000461](https://doi.org/10.1161/CIR.0000000000000461)
-- [2] Topol E. The flawed VO₂ max craze: conflation with cardiorespiratory fitness. *Ground Truths* (Substack). February 23, 2026. [https://erictopol.substack.com/p/the-flawed-v02-max-craze](https://erictopol.substack.com/p/the-flawed-v02-max-craze)
-- [3] Tedesco S, Sica M, Ancillao A, et al. Accuracy of consumer-grade wearables for VO₂ max estimation: a systematic review. *Electronics*. 2025;14(15):3081. [https://doi.org/10.3390/electronics14153081](https://doi.org/10.3390/electronics14153081)
-- [4] Kavanagh T, Mertens DJ, Hamm LF, et al. Prediction of long-term prognosis in 12,169 men referred for cardiac rehabilitation. *Circulation*. 2002;106(6):666–671. [https://doi.org/10.1161/01.CIR.0000024413.15949.ED](https://doi.org/10.1161/01.CIR.0000024413.15949.ED)
-- [5] Kim J, Park Y, Lee K, et al. Combined cardiorespiratory fitness and muscle strength in relation to all-cause and cardiovascular mortality: findings from the UK Biobank. *Br J Sports Med*. 2023 [Epub ahead of print].
-- [6] Older P, Hall A, Hader R. Cardiopulmonary exercise testing as a screening test for perioperative management of major surgery in the elderly. *Chest*. 1993;104(3):701–704.x
+
+Armstrong N, Barker AR. Endurance training and elite young athletes. *Med. Sports Sci.* 2011;56:59–83.
+
+Balyi I, Way R, Higgs C. *Long-Term Athlete Development.* Champaign (IL): Human Kinetics, 2013.
+
+Behm DG, Faigenbaum AD, Falk B, Klentrou P. Canadian Society for Exercise Physiology position paper: resistance training in children and adolescents. *Appl. Physiol. Nutr. Metab.* 2008;33(3):547–561.
+
+Behm DG, Young JD, Whitten JHD, et al. Effectiveness of traditional strength vs. power training on muscle strength, power and speed with youth: a systematic review and meta-analysis. *Front. Physiol.* 2017;8:423.
+
+Behringer M, vom Heede A, Matthews M, Mester J. Effects of strength training on motor performance skills in children and adolescents: a meta-analysis. *Pediatr. Exerc. Sci.* 2011;23:186–206.
+
+Behringer M, vom Heede A, Yue Z, Mester J. Effects of resistance training in children and adolescents: a meta-analysis. *Pediatrics.* 2010;126:e1199–e1210.
+
+Büsch D, Prieske O, Kriemler S, **Puta C**, Gabriel H, Granacher U. Krafttraining im Kindes- und Jugendalter: Bedeutung, Wirkung und Handlungsempfehlungen. *Swiss Sports Exerc. Med.* 2017;65(3):34–42.
+
+Chaouachi M, Granacher U, Makhlouf I, Hammami R, Behm DG, Chaouachi A. Within session sequence of balance and plyometric exercises does not affect training adaptations with youth soccer athletes. *J. Sports Sci. Med.* 2017;16(1):125–136.
+
+Faigenbaum AD, Lloyd RS, MacDonald J, Myer GD. Citius, Altius, Fortius: beneficial effects of resistance training for young athletes: narrative review. *Br. J. Sports Med.* 2016;50(1):3–7.
+
+Fernandez-Fernandez J, Granacher U, Sanz D, et al. Sequencing effects of neuromuscular training on physical fitness in youth elite tennis players. *J. Strength Cond. Res.* 2018;32(3):849–856.
+
+Gäbler M, Prieske O, Hortobagyi T, Granacher U. The effects of concurrent strength and endurance training on physical fitness and athletic performance in youth: a systematic review and meta-analysis. *Front. Physiol.* 2018;9:1057.
+
+Gogtay N, Giedd JN, Lusk L, et al. Dynamic mapping of human cortical development during childhood through early adulthood. *Proc. Natl. Acad. Sci. USA.* 2004;101:8174–8179.
+
+Granacher U, Lesinski M, Büsch D, Muehlbauer T, Prieske O, **Puta C**, Gollhofer A, Behm DG. Effects of Resistance Training in Youth Athletes on Muscular Fitness and Athletic Performance: A Conceptual Model for Long-Term Athlete Development. *Front. Physiol.* 2016;7:164. doi: 10.3389/fphys.2016.00164.
+
+Hammami R, Granacher U, Makhlouf I, Behm DG, Chaouachi A. Sequencing effects of balance and plyometric training on physical performance in youth soccer athletes. *J. Strength Cond. Res.* 2016;30(12):3278–3289.
+
+Lesinski M, Prieske O, Granacher U. Effects and dose-response relationships of resistance training on physical performance in youth athletes: a systematic review and meta-analysis. *Br. J. Sports Med.* 2016;50:781–795.
+
+Lloyd RS, Oliver JL. The Youth Physical Development model: a new approach to long-term athletic development. *Strength Cond. J.* 2012;34:61–72.
+
+Lloyd RS. Das Motorische Entwicklungsmodell nach Lloyd: Ein Update. *Leistungssport.* 2018;48(5):8–9.
+
+Mersmann F, Bohm S, Arampatzis A. Imbalances in the Development of Muscle and Tendon as Risk Factor for Tendinopathies in Youth Athletes. *Front. Physiol.* 2017. (cited in Arampatzis et al., *Leistungssport* 5/2018)
+
+Moran J, Sandercock G, Rumpf MC, Parry DA. Variation in responses to sprint training in male youth athletes: a meta-analysis. *Int. J. Sports Med.* 2016;38(1):1–11.
+
+Oliver J. Risikoreduktion für maximale Erfolge. *Leistungssport.* 2018;48(5):6–7.
+
+**Puta C**, Gabriel HHW. Leistung in Gesundheit — Risiken und Ressourcen. *Leistungssport.* 2018;48(5):25–26.
+
+Ramirez-Campillo R, Alvarez C, Gentil P, et al. Sequencing effects of plyometric training applied before or after regular soccer training on measures of physical fitness in young players. *J. Strength Cond. Res.* 2018 (Epub ahead of print).
+
+Runhaar J, Collard DCM, Singh AS, Kemper HCG, van Mechelen W, Chinapaw MJM. Motor fitness in Dutch youth: differences over a 26-year period (1980–2006). *J. Sci. Med. Sport.* 2010;13(3):323–328.
+
+Rumpf MC, Cronin JB, Pinder SD, Oliver J, Hughes M. Effect of different training methods on running sprint times in male youth. *Pediatr. Exerc. Sci.* 2012;24:170–186.
+
+Sander A, Keiner M, Wirth K, Schmidtbleicher D. Influence of a 2-year strength training programme on power performance in elite youth soccer players. *Eur. J. Sport Sci.* 2013;13(5):445–451.
+
+**Steidten T, Puta C, Gabriel B**, May R, Kellmann M, Granacher U, Gabriel HHW. Belastungsinduzierte immunologische Stressreaktion: How much is too much? *Leistungssport.* 2018;48(5):22–24.
+
+Tomkinson GR, Léger LA, Olds TS, Cazorla G. Secular trends in the performance of children and adolescents (1980–2000): an analysis of 55 studies of the 20m shuttle run test with 1.1 million children. *Sports Med.* 2003;33(4):285–300.
+
+Zinke F, Prieske O, Gäbler M, Granacher U. Krafttraining im Nachwuchsleistungssport. *Leistungssport.* 2018;48(5):10–13.
 
 ---
 
@@ -214,23 +538,23 @@ Topol's bottom line: *"Perhaps the better strategy is to be as physically active
   A **One-Minute-Paper** (OMP) is a short, focused prompt that students answer in ~60 seconds at the end of a session to consolidate learning, surface misconceptions, and provide formative feedback.  When answering, be concise, specific, and use terminology from today's session.
 </Note>
 
-1. Define cardiorespiratory fitness (CRF) and explain why it is a vital sign.
-2. What is the conceptual difference between CRF expressed in METs vs. measured VO₂max?
-3. Why does Topol argue that METs underpin >99% of the outcome literature on fitness and mortality?
-4. Summarise in one sentence the main finding of the JAMA 2009 meta-analysis (n≈103,000) on CRF and mortality.
-5. What advantage does the Cleveland Clinic cohort (n≈122,000) bring to the CRF–mortality evidence base?
-6. Why is the Veterans Affairs cohort (n≈750,000) particularly informative for dose-response analyses?
-7. What does a MAPE of 7–16% mean in plain language for consumer wearable VO₂max estimates?
-8. Identify one source of error in wrist-based VO₂max estimation.
-9. Why is the imbalance between MET-based and direct-VO₂max evidence clinically important?
-10. For a healthy adult, why might METs be a more practical measure than laboratory VO₂max?
-11. Describe one scenario where direct VO₂max measurement is still preferred over METs.
-12. How would you explain "1 MET = 3.5 ml O₂·kg⁻¹·min⁻¹" to a patient in everyday language?
-13. What is the approximate mortality risk reduction associated with each 1-MET increase in CRF?
-14. Why does CRF predict all-cause mortality even after adjustment for traditional risk factors?
-15. How could MET-based CRF estimates be integrated into routine primary care?
-16. What ethical issue arises if wearable VO₂max estimates are used for clinical decision-making?
-17. Suggest one study design that could close the data gap between METs and measured VO₂max.
-18. Why might CRF be a more modifiable predictor of mortality than genetic risk scores?
-19. What was the most convincing piece of evidence for you in today's lecture, and why?
-20. Which question about CRF measurement would you most like to discuss next session?
+1. Define LTAD in one sentence. Why is biological age used instead of chronological age as the organising principle?
+2. What is peak height velocity (PHV) and why does it serve as the central reference point for RT programming in youth athletes?
+3. A 14-year-old athlete has a Tanner stage III classification. Name the corresponding LTAD stage and list three appropriate RT methods.
+4. Explain the difference between predominantly neuronal training adaptations (pre-PHV) and multi-system adaptations (peri-/post-PHV).
+5. Why is balance training recommended at *every* stage of LTAD? Provide a physiological rationale.
+6. What are FMS (fundamental movement skills) and SSS (sport-specific skills) in the YPD model, and at which developmental stage does each receive the highest priority?
+7. Using effect sizes from Lesinski et al. (2016): which RT modality produces the largest gains in muscular strength, and what physiological mechanism explains this superiority?
+8. Why do child athletes (&lt;13 years) show larger *relative* strength gains than adolescents following RT, despite having lower absolute force production?
+9. Define "complex training." Why does it produce the largest effect sizes for muscular power and athletic performance?
+10. Describe the evidence-based mesocycle sequencing for balance and plyometric training (cite the relevant study and the key outcome variable that differentiated the sequences).
+11. List three documented risks of early sport specialisation and explain the mechanistic pathway from early specialisation to drop-out.
+12. What is concurrent training? Summarise two key findings from Gäbler et al. (2018) regarding its effects in youth athletes.
+13. Explain the concept of muscle–tendon dysfunctions: what happens when muscle strength increases faster than tendon stiffness adapts, and what are the consequences for injury risk?
+14. Why are depth jumps from low drop heights recommended for adolescents but not for younger children? What changes in the tissue during mid-PHV that makes this appropriate?
+15. Define the Acute Recovery and Stress Scale (AEB) and explain how it correlates with objective immunological parameters.
+16. List four evidence-based interventions for reducing the exercise-induced immunological stress response in youth athletes, and provide the mechanism for at least two.
+17. Compare the YPD model (Lloyd & Oliver, 2012) with the Balyi et al. (2013) LTAD model: what is the key conceptual difference regarding "windows of optimal trainability"?
+18. A female soccer player is at the Learning to Train stage. Outline a 4-week introductory RT program consistent with the Granacher et al. (2016) model, including training type, frequency, volume, and technique considerations.
+19. Secular trends show that aerobic endurance in 6–19-year-olds declined approximately 0.43% per year between 1981 and 2000. How does this demographic context motivate the LTAD framework from a public health perspective?
+20. Of the research gaps identified by Granacher et al. (2016), which do you consider most pressing for the field, and what study design would you propose to address it?
