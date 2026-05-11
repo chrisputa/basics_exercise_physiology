@@ -140,11 +140,9 @@ if (!pdfUrl && entry) {
       <!-- PDF.js page-by-page viewer -->
       <script>
         import * as pdfjsLib from 'pdfjs-dist';
+        import pdfWorkerUrl from 'pdfjs-dist/build/pdf.worker.min.mjs?url';
 
-        pdfjsLib.GlobalWorkerOptions.workerSrc = new URL(
-          'pdfjs-dist/build/pdf.worker.min.mjs',
-          import.meta.url
-        ).href;
+        pdfjsLib.GlobalWorkerOptions.workerSrc = pdfWorkerUrl;
 
         const root        = document.getElementById('slide-root') as HTMLElement;
         const pdfUrl      = root.dataset.pdfUrl!;
