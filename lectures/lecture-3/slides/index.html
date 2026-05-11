@@ -56,4 +56,15 @@
           update();
           window.addEventListener('resize', update, { passive: true });
         })();
-      </script><!-- PDF.js page-by-page viewer --><script type="module" src="/basics_exercise_physiology/_astro/index.astro_astro_type_script_index_0_lang.ByuhoHxa.js"></script></body></html>
+      </script><!-- ES2024 polyfill: Promise.withResolvers – required by pdfjs-dist v5,
+           missing in Samsung Internet < 25 / Chrome < 119.
+           Must run as a classic (non-deferred) script so it is in place
+           before the module script below initialises pdfjs-dist. --><script>
+        if (typeof Promise.withResolvers === 'undefined') {
+          Promise.withResolvers = function () {
+            var resolve, reject;
+            var promise = new Promise(function (res, rej) { resolve = res; reject = rej; });
+            return { promise: promise, resolve: resolve, reject: reject };
+          };
+        }
+      </script><!-- PDF.js page-by-page viewer --><script type="module" src="/basics_exercise_physiology/_astro/index.astro_astro_type_script_index_0_lang.C1EIZrgw.js"></script></body></html>
