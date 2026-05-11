@@ -137,26 +137,14 @@ if (!pdfUrl && entry) {
         })();
       </script>
 
-      <!-- ES2024 polyfill: Promise.withResolvers – required by pdfjs-dist v5,
-           missing in Samsung Internet < 25 / Chrome < 119.
-           Must run as a classic (non-deferred) script so it is in place
-           before the module script below initialises pdfjs-dist. -->
-      <script is:inline>
-        if (typeof Promise.withResolvers === 'undefined') {
-          Promise.withResolvers = function () {
-            var resolve, reject;
-            var promise = new Promise(function (res, rej) { resolve = res; reject = rej; });
-            return { promise: promise, resolve: resolve, reject: reject };
-          };
-        }
-      </script>
-
       <!-- PDF.js page-by-page viewer -->
       <script>
         import * as pdfjsLib from 'pdfjs-dist';
-        import pdfWorkerUrl from 'pdfjs-dist/build/pdf.worker.min.mjs?url';
 
-        pdfjsLib.GlobalWorkerOptions.workerSrc = pdfWorkerUrl;
+        pdfjsLib.GlobalWorkerOptions.workerSrc = new URL(
+          'pdfjs-dist/build/pdf.worker.min.mjs',
+          import.meta.url
+        ).href;
 
         const root        = document.getElementById('slide-root') as HTMLElement;
         const pdfUrl      = root.dataset.pdfUrl!;
@@ -171,16 +159,6 @@ if (!pdfUrl && entry) {
         let currentPage   = 1;
         let rendering     = false;
         let queued: number | null = null;
-
-        function showFallback(err?: unknown) {
-          console.error('PDF viewer error:', err);
-          const msg = document.createElement('div');
-          msg.style.cssText = 'color:#fff;text-align:center;padding:2rem;font-size:1.5rem;';
-          msg.innerHTML = `<p>Das PDF konnte nicht geladen werden.</p>
-            <a href="${pdfUrl}" download style="color:#93c5fd;text-decoration:underline;">PDF herunterladen</a>`;
-          container.replaceChildren(msg);
-          counter.textContent = '– / –';
-        }
 
         function setNavState(num: number, total: number) {
           counter.textContent = `${num} / ${total}`;
@@ -199,27 +177,22 @@ if (!pdfUrl && entry) {
           if (rendering) { queued = num; return; }
           rendering = true;
 
-          try {
-            const page          = await pdfDoc.getPage(num);
-            const cw            = container.clientWidth  || 1856;
-            const ch            = container.clientHeight || 950;
-            const native        = page.getViewport({ scale: 1 });
-            const scale         = Math.min(cw / native.width, ch / native.height);
-            const viewport      = page.getViewport({ scale });
+          const page          = await pdfDoc.getPage(num);
+          const cw            = container.clientWidth  || 1856;
+          const ch            = container.clientHeight || 950;
+          const native        = page.getViewport({ scale: 1 });
+          const scale         = Math.min(cw / native.width, ch / native.height);
+          const viewport      = page.getViewport({ scale });
 
-            canvas.width        = viewport.width;
-            canvas.height       = viewport.height;
-            const ctx           = canvas.getContext('2d')!;
-            ctx.fillStyle       = '#ffffff';
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-            await page.render({ canvasContext: ctx, viewport }).promise;
+          canvas.width        = viewport.width;
+          canvas.height       = viewport.height;
+          const ctx           = canvas.getContext('2d')!;
+          ctx.fillStyle       = '#ffffff';
+          ctx.fillRect(0, 0, canvas.width, canvas.height);
+          await page.render({ canvasContext: ctx, viewport }).promise;
 
-            setNavState(num, pdfDoc.numPages);
-          } catch (err) {
-            showFallback(err);
-          } finally {
-            rendering = false;
-          }
+          rendering = false;
+          setNavState(num, pdfDoc.numPages);
 
           if (queued !== null && queued !== num) {
             const next = queued;
@@ -238,22 +211,6 @@ if (!pdfUrl && entry) {
         nextBtn.addEventListener('click',  () => goTo(currentPage + 1));
         startBtn.addEventListener('click', () => goTo(1));
 
-        // Touch/swipe navigation for mobile
-        let touchStartX = 0;
-        let touchStartY = 0;
-        container.addEventListener('touchstart', (e) => {
-          touchStartX = e.changedTouches[0].clientX;
-          touchStartY = e.changedTouches[0].clientY;
-        }, { passive: true });
-        container.addEventListener('touchend', (e) => {
-          const dx = e.changedTouches[0].clientX - touchStartX;
-          const dy = e.changedTouches[0].clientY - touchStartY;
-          if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 40) {
-            if (dx < 0) goTo(currentPage + 1);
-            else        goTo(currentPage - 1);
-          }
-        }, { passive: true });
-
         window.addEventListener('keydown', (e) => {
           const t = e.target as HTMLElement;
           if (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.isContentEditable) return;
@@ -269,7 +226,7 @@ if (!pdfUrl && entry) {
         pdfjsLib.getDocument(pdfUrl).promise.then((pdf: any) => {
           pdfDoc = pdf;
           goTo(1);
-        }).catch(showFallback);
+        });
       </script>
     </body>
   </html>
