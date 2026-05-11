@@ -56,13 +56,4 @@
           update();
           window.addEventListener('resize', update, { passive: true });
         })();
-      </script><!-- ES2025 polyfill: Promise.try – used by pdfjs-dist v5.x in its
-           MessageHandler class. Absent in Chrome < 134 / Samsung Internet < ~30.
-           Must run as a classic (non-deferred) script before the module below. --><script>
-        if (typeof Promise.try === 'undefined') {
-          Promise.try = function (fn) {
-            var args = Array.prototype.slice.call(arguments, 1);
-            return new Promise(function (resolve) { resolve(fn.apply(undefined, args)); });
-          };
-        }
-      </script><!-- PDF.js page-by-page viewer --><script type="module" src="/basics_exercise_physiology/_astro/index.astro_astro_type_script_index_0_lang.AK_-8MUQ.js"></script></body></html>
+      </script><!-- PDF.js page-by-page viewer --><script type="module" src="/basics_exercise_physiology/_astro/index.astro_astro_type_script_index_0_lang.MqjpA_Mr.js"></script></body></html>
