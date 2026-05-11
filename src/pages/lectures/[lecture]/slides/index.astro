@@ -154,13 +154,9 @@ if (!pdfUrl && entry) {
         import * as pdfjsLib from 'pdfjs-dist';
         import pdfWorkerUrl from 'pdfjs-dist/build/pdf.worker.min.mjs?url';
 
-        // The worker runs in its own global scope, so the is:inline polyfill above
-        // does not reach it. We route through a static wrapper file (public/) that
-        // polyfills Promise.try before dynamically importing the real worker.
-        // Using a real served file avoids blob: URL CORS restrictions.
-        const absWorkerUrl = new URL(pdfWorkerUrl, location.href).href;
-        pdfjsLib.GlobalWorkerOptions.workerSrc =
-          `${import.meta.env.BASE_URL}pdf-worker-wrapper.mjs?src=${encodeURIComponent(absWorkerUrl)}`;
+        // The Promise.try polyfill is baked into the worker file at build time
+        // by the pdfWorkerPolyfill Vite plugin in astro.config.mjs.
+        pdfjsLib.GlobalWorkerOptions.workerSrc = pdfWorkerUrl;
 
         const root        = document.getElementById('slide-root') as HTMLElement;
         const pdfUrl      = root.dataset.pdfUrl!;
