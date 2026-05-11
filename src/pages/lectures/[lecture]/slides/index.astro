@@ -155,14 +155,16 @@ if (!pdfUrl && entry) {
         import pdfWorkerUrl from 'pdfjs-dist/build/pdf.worker.min.mjs?url';
 
         // The worker runs in its own global scope, so the polyfill above does not
-        // reach it. We wrap the real worker in a blob module that injects
-        // Promise.try first, then imports the real worker file.
+        // reach it. We wrap the real worker in a blob module that uses a dynamic
+        // import (top-level await) so the polyfill is in place *before* the real
+        // worker module evaluates. Static `import` would be hoisted past the
+        // polyfill code, leaving Promise.try undefined when the worker runs.
         const absWorkerUrl = new URL(pdfWorkerUrl, import.meta.url).href;
         const workerWrapper = [
           'if(typeof Promise.try==="undefined"){',
           '  Promise.try=(f,...a)=>new Promise(r=>r(f(...a)));',
           '}',
-          `import ${JSON.stringify(absWorkerUrl)};`,
+          `await import(${JSON.stringify(absWorkerUrl)});`,
         ].join('\n');
         pdfjsLib.GlobalWorkerOptions.workerSrc = URL.createObjectURL(
           new Blob([workerWrapper], { type: 'text/javascript' })
@@ -185,9 +187,8 @@ if (!pdfUrl && entry) {
         function showFallback(err?: unknown) {
           console.error('PDF viewer error:', err);
           const msg = document.createElement('div');
-          msg.style.cssText = 'color:#fff;text-align:center;padding:2rem;font-size:1.5rem;';
-          msg.innerHTML = `<p>Das PDF konnte nicht geladen werden.</p>
-            <a href="${pdfUrl}" download style="color:#93c5fd;text-decoration:underline;">PDF herunterladen</a>`;
+          msg.style.cssText = 'color:#fff;text-align:center;padding:2rem;font-size:1.5rem;line-height:1.6;';
+          msg.textContent = 'This slide deck cannot be displayed in your current browser. Please open the page in a different browser.';
           container.replaceChildren(msg);
           counter.textContent = '– / –';
         }
