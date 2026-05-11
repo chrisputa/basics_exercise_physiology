@@ -154,21 +154,13 @@ if (!pdfUrl && entry) {
         import * as pdfjsLib from 'pdfjs-dist';
         import pdfWorkerUrl from 'pdfjs-dist/build/pdf.worker.min.mjs?url';
 
-        // The worker runs in its own global scope, so the polyfill above does not
-        // reach it. We wrap the real worker in a blob module that uses a dynamic
-        // import (top-level await) so the polyfill is in place *before* the real
-        // worker module evaluates. Static `import` would be hoisted past the
-        // polyfill code, leaving Promise.try undefined when the worker runs.
-        const absWorkerUrl = new URL(pdfWorkerUrl, import.meta.url).href;
-        const workerWrapper = [
-          'if(typeof Promise.try==="undefined"){',
-          '  Promise.try=(f,...a)=>new Promise(r=>r(f(...a)));',
-          '}',
-          `await import(${JSON.stringify(absWorkerUrl)});`,
-        ].join('\n');
-        pdfjsLib.GlobalWorkerOptions.workerSrc = URL.createObjectURL(
-          new Blob([workerWrapper], { type: 'text/javascript' })
-        );
+        // The worker runs in its own global scope, so the is:inline polyfill above
+        // does not reach it. We route through a static wrapper file (public/) that
+        // polyfills Promise.try before dynamically importing the real worker.
+        // Using a real served file avoids blob: URL CORS restrictions.
+        const absWorkerUrl = new URL(pdfWorkerUrl, location.href).href;
+        pdfjsLib.GlobalWorkerOptions.workerSrc =
+          `${import.meta.env.BASE_URL}pdf-worker-wrapper.mjs?src=${encodeURIComponent(absWorkerUrl)}`;
 
         const root        = document.getElementById('slide-root') as HTMLElement;
         const pdfUrl      = root.dataset.pdfUrl!;
