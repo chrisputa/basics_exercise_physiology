@@ -1,3 +1,4 @@
+if(typeof Promise.try==="undefined"){Promise.try=(f,...a)=>new Promise(r=>r(f(...a)));}
 /**
  * @licstart The following is the entire license notice for the
  * JavaScript code in this page
