@@ -1,15 +1,52 @@
 ---
-title: Energy Expenditure, MET-concept, Thresholds, Determine Exercise Intensity
-description: Provides a detailed treatment of energy expenditure, from basal and resting metabolic rate through total daily energy expenditure (TDEE) to the Weir formula and respiratory exchange ratio (RER).
-  Links oxygen uptake (V̇O₂) to daily behaviour, physical activity levels, and energy supply under normoxic and hypoxic conditions, including the MET concept and MET-minutes.
-  Covers threshold concepts — ventilatory, lactate, and anaerobic thresholds — and their physiological significance for exercise prescription and performance diagnostics.
-  Presents standardised exercise intensity terminology (Very Low to Very High) based on the joint ACSM/ESSA consensus, with methods for determining and monitoring cardiorespiratory and resistance exercise intensity using metabolic thresholds, RIR, and RPE.
+title: Teaching Anaerobic Threshold
+description: Defines the anaerobic threshold as the upper border of the aerobic–anaerobic transition (MLSS), compares fixed (4 mmol/L) and individualised threshold concepts, walks through a Stegmann tangent worked example, and derives heart-rate–anchored training zones — with a critical look at why %VO₂max and %HRmax fall short as prescription anchors.
 publishDate: '2026-05-11'
 draft: false
 tags:
   - Lecture
 ---
 
+import Figure from '../../../components/Figure.astro';
+import fig1 from '../../../assets/fig1_aerob_anaerob_transition.png';
+import fig1Dark from '../../../assets/generated/fig1_aerob_anaerob_transition_dark.png';
+import fig2 from '../../../assets/fig2_stegmann_iat.png';
+import fig2Dark from '../../../assets/generated/fig2_stegmann_iat_dark.png';
+import fig3 from '../../../assets/fig3_training_zones.png';
+import fig3Dark from '../../../assets/generated/fig3_training_zones_dark.png';
+import { Note } from '../../../components/MarginNote/index.js';
+
+
+## Table of Contents
+
+1. [Definition of the anaerobic threshold](#1-definition-of-the-anaerobic-threshold)
+   - 1.1 [The aerobic–anaerobic transition](#11-the-aerobicanaerobic-transition)
+   - 1.2 [The MLSS as gold standard](#12-the-mlss-as-gold-standard)
+   - 1.3 [The 4 mmol/L threshold and its limits](#13-the-4-mmoll-threshold-and-its-limits)
+   - 1.4 [Agreement between LT concepts and MLSS — limits of agreement](#14-agreement-between-lt-concepts-and-mlss--limits-of-agreement)
+2. [Worked example: determining the IAT after Stegmann et al. (1981)](#2-worked-example-determining-the-iat-after-stegmann-et-al-1981)
+   - 2.1 [Rationale of the method](#21-rationale-of-the-method)
+   - 2.2 [Sample protocol — incremental treadmill test](#22-sample-protocol--incremental-treadmill-test)
+   - 2.3 [Measured data](#23-measured-data)
+   - 2.4 [Construction of the IAT](#24-construction-of-the-iat)
+   - 2.5 [Derived training prescription](#25-derived-training-prescription)
+3. [The anaerobic threshold as a metabolic, hormonal and immunological breakpoint](#3-the-anaerobic-threshold-as-a-metabolic-hormonal-and-immunological-breakpoint)
+4. [Exercise prescription based on the anaerobic threshold](#4-exercise-prescription-based-on-the-anaerobic-threshold)
+   - 4.1 [Training zones derived from the aerobic–anaerobic transition (Kindermann 2004)](#41-training-zones-derived-from-the-aerobicanaerobic-transition-kindermann-2004)
+   - 4.2 [Application examples (Kindermann 2004)](#42-application-examples-kindermann-2004)
+   - 4.3 [The ACSM/ESSA framework (Bishop et al. 2025)](#43-the-acsmessa-framework-bishop-et-al-2025)
+5. [Trained versus untrained subjects](#5-trained-versus-untrained-subjects)
+6. [The anaerobic threshold and percentages of VO₂max / HRmax](#6-the-anaerobic-threshold-and-percentages-of-vomax--hrmax)
+   - 6.1 [Typical values](#61-typical-values)
+   - 6.2 [Why %VO₂max / %HRmax are *not* a reliable prescription tool](#62-why-vomax--hrmax-are-not-a-reliable-prescription-tool)
+7. [Strengths and weaknesses of the anaerobic-threshold concept](#7-strengths-and-weaknesses-of-the-anaerobic-threshold-concept)
+   - 7.1 [Strengths](#71-strengths)
+   - 7.2 [Weaknesses](#72-weaknesses)
+8. [Summary in one paragraph](#8-summary-in-one-paragraph)
+9. [References](#references)
+10. [One-Minute-Paper Topics](#one-minute-paper-topics)
+
+---
 
 ## 1. Definition of the anaerobic threshold
 
@@ -22,9 +59,9 @@ The framework introduced by Kindermann, Simon and Keul (1979) describes enduranc
 
 The anaerobic threshold is therefore not a sudden switch but the upper border of a gradual transition.
 
-![Figure 1 — Aerobic-anaerobic transition during incremental exercise](fig1_aerob_anaerob_transition.svg)
-
-*Figure 1.* Schematic representation of the aerobic–anaerobic transition (grey zone). Top: blood-lactate curve with aerobic threshold (AeS) and individual anaerobic threshold (IAS ≙ MLSS). Bottom: pulmonary ventilation with the two ventilatory thresholds VT1 and VT2 (RCP). Redrawn after Kindermann (2004).
+<Figure src={fig1} srcDark={fig1Dark} alt="Aerobic-anaerobic transition during incremental exercise">
+**Figure 1:** Schematic representation of the aerobic–anaerobic transition (grey zone). Top: blood-lactate curve with aerobic threshold (AeS) and individual anaerobic threshold (IAS ≙ MLSS). Bottom: pulmonary ventilation with the two ventilatory thresholds VT1 and VT2 (RCP). Redrawn after Kindermann (2004).
+</Figure>
 
 ### 1.2 The MLSS as gold standard
 
@@ -106,9 +143,9 @@ The following example uses a standard protocol that meets Stegmann's original me
 
 ### 2.4 Construction of the IAT
 
-![Figure 3 — Determination of the IAT after Stegmann et al. (1981)](fig3_stegmann_iat.svg)
-
-*Figure 3.* Lactate–velocity curve during incremental exercise (red) and lactate–time curve during recovery (blue). The dashed grey line marks L_end. The descending recovery curve crosses L_end at ≈ 4 min post-exercise (linear interpolation between R2 = 10.0 mmol/L and R3 = 8.0 mmol/L → L = 9.0 at t ≈ 4 min): this is the **anchor**. The dashed green line is the tangent from the anchor to the ascending exercise curve; the **tangent contact** on the exercise curve is the IAT. Vertical and horizontal projections give v_IAT and L_IAT respectively.
+<Figure src={fig2} srcDark={fig2Dark} alt="Determination of the IAT after Stegmann et al. (1981)">
+**Figure 2:** Lactate–velocity curve during incremental exercise (red) and lactate–time curve during recovery (blue). The dashed grey line marks L_end. The descending recovery curve crosses L_end at ≈ 4 min post-exercise (linear interpolation between R2 = 10.0 mmol/L and R3 = 8.0 mmol/L → L = 9.0 at t ≈ 4 min): this is the **anchor**. The dashed green line is the tangent from the anchor to the ascending exercise curve; the **tangent contact** on the exercise curve is the IAT. Vertical and horizontal projections give v_IAT and L_IAT respectively.
+</Figure>
 
 **Step-by-step:**
 
@@ -171,9 +208,9 @@ These convergent breakpoints justify the concept even though "threshold" is, str
 | Intensive endurance (GA II, "Tempodauerlauf") | 90 – 100 % of IAT | up to MLSS, typically 3–5 mmol/L in trained runners |
 | Interval training (IVT) | > 100 % of IAT | suprathreshold, lactate dependent on work/rest ratio |
 
-![Figure 2 — Training zones as % of IAS](fig2_training_zones.svg)
-
-*Figure 2.* Typical blood-lactate ranges encountered during the four endurance-training zones, expressed as a percentage of the individual anaerobic threshold (IAS). Redrawn after Kindermann (2004).
+<Figure src={fig3} srcDark={fig3Dark} alt="Training zones as % of IAS">
+**Figure 3:** Typical blood-lactate ranges encountered during the four endurance-training zones, expressed as a percentage of the individual anaerobic threshold (IAS). Redrawn after Kindermann (2004).
+</Figure>
 
 **Heart-rate prescription** is preferred in practice, because heart rate is easy to monitor and lactate response is not affected by beta-blockers — exact heart-rate targets at the IAT can therefore be given even to cardiac patients on beta-blockade.
 
