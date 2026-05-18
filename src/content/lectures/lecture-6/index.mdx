@@ -1,226 +1,680 @@
 ---
-title: Estimation of VO₂max after Nes et al. (2011) – Worked Example
-description: The Nes et al. (2011) model estimates VO₂max without exercise testing, using only age, BMI, resting heart rate, and a self-reported Physical Activity Index derived from three questions on training frequency, intensity, and duration. Separate regression equations for men (intercept 92.05) and women (intercept 70.77) were developed in the HUNT Study (n > 4,600). The model explains approximately 58% of variance (R² ≈ 0.58) with a standard error of estimate of 5–6 ml·kg⁻¹·min⁻¹, making it suitable for population-level screening but not a replacement for maximal exercise testing. In the worked examples, predicted values range from ~33 ml·kg⁻¹·min⁻¹ (inactive, older adult) to ~53 ml·kg⁻¹·min⁻¹ (moderately active young male), illustrating the dominant influence of BMI and age on the prediction.
+title: Basics of Biochemistry Principles of Exercise
+description: Examines the molecular and metabolic foundations of exercise, covering ATP production through the phosphagen, glycolytic, and oxidative energy systems.
+  Provides an in-depth treatment of glucose utilization pathways based on Lehninger's Principles of Biochemistry - glycolysis, pyruvate fates (aerobic oxidation, lactic acid fermentation, ethanol fermentation), the Warburg effect, gluconeogenesis, and the pentose phosphate pathway.
+  Covers substrate utilization at different exercise intensities, hormonal regulation of exercise metabolism (catecholamines, insulin/glucagon, cortisol/growth hormone), and the lactate paradigm shift — including lactate production, clearance, MCT transport, the lactate shuttle, GPR81 signalling, and protein lactylation as an epigenetic mechanism.
+  Addresses muscle fiber types, biochemical adaptations to endurance and resistance training (AMPK, mTOR, PGC-1α signalling), reactive oxygen species and hormesis, recovery metabolism (EPOC, glycogen resynthesis, muscle protein synthesis), and clinical applications of exercise biochemistry.
 draft: false
 tags:
   - Lecture
 ---
 
+import Figure from '../../../components/Figure.astro';
+import fig1 from '../../../assets/Cellular_Respiration_bw.png';
+import fig1Dark from '../../../assets/generated/Cellular_Respiration_bw_dark.png';
 import { Note } from '../../../components/MarginNote/index.js';
 
 
 ## Table of Contents
 
-1. [Background](#background)
-2. [Prediction Equations](#prediction-equations)
-3. [Physical Activity Index (PA-Index)](#physical-activity-index-pa-index)
-4. [Worked Example 1: Male Student, 24 years, moderately active](#worked-example-1-male-student-24-years-moderately-active)
-5. [Worked Example 2: Female Student, 22 years, highly active](#worked-example-2-female-student-22-years-highly-active)
-6. [Worked Example 3: Older inactive male, 55 years (for comparison)](#worked-example-3-older-inactive-male-55-years-for-comparison)
-7. [Summary Comparison Table](#summary-comparison-table)
-8. [Discussion Points for Lecture](#discussion-points-for-lecture)
-9. [One-Minute-Paper Topics](#one-minute-paper-topics)
+1. [Introduction to Exercise Biochemistry](#1-introduction-to-exercise-biochemistry)
+2. [Energy Systems and ATP Production](#2-energy-systems-and-atp-production)
+   - 2.1 [The ATP-PCr System (Phosphagen System)](#21-the-atp-pcr-system-phosphagen-system)
+   - 2.2 [Glycolytic System (Anaerobic Glycolysis)](#22-glycolytic-system-anaerobic-glycolysis)
+   - 2.3 [Oxidative System (Aerobic Metabolism)](#23-oxidative-system-aerobic-metabolism)
+   - 2.4 [Comparison of Energy Systems](#24-comparison-of-energy-systems)
+   - 2.5 [Common Metabolic Thresholds](#25-common-metabolic-thresholds)
+   - 2.6 [Major Pathways of Glucose Utilization](#26-major-pathways-of-glucose-utilization)
+   - 2.7 [Three Possible Catabolic Fates of Pyruvate](#27-three-possible-catabolic-fates-of-pyruvate)
+   - 2.8 [Glycolysis Is under Tight Regulation and the Warburg Effect](#28-glycolysis-is-under-tight-regulation-and-the-warburg-effect)
+   - 2.9 [Glucose Uptake Is Deficient in Type 1 Diabetes Mellitus](#29-glucose-uptake-is-deficient-in-type-1-diabetes-mellitus)
+   - 2.10 [Effect of Type 1 Diabetes on Carbohydrate and Fat Metabolism](#210-effect-of-type-1-diabetes-on-carbohydrate-and-fat-metabolism)
+   - 2.11 [SUMMARY Glycolysis](#211-summary-glycolysis)
+   - 2.12 [Fates of Pyruvate under Anaerobic Conditions: Fermentation](#212-fates-of-pyruvate-under-anaerobic-conditions-fermentation)
+   - 2.13 [SUMMARY Fates of Pyruvate under Anaerobic Conditions: Fermentation](#213-summary-fates-of-pyruvate-under-anaerobic-conditions-fermentation)
+   - 2.14 [Gluconeogenesis](#214-gluconeogenesis)
+   - 2.15 [Pentose Phosphate Pathway of Glucose Oxidation](#215-pentose-phosphate-pathway-of-glucose-oxidation)
+   - 2.16 [SUMMARY Pentose Phosphate Pathway](#216-summary-pentose-phosphate-pathway)
+3. [Substrate Utilization During Exercise](#3-substrate-utilization-during-exercise)
+   - 3.1 [Carbohydrate Metabolism](#31-carbohydrate-metabolism)
+   - 3.2 [Fat Metabolism](#32-fat-metabolism)
+   - 3.3 [Protein Metabolism](#33-protein-metabolism)
+   - 3.4 [Substrate Utilization at Different Exercise Intensities](#34-substrate-utilization-at-different-exercise-intensities)
+4. [Hormonal Regulation of Exercise Metabolism](#4-hormonal-regulation-of-exercise-metabolism)
+   - 4.1 [Catecholamines (Epinephrine and Norepinephrine)](#41-catecholamines-epinephrine-and-norepinephrine)
+   - 4.2 [Insulin and Glucagon](#42-insulin-and-glucagon)
+   - 4.3 [Cortisol and Growth Hormone](#43-cortisol-and-growth-hormone)
+5. [Lactate Metabolism and the Lactate Threshold](#5-lactate-metabolism-and-the-lactate-threshold)
+   - 5.1 [Introduction: The Lactate Paradigm Shift](#51-introduction-the-lactate-paradigm-shift)
+   - 5.2 [Lactate Production Pathways](#52-lactate-production-pathways)
+   - 5.3 [Lactate Clearance Mechanisms](#53-lactate-clearance-mechanisms)
+   - 5.4 [Lactate Transport and Regulation](#54-lactate-transport-and-regulation)
+   - 5.5 [Cellular Lactate Metabolism and Lactylation](#55-cellular-lactate-metabolism-and-lactylation)
+   - 5.6 [Lactate Homeostasis: The Complete Picture](#56-lactate-homeostasis-the-complete-picture)
+   - 5.7 [The Lactate Threshold in Exercise Physiology](#57-the-lactate-threshold-in-exercise-physiology)
+   - 5.8 [Summary: The Lactate Paradigm Shift](#58-summary-the-lactate-paradigm-shift)
+6. [Muscle Fiber Types and Metabolic Characteristics](#6-muscle-fiber-types-and-metabolic-characteristics)
+   - 6.1 [Type I Fibers (Slow-Twitch, Oxidative)](#61-type-i-fibers-slow-twitch-oxidative)
+   - 6.2 [Type II Fibers (Fast-Twitch)](#62-type-ii-fibers-fast-twitch)
+   - 6.3 [Muscle Fiber Type Characteristics](#63-muscle-fiber-type-characteristics)
+7. [Biochemical Adaptations to Training](#7-biochemical-adaptations-to-training)
+   - 7.1 [Endurance Training Adaptations](#71-endurance-training-adaptations)
+   - 7.2 [Resistance Training Adaptations](#72-resistance-training-adaptations)
+   - 7.3 [Molecular Signaling Pathways](#73-molecular-signaling-pathways)
+8. [Reactive Oxygen Species and Oxidative Stress](#8-reactive-oxygen-species-and-oxidative-stress)
+9. [Recovery Metabolism and Nutritional Biochemistry](#9-recovery-metabolism-and-nutritional-biochemistry)
+   - 9.1 [Excess Post-Exercise Oxygen Consumption (EPOC)](#91-excess-post-exercise-oxygen-consumption-epoc)
+   - 9.2 [Glycogen Resynthesis](#92-glycogen-resynthesis)
+   - 9.3 [Muscle Protein Synthesis and Recovery](#93-muscle-protein-synthesis-and-recovery)
+10. [Clinical Applications and Exercise as Medicine](#10-clinical-applications-and-exercise-as-medicine)
+    - 10.1 [Metabolic Disease](#101-metabolic-disease)
+    - 10.2 [Cardiovascular Health](#102-cardiovascular-health)
+    - 10.3 [Aging and Sarcopenia](#103-aging-and-sarcopenia)
+11. [Key Terms Related to Physical Activity and Exercise Prescription](#11-key-terms-related-to-physical-activity-and-exercise-prescription)
+12. [Conclusion](#12-conclusion)
+13. [References](#references)
+14. [One-Minute-Paper Topics](#one-minute-paper-topics)
 
 ---
 
-## Background
+## 1 Introduction to Exercise Biochemistry
 
-The Nes et al. (2011) model allows **non-exercise-based estimation** of VO₂peak using only four easily obtainable variables: age, BMI, resting heart rate, and a self-reported physical activity index (PA-Index). The model was developed and validated in the HUNT Study (Nord-Trøndelag Health Study, Norway) with over 4,600 healthy adults.
+Exercise biochemistry examines the molecular and metabolic changes that occur during physical activity. Understanding these principles is essential for optimizing athletic performance, designing effective training programs, and comprehending how exercise promotes health and prevents disease [1].
 
-**Reference:** Nes BM, Janszky I, Vatten LJ, Nilsen TI, Aspenes ST, Wisløff U. Estimating V·O₂peak from a nonexercise prediction model: the HUNT Study, Norway. *Med Sci Sports Exerc.* 2011 Nov;43(11):2024-30. doi: 10.1249/MSS.0b013e31821d3f6f.
-
----
-
-## Prediction Equations
-
-**Men:**
-```
-VO₂max (ml·kg⁻¹·min⁻¹) = 92.05 − 0.327 × Age − 0.933 × BMI − 0.167 × RHR + 0.257 × PA-Index
-```
-R² = 0.59; SEE = 5.8 ml·kg⁻¹·min⁻¹
-
-**Women:**
-```
-VO₂max (ml·kg⁻¹·min⁻¹) = 70.77 − 0.244 × Age − 0.749 × BMI − 0.107 × RHR + 0.213 × PA-Index
-```
-R² = 0.57; SEE = 5.1 ml·kg⁻¹·min⁻¹
+At the cellular level, exercise initiates a cascade of biochemical events involving energy metabolism, substrate utilization, hormone regulation, and adaptive signaling pathways. These processes are highly coordinated and depend on exercise intensity, duration, and the individual's training status [2].
 
 ---
 
-## Physical Activity Index (PA-Index)
+## 2 Energy Systems and ATP Production
 
-The PA-Index is composed of three self-report questions (see Arbeitsblatt_Nes.pdf):
+### 2.1 The ATP-PCr System (Phosphagen System)
 
-| Question | Answer | Score |
-|---|---|---|
-| **1. Frequency** – How often do you exercise per week? | Never / less than once | 0 |
-| | Once per week | 1 |
-| | 2–3 times per week | 2 |
-| | Almost every day | 3 |
-| **2. Intensity** – How hard do you push yourself? | No sweating/heavy breathing | 0 |
-| | Sweating and heavy breathing | 5 |
-| | Push to exhaustion | 10 |
-| **3. Duration** – Average training duration per session? | < 15 min or 15–30 min | 1 |
-| | 30–60 min or > 60 min | 1.5 |
+The most immediate energy source for muscle contraction is adenosine triphosphate (ATP). However, intramuscular ATP stores are limited and can sustain maximal exercise for only 2–3 seconds. The phosphocreatine (PCr) system provides rapid ATP regeneration through the creatine kinase reaction [3]:
 
-**PA-Index = Frequency + Intensity + Duration** (Range: 1 – 14.5)
+> **PCr + ADP + H⁺ → ATP + Creatine**
+
+This system is crucial for high-intensity, short-duration activities (5–10 seconds) such as sprinting, jumping, or powerlifting. Complete PCr restoration requires 3–5 minutes of rest [4].
+
+### 2.2 Glycolytic System (Anaerobic Glycolysis)
+
+When exercise extends beyond 10 seconds, the glycolytic system becomes the predominant ATP source. This pathway breaks down glucose or glycogen without requiring oxygen, producing pyruvate and lactate as end products [5].
+
+Key features of glycolysis:
+- Net ATP yield: 2–3 ATP per glucose molecule (depending on glucose source)
+- Peak power output: 30–90 seconds
+- Produces hydrogen ions (H⁺) that contribute to metabolic acidosis
+- Critical for activities like 400 m sprint, swimming 100 m, or resistance training
+
+### 2.3 Oxidative System (Aerobic Metabolism)
+
+The oxidative system provides sustainable ATP production through complete oxidation of carbohydrates and fats in the mitochondria. This system involves three main processes: pyruvate oxidation, the citric acid cycle (Krebs cycle), and the electron transport chain [6].
+
+ATP yields from complete oxidation are substantially higher than anaerobic pathways: approximately 32–36 ATP per glucose molecule and over 100 ATP per palmitate (16-carbon fatty acid). This efficiency makes the oxidative system ideal for prolonged exercise lasting more than 2–3 minutes [7].
+
+### 2.4 Comparison of Energy Systems
+
+| System | Peak Power | ATP Rate | Capacity |
+|--------|-----------|----------|----------|
+| ATP-PCr | 5–10 seconds | Very High | Very Limited |
+| Glycolytic | 30–90 seconds | High | Limited |
+| Oxidative | >2–3 minutes | Moderate | Unlimited |
+
+<Figure src={fig1} srcDark={fig1Dark} alt="Cellular Respiration">
+**Figure 3:** After uptake into the cell, glucose is phosphorylated and passes through the reactions of glycolysis down to the level of pyruvate. Under anaerobic conditions, pyruvate must be converted to lactate in order to regenerate the NAD⁺ required for glycolysis. Lactate is typically released by the cells. The energy yield amounts to 2 mol ATP per mol glucose. Under aerobic conditions, pyruvate is taken up into the mitochondria and converted there to acetyl-CoA by oxidative decarboxylation. This enters the citrate cycle, where it is broken down into CO₂ and reduction equivalents in the form of NADH/H⁺ and FADH₂. Their oxygen-dependent reoxidation yields water and is coupled to ATP synthesis from ADP and Pᵢ. Overall, the ATP yield is approximately 30 mol ATP per mol glucose. For the mechanisms of pyruvate oxidation, the citrate cycle, the respiratory chain, and oxidative phosphorylation.
+</Figure>
+
+### 2.5 Common Metabolic Thresholds
+
+**Metabolic threshold:** a term used to describe an exercise intensity that results in an apparent change in metabolism (usually reflected by changes in oxygen uptake, carbon dioxide production, ventilation, or metabolites in the muscle and blood). The first detectable change in metabolism is often termed the first metabolic threshold, whereas the second detectable change in metabolism is often termed the second metabolic threshold [8].
+
+### 2.6 Major Pathways of Glucose Utilization
+
+Glucose occupies a central position in the metabolism of plants, animals, and many microorganisms. It is relatively rich in potential energy, and the complete oxidation of glucose to carbon dioxide and water proceeds with a standard free-energy change of −2,840 kJ/mol. In animals and vascular plants, glucose has four major fates [9]:
+
+- **Storage:** Glucose may be stored as glycogen (animals) or starch (plants), or as sucrose.
+- **Structural polymers:** Glucose is used in the synthesis of complex polysaccharides destined for the extracellular space (e.g. extracellular matrix and cell wall polysaccharides).
+- **Glycolysis → pyruvate:** Glucose is oxidized to the three-carbon compound pyruvate via glycolysis to provide ATP and metabolic intermediates.
+- **Pentose phosphate pathway:** Glucose is oxidized via the pentose phosphate (phosphogluconate) pathway to yield ribose 5-phosphate for nucleic acid synthesis and NADPH for reductive biosynthetic processes.
+
+Although these are not the only possible fates for glucose, these four pathways are the most significant in terms of the amount of glucose that flows through them in most cells.
+
+### 2.7 Three Possible Catabolic Fates of Pyruvate 
+
+
+With the exception of some interesting variations in the bacterial realm, the pyruvate formed by glycolysis is further metabolized via one of three catabolic routes [9]:
+
+1. **Aerobic oxidation (complete oxidation to CO₂):** In aerobic organisms or tissues, under aerobic conditions, glycolysis is only the first stage in the complete degradation of glucose. Pyruvate is oxidized, with loss of its carboxyl group as CO₂, to yield the acetyl group of acetyl-coenzyme A (acetyl-CoA). The acetyl group is then oxidized completely to CO₂ by the citric acid cycle (Chapter 16). The electrons from these oxidations are passed to O₂ through a chain of carriers in mitochondria, to form H₂O. The energy from the electron-transfer reactions drives the synthesis of ATP in mitochondria. This pathway yields approximately 30–32 ATP per molecule of glucose.
+
+2. **Lactic acid fermentation:** The second route for pyruvate is its reduction to **lactate** via **lactic acid fermentation**. When vigorously contracting skeletal muscle must function under low-oxygen conditions (**hypoxia**), NADH cannot be reoxidized to NAD⁺, but NAD⁺ is required as an electron acceptor for the further oxidation of pyruvate. Under these conditions pyruvate is reduced to lactate, accepting electrons from NADH and thereby regenerating the NAD⁺ necessary for glycolysis to continue. Certain tissues and cell types (retina and erythrocytes, for example) convert glucose to lactate even under aerobic conditions.
+
+3. **Ethanol (alcohol) fermentation:** In some plant tissues and in certain invertebrates, protists, and microorganisms such as brewer's or baker's yeast, pyruvate is converted under hypoxic or anaerobic conditions to ethanol and CO₂, a process called **ethanol (alcohol) fermentation**. The overall equation is:
+
+> Glucose + 2ADP + 2Pᵢ → 2 ethanol + 2CO₂ + 2ATP + 2H₂O
+
+**Exercise physiology relevance:** During high-intensity exercise, when oxygen delivery cannot meet the demands of working muscle, the lactic acid fermentation pathway predominates. The lactate produced is carried in the blood to the liver, where it is converted back to glucose via gluconeogenesis — the Cori cycle. The best-conditioned athletes can sprint at top speed for no more than about a minute [9].
+
+### 2.8 Glycolysis Is under Tight Regulation and the Warburg Effect 
+
+During his studies on the fermentation of glucose by yeast, Louis Pasteur discovered that both the rate and the total amount of glucose consumption were many times greater under anaerobic than aerobic conditions. Later studies of muscle showed the same large difference in the rates of anaerobic and aerobic glycolysis. The biochemical basis of this "Pasteur effect" is now clear: the ATP yield from glycolysis under anaerobic conditions (2 ATP per molecule of glucose) is much smaller than that from the complete oxidation of glucose to CO₂ under aerobic conditions (30 or 32 ATP per glucose). About 15 times as much glucose must therefore be consumed anaerobically as aerobically to yield the same amount of ATP [9].
+
+The flux of glucose through the glycolytic pathway is regulated to maintain nearly constant ATP levels (as well as adequate supplies of glycolytic intermediates that serve biosynthetic roles). The required adjustment in the rate of glycolysis is achieved by a complex interplay among ATP consumption, NADH regeneration, and allosteric regulation of several glycolytic enzymes — including hexokinase, PFK-1, and pyruvate kinase — and by second-to-second fluctuations in the concentration of key metabolites that reflect the cellular balance between ATP production and consumption. On a slightly longer time scale, glycolysis is regulated by the hormones glucagon, epinephrine, and insulin, and by changes in the expression of the genes for several glycolytic enzymes.
+
+**The Warburg effect (high rate of glycolysis in tumors):** The German biochemist Otto Warburg first observed in 1928 that tumors of nearly all types carry out glycolysis at a much higher rate than normal tissue, *even when oxygen is available*. This "Warburg effect" is the basis for several methods of detecting and treating cancer [9]:
+
+- Tumor cells rely on glycolysis alone for much of their ATP production. The energy yield (2 ATP per glucose) is far lower than that from complete oxidation (~30 ATP per glucose), so tumor cells must take up much more glucose than do normal cells.
+- The **hypoxia-inducible transcription factor (HIF-1)** stimulates the production of at least eight glycolytic enzymes and the glucose transporters GLUT1 and GLUT3 when oxygen supply is limited.
+- Three inhibitors of hexokinase have shown promise as chemotherapeutic agents: 2-deoxyglucose, lonidamine, and 3-bromopyruvate.
+- Positron emission tomography (PET) using ¹⁸F-labeled 2-fluoro-2-deoxyglucose (FdG) allows detection of tumors based on their high rate of glucose uptake.
+
+### 2.9 Glucose Uptake Is Deficient in Type 1 Diabetes Mellitus
+
+The metabolism of glucose in mammals is limited by the rate of glucose uptake into cells and its phosphorylation by hexokinase. Glucose uptake from the blood is mediated by the GLUT family of glucose transporters. The transporters of hepatocytes (GLUT1, GLUT2) and of brain neurons (GLUT3) are always present in plasma membranes. In contrast, the main glucose transporter in the cells of skeletal muscle, cardiac muscle, and adipose tissue (**GLUT4**) is sequestered in small intracellular vesicles and moves into the plasma membrane only in response to an **insulin signal** [9].
+
+Thus, in skeletal muscle, heart, and adipose tissue, glucose uptake and metabolism depend on the normal release of insulin by pancreatic β cells in response to elevated blood glucose. Individuals with **type 1 diabetes mellitus** (also called insulin-dependent diabetes) have too few β cells and cannot release sufficient insulin to trigger glucose uptake by the cells of skeletal muscle, heart, or adipose tissue. After a meal containing carbohydrates, glucose accumulates to abnormally high levels in the blood, a condition known as **hyperglycemia**. Unable to take up glucose, muscle and fat tissue use the fatty acids of stored triacylglycerols as their principal fuel. In the liver, acetyl-CoA derived from this fatty acid breakdown is converted to "ketone bodies" — acetoacetate and β-hydroxybutyrate — which are exported and carried to other tissues to be used as fuel. These compounds are especially critical to the brain, which uses ketone bodies as alternative fuel when glucose is unavailable. In untreated type 1 diabetes, overproduction of acetoacetate and β-hydroxybutyrate leads to their accumulation in the blood, and the consequent lowering of blood pH produces **ketoacidosis**, a life-threatening condition [9].
+
+**Exercise physiology relevance:** Exercise stimulates GLUT4 translocation to the muscle membrane via AMPK and calcium signaling pathways, independent of insulin action [10]. This insulin-independent mechanism of glucose uptake during exercise is of particular clinical importance for individuals with diabetes.
+
+### 2.10 Effect of Type 1 Diabetes on Carbohydrate and Fat Metabolism 
+
+Lehninger Figure 14-10 illustrates the metabolic consequences of type 1 diabetes in an adipocyte. The following numbered steps describe the cascade of events [9]:
+
+1. The **primary defect in diabetes** is insufficient insulin secretion by the pancreas.
+2. Normally, the insulin receptor is activated, triggering the PI-3K → PKB signaling cascade.
+3. This cascade causes vesicles containing **GLUT4** to fuse with the plasma membrane, allowing glucose uptake from the blood.
+4. In type 1 diabetes, this process is blocked (indicated by **X**): GLUT4 insertion into membranes does not occur, and cells are deprived of glucose while blood glucose is elevated.
+5. Without glucose entry, hexokinase cannot phosphorylate glucose.
+6. Glycolysis is blocked (no glucose 6-phosphate is available); furthermore, the pentose phosphate pathway is also blocked.
+7. Pyruvate cannot be produced, so oxidation via the citric acid cycle is impaired.
+8. Mitochondrial electron transfer and ATP synthesis are diminished (~30 ATP route is blocked).
+9. To compensate, **triacylglycerol mobilization** provides fatty acids as alternative fuel.
+10. Excessive fatty acid oxidation leads to overproduction of acetoacetate and β-hydroxybutyrate → **ketoacidosis**.
+
+### 2.11 SUMMARY Glycolysis
+
+Key points from the Lehninger summary of glycolysis [9]:
+
+- Glycolysis is a near-universal pathway by which a glucose molecule is oxidized to two molecules of pyruvate, with energy conserved as ATP and NADH.
+- All 10 glycolytic enzymes are in the cytosol, and all 10 intermediates are phosphorylated compounds of three or six carbons.
+- In the **preparatory phase** of glycolysis, ATP is invested to convert glucose to fructose 1,6-bisphosphate. The bond between C-3 and C-4 is then broken to yield two molecules of triose phosphate.
+- In the **payoff phase**, each of the two molecules of glyceraldehyde 3-phosphate derived from glucose undergoes oxidation at C-1; the energy of this oxidation reaction is conserved in the form of one NADH and two ATP per triose phosphate oxidized.
+- The net equation for the overall process is:
+
+> Glucose + 2NAD⁺ + 2ADP + 2Pᵢ → 2 pyruvate + 2NADH + 2H⁺ + 2ATP + 2H₂O
+
+- Glycolysis is tightly regulated in coordination with other energy-yielding pathways to ensure a steady supply of ATP.
+- In type 1 diabetes, defective uptake of glucose by muscle and adipose tissue has profound effects on the metabolism of carbohydrates and fats.
+
+### 2.12 Fates of Pyruvate under Anaerobic Conditions: Fermentation
+
+#### What Is Fermentation?
+
+**Fermentation** is a general term for the anaerobic degradation of glucose or other organic nutrients to obtain energy, conserved as ATP. Because living organisms first arose in an atmosphere without oxygen, anaerobic breakdown of glucose is probably the most ancient biological mechanism for obtaining energy from organic fuel molecules. Most modern organisms have retained the ability to continually regenerate NAD⁺ during anaerobic glycolysis by transferring electrons from NADH to form a reduced end product such as lactate or ethanol [9].
+
+Key principles of fermentation:
+- Fermentations are processes that extract energy (as ATP) but do not consume oxygen and do not change the concentrations of NAD⁺ or NADH.
+- Fermentations are carried out by a wide range of organisms, many of which occupy anaerobic niches, and they yield a variety of end products.
+- In **lactic acid fermentation**, the NADH formed in glycolysis is reoxidized to NAD⁺ by the reduction of pyruvate to lactate (catalyzed by lactate dehydrogenase):
+
+> Pyruvate + NADH + H⁺ → L-Lactate + NAD⁺  (ΔG'° = −25.1 kJ/mol)
+
+- In **ethanol fermentation**, pyruvate is decarboxylated to acetaldehyde (by pyruvate decarboxylase, requiring TPP and Mg²⁺), which is then reduced to ethanol by alcohol dehydrogenase using NADH.
+
+#### Lactic Acid Fermentation in Exercise
+
+During vigorous muscle contraction (during a sprint, for example), the blood cannot carry oxygen to muscle fast enough to oxidize pyruvate. Instead, muscles use their stored glucose (glycogen) as fuel to generate ATP by fermentation, with lactate as the end product. In a sprint, lactate in the blood builds up to high concentrations. It is slowly converted back to glucose by gluconeogenesis in the liver in the subsequent rest or recovery period, during which oxygen is consumed at a gradually diminishing rate — the excess oxygen consumed in the recovery period represents a repayment of the **oxygen debt** [9].
+
+The cycle of reactions that includes glucose conversion to lactate in muscle and lactate conversion to glucose in liver is called the **Cori cycle**, for Carl and Gerty Cori, whose studies in the 1930s and 1940s clarified the pathway and its role.
+
+**Athletes, alligators, and coelacanths (Box 14-2):** Most vertebrates are essentially aerobic organisms; they convert glucose to pyruvate by glycolysis, then use molecular oxygen to oxidize the pyruvate completely to CO₂ and H₂O. Anaerobic catabolism of glucose to lactate occurs during short bursts of extreme muscular activity, for example in a 100 m sprint, during which oxygen cannot be carried to the muscles fast enough. Whereas a trained athlete can recover from a 100 m sprint in 30 min or less, an alligator may require many hours of rest and extra oxygen consumption to clear the excess lactate and regenerate muscle glycogen after a burst of activity [9].
+
+### 2.13 SUMMARY Fates of Pyruvate under Anaerobic Conditions: Fermentation 
+
+Key points from the Lehninger summary [9]:
+- The NADH formed in glycolysis must be recycled to regenerate NAD⁺, which is required as an electron acceptor in the first step of the payoff phase. Under aerobic conditions, electrons pass from NADH to O₂ in mitochondrial respiration.
+- Under anaerobic or hypoxic conditions, many organisms regenerate NAD⁺ by transferring electrons from NADH to pyruvate, forming lactate. Other organisms, such as yeast, regenerate NAD⁺ by reducing pyruvate to ethanol and CO₂. In these anaerobic processes (fermentations), there is no *net* oxidation or reduction of the carbons of glucose.
+- A variety of microorganisms can ferment sugar in fresh foods, resulting in changes in pH, taste, and texture, and preserving food from spoilage.
+
+### 2.14 Gluconeogenesis 
+
+The central role of glucose in metabolism arose early in evolution, and this sugar remains the nearly universal fuel and building block in modern organisms, from microbes to humans. In mammals, some tissues depend almost completely on glucose for their metabolic energy. For the human brain and nervous system, as well as the erythrocytes, testes, renal medulla, and embryonic tissues, glucose from the blood is the sole or major fuel source. The brain alone requires about 120 g of glucose each day — more than half of all the glucose stored as glycogen in muscle and liver [9].
+
+However, the supply of glucose from these stores is not always sufficient; between meals and during longer fasts, or after vigorous exercise, glycogen is depleted. For these times, organisms need a method for synthesizing glucose from noncarbohydrate precursors. This is accomplished by a pathway called **gluconeogenesis** ("new formation of sugar"), which converts pyruvate and related three- and four-carbon compounds to glucose.
+
+Key features of gluconeogenesis:
+- Gluconeogenesis occurs in all animals, plants, fungi, and microorganisms. The reactions are essentially the same in all tissues and all species.
+- The important precursors of glucose in animals are three-carbon compounds such as **lactate**, **pyruvate**, and **glycerol**, as well as certain **amino acids** (glucogenic amino acids).
+- In mammals, gluconeogenesis takes place mainly in the **liver**, and to a lesser extent in **renal cortex** and in the epithelial cells that line the inside of the small intestine.
+- After vigorous exercise, lactate produced by anaerobic glycolysis in skeletal muscle returns to the liver and is converted to glucose, which moves back to muscle and is converted to glycogen — the **Cori cycle**.
+
+**Gluconeogenesis is not simply the reversal of glycolysis.** Seven of the 10 enzymatic reactions of gluconeogenesis are the reverse of glycolytic reactions. However, three reactions of glycolysis are essentially irreversible *in vivo* and cannot be used in gluconeogenesis. These three steps are bypassed by a separate set of enzymes [9]:
+
+1. **Bypass 1 — Pyruvate → Phosphoenolpyruvate (PEP):** Requires two enzymes: **pyruvate carboxylase** (in mitochondria, converts pyruvate to oxaloacetate; requires biotin, ATP) and **PEP carboxykinase** (converts oxaloacetate to PEP; requires GTP). The overall equation is: Pyruvate + ATP + GTP + HCO₃⁻ → PEP + ADP + GDP + Pᵢ + CO₂
+2. **Bypass 2 — Fructose 1,6-bisphosphate → Fructose 6-phosphate:** Catalyzed by **fructose 1,6-bisphosphatase (FBPase-1)**, an Mg²⁺-dependent enzyme that promotes the essentially irreversible hydrolysis of the C-1 phosphate (ΔG'° = −16.3 kJ/mol).
+3. **Bypass 3 — Glucose 6-phosphate → Glucose:** Catalyzed by **glucose 6-phosphatase**, found on the lumenal side of the endoplasmic reticulum of hepatocytes, renal cells, and epithelial cells of the small intestine (ΔG'° = −13.8 kJ/mol).
+
+**Gluconeogenesis is energetically expensive but essential.** The sum of the biosynthetic reactions leading from pyruvate to free blood glucose is:
+
+> 2 Pyruvate + 4ATP + 2GTP + 2NADH + 2H⁺ + 4H₂O → Glucose + 4ADP + 2GDP + 6Pᵢ + 2NAD⁺
+
+For each molecule of glucose formed from pyruvate, six high-energy phosphate groups are required (four from ATP and two from GTP). In addition, two molecules of NADH are required for the reduction of two molecules of 1,3-bisphosphoglycerate. Thus, gluconeogenesis is not simply the reverse of glycolysis (which requires only two molecules of ATP) [9].
+
+**Glycolysis and gluconeogenesis are reciprocally regulated** to prevent wasteful operation of both pathways at the same time.
+
+### 2.15 Pentose Phosphate Pathway of Glucose Oxidation 
+
+In most animal tissues, the major catabolic fate of glucose 6-phosphate is glycolytic breakdown to pyruvate, much of which is then oxidized via the citric acid cycle, ultimately leading to the formation of ATP. Glucose 6-phosphate does have other catabolic fates, however, which lead to specialized products needed by the cell [9].
+
+Of particular importance in some tissues is the oxidation of glucose 6-phosphate to pentose phosphates by the **pentose phosphate pathway** (also called the **phosphogluconate pathway** or the **hexose monophosphate pathway**).
+
+The pathway has two major functions:
+- **NADPH production:** In this oxidative pathway, NADP⁺ is the electron acceptor, yielding NADPH. Tissues that carry out extensive fatty acid synthesis (liver, adipose, lactating mammary gland) or very active synthesis of cholesterol and steroid hormones (liver, adrenal glands, gonads) require the NADPH provided by this pathway. Erythrocytes and the cells of the lens and cornea, directly exposed to oxygen and the damaging free radicals generated by oxygen, also require the NADPH to maintain a reducing atmosphere (high ratio of NADPH to NADP⁺) and a high ratio of reduced to oxidized glutathione.
+- **Ribose 5-phosphate production:** Rapidly dividing cells, such as those of bone marrow, skin, and intestinal mucosa, and those of tumors, use the pentose ribose 5-phosphate to make RNA, DNA, and such coenzymes as ATP, NADH, FADH₂, and coenzyme A.
+
+#### Oxidative Phase
+
+- Glucose 6-phosphate is oxidized by **glucose 6-phosphate dehydrogenase (G6PD)**, reducing NADP⁺ to NADPH and forming 6-phosphoglucono-δ-lactone.
+- The lactone is hydrolyzed by a specific lactonase, then 6-phosphogluconate undergoes oxidation and decarboxylation by **6-phosphogluconate dehydrogenase**, generating a second molecule of NADPH and producing ribulose 5-phosphate.
+- Phosphopentose isomerase then converts ribulose 5-phosphate to its aldose isomer, **ribose 5-phosphate**.
+- The overall equation of the oxidative phase:
+
+> Glucose 6-phosphate + 2NADP⁺ + H₂O → ribose 5-phosphate + CO₂ + 2NADPH + 2H⁺
+
+#### Nonoxidative Phase
+
+- In tissues that require primarily NADPH, the pentose phosphates produced in the oxidative phase are recycled into glucose 6-phosphate.
+- Ribulose 5-phosphate is first epimerized to xylulose 5-phosphate.
+- Then, in a series of carbon skeleton rearrangements, six five-carbon sugar phosphates are converted to five six-carbon sugar phosphates, completing the cycle and allowing continued oxidation of glucose 6-phosphate with production of NADPH.
+- Two enzymes unique to the pentose phosphate pathway act in these interconversions: **transketolase** (which transfers a two-carbon fragment from a ketose donor to an aldose acceptor; requires TPP as cofactor) and **transaldolase** (which transfers a three-carbon fragment).
+
+**Partitioning of glucose 6-phosphate:** Whether glucose 6-phosphate enters glycolysis or the pentose phosphate pathway depends on the current needs of the cell and on the concentration of NADP⁺ in the cytosol. When a cell is rapidly converting NADPH to NADP⁺ in biosynthetic reductions, the level of NADP⁺ rises, allosterically stimulating G6PD and thereby increasing the flux of glucose 6-phosphate through the pentose phosphate pathway. When the demand for NADPH slows, the pentose phosphate pathway slows, and glucose 6-phosphate is instead used to fuel glycolysis [9].
+
+### 2.16 SUMMARY Pentose Phosphate Pathway 
+
+Key points from the Lehninger summary [9]:
+- The *oxidative* pentose phosphate pathway brings about oxidation and decarboxylation at C-1 of glucose 6-phosphate, reducing NADP⁺ to NADPH and producing pentose phosphates.
+- NADPH provides reducing power for biosynthetic reactions, and ribose 5-phosphate is a precursor for nucleotide and nucleic acid synthesis. Rapidly growing tissues and tissues carrying out active biosynthesis of fatty acids, cholesterol, or steroid hormones send more glucose 6-phosphate through the pentose phosphate pathway than do tissues with less demand for pentose phosphates and reducing power.
+- The first phase consists of two oxidations that convert glucose 6-phosphate to ribulose 5-phosphate and reduce NADP⁺ to NADPH. The second phase comprises nonoxidative steps that convert pentose phosphates to glucose 6-phosphate, which begins the cycle again.
+- In the second phase, transketolase (with TPP as cofactor) and transaldolase catalyze the interconversion of three-, four-, five-, six-, and seven-carbon sugars, with the reversible conversion of six pentose phosphates to five hexose phosphates.
+- Entry of glucose 6-phosphate either into glycolysis or into the pentose phosphate pathway is largely determined by the relative concentrations of NADP⁺ and NADPH.
 
 ---
 
-## Worked Example 1: Male Student, 24 years, moderately active
+## 3 Substrate Utilization During Exercise
 
-### Step 1 – Anthropometric Data
+### 3.1 Carbohydrate Metabolism
 
-| Variable | Value |
-|---|---|
-| Sex | male |
-| Age | 24 years |
-| Height | 181 cm |
-| Body mass | 78 kg |
-| **BMI** | 78 / (1.81)² = **23.8 kg/m²** |
-| Resting HR (seated) | 68 bpm |
+Carbohydrates serve as the primary fuel source during moderate to high-intensity exercise. Muscle glycogen and blood glucose are the main carbohydrate substrates utilized during physical activity [11].
 
-### Step 2 – Physical Activity Index
+The rate of muscle glycogen depletion is directly related to exercise intensity. At higher intensities (>70% VO₂max), glycogen utilization increases exponentially. Glycogen depletion is associated with fatigue and reduced exercise capacity, a phenomenon known as "hitting the wall" in endurance events [12].
 
-| Question | Selected answer | Score |
-|---|---|---|
-| Frequency | 2–3 times/week | 2 |
-| Intensity | Sweating and heavy breathing | 5 |
-| Duration | 30–60 min | 1.5 |
+Glucose uptake by muscle is enhanced during exercise through both insulin-dependent and insulin-independent mechanisms. Exercise stimulates GLUT4 translocation to the muscle membrane via AMPK and calcium signaling pathways, independent of insulin action [10].
 
-### Step 3 – Calculate PA-Index
+### 3.2 Fat Metabolism
 
-**PA-Index = 2 + 5 + 1.5 = 8.5**
+Fat oxidation provides energy during low to moderate intensity exercise and becomes increasingly important as exercise duration extends. Fatty acids must be transported into mitochondria via the carnitine shuttle system before undergoing beta-oxidation [13].
 
-### Step 4–5 – Calculate estimated VO₂max (male formula)
+The maximal rate of fat oxidation (FATmax) typically occurs at approximately 45–65% VO₂max, varying with training status. Endurance training enhances fat oxidation capacity by increasing mitochondrial density, oxidative enzyme activity, and capillary density in skeletal muscle [14].
 
-```
-VO₂max = 92.05 − 0.327 × 24 − 0.933 × 23.8 − 0.167 × 68 + 0.257 × 8.5
-       = 92.05 − 7.848 − 22.214 − 11.356 + 2.184
-       = 52.82 ml·kg⁻¹·min⁻¹  (SEE = ±5.8 ml·kg⁻¹·min⁻¹)
-```
+### 3.3 Protein Metabolism
 
-### Conversion to MET
+While proteins contribute minimally to energy production during most exercise (typically 5–15% of total energy), their role becomes more significant during prolonged exercise when glycogen stores are depleted. Amino acids, particularly branched-chain amino acids (BCAAs), can be oxidized for energy or used for gluconeogenesis [15].
 
-```
-VO₂max in MET = 52.82 / 3.5 = 15.1 MET  (SEE = ±1.7 MET)
-```
+### 3.4 Substrate Utilization at Different Exercise Intensities
 
-**Interpretation:** A predicted VO₂max of ~53 ml·kg⁻¹·min⁻¹ places this 24-year-old male student in a **good to excellent fitness category** for his age group.
+| Intensity | Primary Fuel | CHO:Fat Ratio |
+|-----------|-------------|---------------|
+| Low (&lt;40% VO₂max) | Fat (primarily FFA) | 30:70 |
+| Moderate (40–65% VO₂max) | Mixed (Fat + CHO) | 50:50 |
+| High (>75% VO₂max) | Carbohydrate (glycogen) | 85:15 |
+
+[**Cellular Respiration - Slidedeck**](slides/slide-1/)
 
 ---
 
-## Worked Example 2: Female Student, 22 years, highly active
+## 4 Hormonal Regulation of Exercise Metabolism
 
-### Step 1 – Anthropometric Data
+Exercise triggers profound hormonal responses that coordinate metabolic adjustments to meet energy demands and maintain homeostasis [16].
 
-| Variable | Value |
-|---|---|
-| Sex | female |
-| Age | 22 years |
-| Height | 168 cm |
-| Body mass | 62 kg |
-| **BMI** | 62 / (1.68)² = **22.0 kg/m²** |
-| Resting HR (seated) | 58 bpm |
+### 4.1 Catecholamines (Epinephrine and Norepinephrine)
 
-### Step 2 – Physical Activity Index
+Catecholamine secretion increases proportionally with exercise intensity. These hormones promote glycogenolysis and lipolysis through β-adrenergic receptor stimulation, increasing both glucose and free fatty acid availability. They also enhance cardiac output and redirect blood flow to working muscles [17].
 
-| Question | Selected answer | Score |
-|---|---|---|
-| Frequency | Almost every day | 3 |
-| Intensity | Push to exhaustion | 10 |
-| Duration | > 60 min | 1.5 |
+### 4.2 Insulin and Glucagon
 
-### Step 3 – Calculate PA-Index
+During exercise, insulin levels decrease while glucagon rises, promoting hepatic glucose production to maintain blood glucose homeostasis. This reciprocal regulation ensures adequate glucose delivery to working muscles and the central nervous system [18].
 
-**PA-Index = 3 + 10 + 1.5 = 14.5**
+### 4.3 Cortisol and Growth Hormone
 
-### Step 4–5 – Calculate estimated VO₂max (female formula)
-
-```
-VO₂max = 70.77 − 0.244 × 22 − 0.749 × 22.0 − 0.107 × 58 + 0.213 × 14.5
-       = 70.77 − 5.368 − 16.453 − 6.206 + 3.088
-       = 45.83 ml·kg⁻¹·min⁻¹  (SEE = ±5.1 ml·kg⁻¹·min⁻¹)
-```
-
-### Conversion to MET
-
-```
-VO₂max in MET = 45.83 / 3.5 = 13.1 MET  (SEE = ±1.5 MET)
-```
-
-**Interpretation:** A predicted VO₂max of ~46 ml·kg⁻¹·min⁻¹ places this 22-year-old female student in an **excellent fitness category** for her age group, consistent with her high training volume.
+Both hormones increase during prolonged exercise. Cortisol stimulates gluconeogenesis and protein catabolism, while growth hormone promotes lipolysis and has anabolic effects during recovery. Their elevation becomes particularly significant during exercise exceeding 60 minutes [19].
 
 ---
 
-## Worked Example 3: Older inactive male, 55 years (for comparison)
+## 5 Lactate Metabolism and the Lactate Threshold
 
-### Step 1 – Anthropometric Data
+### 5.1 Introduction: The Lactate Paradigm Shift
 
-| Variable | Value |
-|---|---|
-| Sex | male |
-| Age | 55 years |
-| Height | 175 cm |
-| Body mass | 92 kg |
-| **BMI** | 92 / (1.75)² = **30.0 kg/m²** |
-| Resting HR (seated) | 78 bpm |
+Since its discovery in 1780, lactate has been wrongly characterized as a harmful byproduct produced only under hypoxic conditions. However, groundbreaking research over the past few decades has completely revolutionized our understanding: lactate is actually a sophisticated signaling molecule, an energy substrate, and a key regulator of cellular metabolism. It is produced and utilized even under completely aerobic conditions [20].
 
-### Step 2 – Physical Activity Index
+Understanding **lactate homeostasis** — how the body produces, clears, and maintains proper lactate levels — is crucial for comprehending everything from exercise physiology to cancer metabolism to inflammatory diseases.
 
-| Question | Selected answer | Score |
-|---|---|---|
-| Frequency | Less than once/week | 0 |
-| Intensity | No sweating | 0 |
-| Duration | < 15 min | 1 |
+### 5.2 Lactate Production Pathways
 
-### Step 3 – Calculate PA-Index
+The production of lactate increases dramatically when the demand for oxygen and ATP exceeds cellular supply. This occurs during strenuous exercise, infection and inflammation, hypoxic conditions, and cancer cell metabolism.
 
-**PA-Index = 0 + 0 + 1.0 = 1.0**
+#### Primary Pathway: Glycolysis
 
-### Step 4–5 – Calculate estimated VO₂max (male formula)
+The **primary pathway** for lactate production is glycolysis. Through a series of ten enzymatic reactions, glucose is broken down into two molecules of pyruvate. The fate of pyruvate depends on cellular conditions:
 
-```
-VO₂max = 92.05 − 0.327 × 55 − 0.933 × 30.0 − 0.167 × 78 + 0.257 × 1.0
-       = 92.05 − 17.985 − 28.028 − 13.026 + 0.257
-       = 33.27 ml·kg⁻¹·min⁻¹  (SEE = ±5.8 ml·kg⁻¹·min⁻¹)
-```
+- **Under normal aerobic conditions:** Pyruvate enters the mitochondria, is converted to acetyl-CoA, and enters the TCA cycle for complete oxidation.
+- **Under high energy demand or hypoxia:** The TCA cycle is inhibited or insufficient. Pyruvate does not enter mitochondria but is instead directly reduced to lactate by the enzyme **lactate dehydrogenase (LDH)**.
 
-### Conversion to MET
+The glycolysis pathway is activated to compensate for insufficient ATP production when hypoxia inhibits the TCA cycle. This represents the body's elegant solution to an energy crisis [9].
 
-```
-VO₂max in MET = 33.27 / 3.5 = 9.5 MET  (SEE = ±1.7 MET)
-```
+#### The Critical Role of NAD⁺ Regeneration
 
-**Interpretation:** A predicted VO₂max of ~33 ml·kg⁻¹·min⁻¹ reflects the combined effects of higher age, elevated BMI (obesity grade I), higher resting HR, and minimal physical activity. This places the individual in a **below average** fitness category.
+A crucial and often overlooked point is that **lactate production is not just about making a metabolite — it is about regenerating NAD⁺**. Glycolysis requires NAD⁺ to continue functioning. When pyruvate is converted to lactate, NADH is oxidized back to NAD⁺. This regeneration allows glycolysis to continue producing ATP even when the mitochondria cannot keep up. Without this conversion, glycolysis would halt due to NAD⁺ depletion.
+
+#### Secondary Pathway: Glutamine Catabolism
+
+A second, less well-known but increasingly recognized pathway is **glutamine catabolism**, which is particularly important in cancer metabolism:
+
+1. **Glutamine uptake:** Glutamine crosses the cell membrane through specific transporters (ASCT2, SN2).
+2. **First conversion:** Glutamine is converted to **glutamate** by glutaminase (GLS/GLS2), a step often upregulated by the oncogene c-Myc in cancer cells.
+3. **Second conversion:** Glutamate is converted to **α-ketoglutarate (α-KG)** by glutamate dehydrogenase (GLUD) or various transaminases (GOT, GPT, PSAT).
+4. **Entry into TCA cycle:** α-KG enters the TCA cycle.
+5. **The twist:** Glutamine-derived carbon is converted to oxaloacetate, then to malate. Malate exits the mitochondria, and in the cytoplasm, malic enzyme (ME1) converts malate to NADPH and pyruvate.
+6. **Final step:** This pyruvate becomes a secondary source of lactate.
+
+This pathway serves dual purposes: **NADPH production** (essential for fatty acid synthesis and antioxidant defense) and **lactate production** (providing a secondary carbon source, particularly important in cancer cells) [20].
+
+### 5.3 Lactate Clearance Mechanisms
+
+The accumulation of lactate in the human body is more dangerous than the accumulation of other molecular fuels, because rising serum lactate can lead to **lactic acidosis** — a potentially life-threatening condition. Therefore, lactate must be rapidly metabolized and removed from tissues and circulation.
+
+#### Irreversible Clearance: The PDH Pathway
+
+The primary mechanism for irreversible lactate removal involves **pyruvate dehydrogenase (PDH)**:
+
+1. Lactate is oxidized back to pyruvate.
+2. PDH catalyzes the conversion of pyruvate to acetyl-CoA.
+3. Acetyl-CoA enters the TCA cycle.
+4. In the TCA cycle, acetyl-CoA is completely oxidized.
+
+This is a **one-way street** for lactate in mammals: once acetyl-CoA is formed, it cannot be converted back into a three-carbon unit. The systemic balance between glycolytic flux and PDH activity is a key determinant of blood lactate levels.
+
+PDH activity is tightly regulated by: (1) phosphorylation status of the E1α subunit (phosphorylated = inactive, dephosphorylated = active), and (2) NADH levels (high NADH inhibits PDH, creating a feedback loop). When mitochondrial activity or respiration is impaired, PDH activity decreases, leading to elevated circulating lactate — which is why lactate serves as a valuable clinical marker [20].
+
+#### Reversible Clearance: Gluconeogenesis and the Cori Cycle
+
+The second clearance mechanism is **gluconeogenesis** — essentially, running glycolysis in reverse. This occurs primarily in liver and skeletal muscle cells: lactate is converted back to pyruvate, and through a series of enzymatic steps, pyruvate is converted to glucose, which is released into the blood. This pathway maintains blood glucose during fasting or prolonged exercise, recycles lactate back into usable glucose, and drives additional glucose consumption during energy expenditure.
+
+This process forms the basis of the famous **Cori Cycle**: muscle produces lactate during exercise → liver converts it to glucose via gluconeogenesis → glucose returns to muscle [21].
+
+### 5.4 Lactate Transport and Regulation
+
+#### Monocarboxylate Transporters (MCTs)
+
+Lactate transport across cell membranes requires specific **Monocarboxylate Transporters (MCTs)**, part of the solute carrier family 16 (SLC16). There are 14 identified MCTs, but MCT1–4 are the most physiologically important. These transporters catalyze **proton-coupled transport** — co-transporting lactate with protons (H⁺) in a 1:1 ratio (symport/cotransport), and enable **bidirectional** transport of monocarboxylic acids.
+
+**MCT1 (The Homeostatic Transporter):** MCT1 is the most widely distributed subtype, with high affinity for lactate and ubiquitous expression across many cell types. It functions under physiological conditions for basal lactate maintenance, transferring lactate according to the transmembrane concentration gradient.
+
+**MCT4 (The High-Capacity Transporter):** MCT4 has low affinity but high capacity for transport. It is expressed in cells with high intracellular lactate concentrations, including tumor cells, highly glycolytic tissues, and white (Type II) muscle fibers. High expression of MCT1, MCT2, and MCT4 is closely associated with cancer development and progression.
+
+The MCT transport mechanism operates in five steps: (1) free protons bind to the MCT on one side of the membrane; (2) lactate binds to the transporter; (3) the transporter undergoes a conformational change flipping the binding site to the opposite side; (4) protons are released first, followed by lactate; (5) the deprotonated MCT undergoes another conformational change and returns to its initial structure. The direction of transport depends entirely on the concentration gradients of both lactate and protons across the membrane [20].
+
+#### The Lactate Shuttle
+
+Under physiological conditions, synergistic activity of MCT1–4 promotes **lactate shuttling** between glycolytic cells (lactate producers) and oxidative cells (lactate consumers). This is fundamental to lactate homeostasis within different tissues:
+
+- **In muscle:** Type II (glycolytic) fibers → Type I (oxidative) fibers
+- **In tumors:** Hypoxic cancer cells → Normoxic cancer cells
+- **In brain:** Astrocytes → Neurons
+
+#### GPR81: The Lactate Receptor
+
+Lactate also acts as a **signaling molecule** through a specific receptor: **G protein-coupled receptor 81 (GPR81)**. GPR81 is expressed in adipose tissue (highest), kidney, skeletal muscle, central nervous system, heart, and other organs. It mediates lactate-induced energy metabolism, lipodieresis (fat breakdown regulation), neuronal protection, and inflammatory regulation. This receptor allows lactate to function as a true signaling molecule, not just a metabolite [20].
+
+### 5.5 Cellular Lactate Metabolism and Lactylation
+
+#### Lactate Entry and Production
+
+External lactate enters cells via MCT transporters (bidirectional and concentration-dependent). Intracellularly, lactate is produced through two pathways: (A) **Glycolysis:** Glucose enters the cytoplasm, is broken down through the glycolytic cascade, and LDH converts pyruvate to lactate; (B) **Glutamine pathway:** Glutamine is converted to glutamate, enters the TCA cycle via α-KG, and eventually produces lactate through the malic enzyme (ME1) route.
+
+#### Mitochondrial Metabolism and Gluconeogenesis
+
+Within the mitochondria, lactate can be converted to pyruvate, which enters via PDH to form acetyl-CoA and feed the TCA cycle (through citrate, α-KG, succinyl-CoA, and oxaloacetate). Key metabolic branch points connect to cholesterol synthesis and lipid synthesis, demonstrating that lactate metabolism is not isolated but connects to multiple metabolic pathways. The gluconeogenesis pathway represents the reversible clearance route: lactate → pyruvate → glucose, particularly important in the liver.
+
+#### Revolutionary Discovery: Protein Lactylation
+
+One of the most revolutionary recent discoveries is that lactate serves as a substrate for **protein lactylation** — a post-translational modification with profound epigenetic consequences:
+
+1. **Lactyl-CoA formation:** Lactate is converted to lactyl-CoA, which serves as the substrate for protein modification.
+2. **Histone lactylation:** Lactyl-CoA modifies histone lysine residues (termed **Kla**, lysine lactylation). The enzyme **p300** acts as a "writer" catalyzing lactylation, while **HDACs** (histone deacetylases) act as "erasers" removing lactyl modifications.
+3. **Non-histone lactylation:** Many cellular proteins beyond histones can also be lactylated, affecting their function.
+4. **Gene expression regulation:** Lactylated histones directly control the expression of genes involved in inflammation, tumor development, immune responses, and metabolism (e.g., *Arg1*, *YTHDF2*).
+
+This means that lactate is not merely a metabolite — it is an **epigenetic regulator** that directly controls which genes are turned on or off [20].
+
+### 5.6 Lactate Homeostasis: The Complete Picture
+
+Lactate homeostasis can be understood as a balance equation:
+
+> [Lactate]_steady-state = Production − Clearance
+
+Where:
+- Production = Glycolysis + Glutamine metabolism + Import (via MCTs)
+- Clearance = Oxidation (via PDH) + Gluconeogenesis + Export (via MCTs) + Lactylation
+
+The key determinants are: glycolytic flux (rate of glucose breakdown), PDH activity (rate of conversion to acetyl-CoA), MCT expression and activity (transport capacity), oxygen availability (determines pathway choice), and metabolic demand (ATP requirements).
+
+### 5.7 The Lactate Threshold in Exercise Physiology
+
+Lactate has been traditionally viewed as a metabolic waste product associated with fatigue. However, contemporary understanding recognizes lactate as an important metabolic intermediate and signaling molecule [22].
+
+Lactate is produced when pyruvate production exceeds mitochondrial oxidative capacity. Rather than simply accumulating, lactate is continuously produced and cleared even at rest. During exercise, lactate can be oxidized in the same muscle fiber, transported to other muscle fibers with greater oxidative capacity, or converted to glucose in the liver via the Cori cycle [21].
+
+The lactate threshold represents the exercise intensity at which blood lactate begins to accumulate exponentially. This typically occurs at 50–60% VO₂max in untrained individuals and 70–80% VO₂max in endurance athletes. The lactate threshold is a strong predictor of endurance performance and is highly trainable [23].
+
+### 5.8 Summary: The Lactate Paradigm Shift
+
+The understanding of lactate has fundamentally changed:
+
+**Old view (Pre-1980s):** Lactate was considered a waste product, only produced during anaerobic metabolism, and believed to cause muscle fatigue.
+
+**Current view:** Lactate is recognized as an essential metabolite and signaling molecule, produced both aerobically and anaerobically, serving as a primary fuel for many tissues, regulating gene expression through lactylation, and coordinating whole-body metabolism. Lactate functions as: (1) an energy substrate (often preferred over glucose), (2) a redox buffer (NAD⁺/NADH regulation), (3) a signaling molecule (GPR81 activation), and (4) an epigenetic regulator (through lactylation) [20, 22].
 
 ---
 
-## Summary Comparison Table
+## 6 Muscle Fiber Types and Metabolic Characteristics
 
-| Parameter | Example 1 | Example 2 | Example 3 |
-|---|---|---|---|
-| Sex | male | female | male |
-| Age (years) | 24 | 22 | 55 |
-| BMI (kg/m²) | 23.8 | 22.0 | 30.0 |
-| Resting HR (bpm) | 68 | 58 | 78 |
-| PA-Index | 8.5 | 14.5 | 1.0 |
-| **pred. VO₂max (ml·kg⁻¹·min⁻¹)** | **52.8** | **45.8** | **33.3** |
-| **pred. VO₂max (MET)** | **15.1** | **13.1** | **9.5** |
+Skeletal muscle contains heterogeneous fiber types with distinct metabolic and contractile properties [24].
+
+### 6.1 Type I Fibers (Slow-Twitch, Oxidative)
+
+Type I fibers are characterized by high mitochondrial density and oxidative enzyme content, rich capillary supply and myoglobin content (red appearance), high resistance to fatigue, lower force production and contraction speed, and primary reliance on fat oxidation.
+
+### 6.2 Type II Fibers (Fast-Twitch)
+
+Type II fibers are subdivided into Type IIa (fast-twitch oxidative-glycolytic) and Type IIx (fast-twitch glycolytic). Type IIa fibers possess intermediate characteristics with moderate oxidative and glycolytic capacities. Type IIx fibers have the highest glycolytic capacity, lowest oxidative capacity, and greatest force-producing capability but fatigue rapidly [25].
+
+### 6.3 Muscle Fiber Type Characteristics
+
+| Characteristic | Type I | Type IIa | Type IIx |
+|---------------|--------|----------|----------|
+| Contraction Speed | Slow | Fast | Very Fast |
+| Force Production | Low | High | Very High |
+| Mitochondrial Density | High | Moderate | Low |
+| Fatigue Resistance | High | Moderate | Low |
+| Primary Metabolism | Oxidative | Oxid-Glycolytic | Glycolytic |
 
 ---
 
-## Discussion Points for Lecture
+## 7 Biochemical Adaptations to Training
 
-1. **Which variable has the greatest influence?** BMI has the largest regression coefficient (−0.933 for men), followed by resting HR and age. PA-Index has the smallest absolute weight but can range up to 14.5 points.
+### 7.1 Endurance Training Adaptations
 
-2. **Limitations of the model:** R² of ~0.58 means about 42% of variance is unexplained. SEE of 5–6 ml·kg⁻¹·min⁻¹ is clinically relevant. The model cannot replace a maximal exercise test for precise measurement.
+Endurance training induces profound metabolic adaptations that enhance oxidative capacity and substrate utilization [26].
 
-3. **Practical application:** Useful for epidemiological studies and risk stratification in large populations where exercise testing is not feasible (e.g., primary care screening).
+Key adaptations include:
+- Mitochondrial biogenesis: Increased mitochondrial volume and density through PGC-1α activation
+- Enhanced oxidative enzyme activity: Greater capacity for fat oxidation and citric acid cycle flux
+- Increased capillary density: Improved oxygen and substrate delivery to muscle fibers
+- Greater myoglobin content: Enhanced intramuscular oxygen storage and transport
+- Glycogen sparing: Reduced reliance on glycogen at submaximal intensities
+- Improved lactate clearance: Enhanced lactate shuttle efficiency
 
-4. **Comparison with measured values:** Students can compare their predicted VO₂max from the worksheet with directly measured values from ergospirometry (if available) and discuss the prediction error.
+### 7.2 Resistance Training Adaptations
 
-5. **Sensitivity analysis:** What happens if we change only one variable? For example, reducing the resting HR from 78 to 58 in Example 3 would increase predicted VO₂max by 0.167 × 20 = +3.3 ml·kg⁻¹·min⁻¹.
+Resistance training primarily stimulates muscle protein synthesis and neural adaptations [27].
+
+Biochemical changes include:
+- Increased muscle protein synthesis via mTOR pathway activation
+- Enhanced PCr stores and creatine kinase activity
+- Greater glycolytic enzyme content and capacity
+- Muscle fiber hypertrophy, particularly Type II fibers
+- Satellite cell activation and incorporation
+
+### 7.3 Molecular Signaling Pathways
+
+Exercise activates multiple signaling pathways that mediate training adaptations. The AMP-activated protein kinase (AMPK) pathway is activated by cellular energy stress and stimulates processes that restore ATP availability, including glucose uptake, fat oxidation, and mitochondrial biogenesis [28].
+
+The mechanistic target of rapamycin (mTOR) pathway integrates signals from nutrients, growth factors, and mechanical tension to regulate protein synthesis. Resistance exercise particularly activates mTOR through mechanical loading, while endurance exercise may suppress mTOR activity during the acute phase [29].
+
+Peroxisome proliferator-activated receptor gamma coactivator 1-alpha (PGC-1α) serves as a master regulator of mitochondrial biogenesis and is upregulated by endurance exercise through multiple mechanisms including AMPK activation, calcium signaling, and p38 MAPK pathway [30].
+
+---
+
+## 8 Reactive Oxygen Species and Oxidative Stress
+
+Exercise increases oxygen consumption up to 100-fold in working muscles, leading to enhanced reactive oxygen species (ROS) production. While excessive ROS can damage cellular components, moderate ROS production serves important signaling functions [31].
+
+ROS act as secondary messengers in exercise-induced adaptations, including mitochondrial biogenesis, antioxidant enzyme expression, and glucose uptake. The concept of hormesis suggests that low to moderate oxidative stress from exercise stimulates adaptive responses that enhance cellular defense mechanisms [32].
+
+Chronic exercise training enhances endogenous antioxidant systems, including superoxide dismutase (SOD), catalase, and glutathione peroxidase. This adaptation improves the capacity to manage oxidative stress during subsequent exercise bouts [33].
+
+---
+
+## 9 Recovery Metabolism and Nutritional Biochemistry
+
+### 9.1 Excess Post-Exercise Oxygen Consumption (EPOC)
+
+Following exercise, oxygen consumption remains elevated above resting levels to restore homeostasis. This phenomenon, termed EPOC, involves PCr resynthesis, lactate clearance, restoration of oxygen stores, elevated body temperature, increased cardiac and respiratory work, and elevated catecholamine effects [34].
+
+The magnitude and duration of EPOC depend on exercise intensity and duration. High-intensity interval training produces greater EPOC compared to steady-state exercise of similar total work, contributing to greater total energy expenditure [35].
+
+### 9.2 Glycogen Resynthesis
+
+Muscle glycogen resynthesis occurs in two phases. The rapid phase (first 30–60 minutes post-exercise) is insulin-independent and driven by exercise-induced GLUT4 translocation and enhanced glycogen synthase activity. The slower phase requires insulin and carbohydrate intake for optimal rates [36].
+
+Maximal glycogen resynthesis rates occur with carbohydrate intake of 1.0–1.2 g/kg body weight per hour. Co-ingestion of protein (0.2–0.4 g/kg) may enhance glycogen storage when carbohydrate intake is suboptimal [37].
+
+### 9.3 Muscle Protein Synthesis and Recovery
+
+Exercise, particularly resistance exercise, stimulates muscle protein synthesis for 24–48 hours post-exercise. The magnitude and duration of this response depend on training status, exercise type, and nutritional intake [38].
+
+Protein consumption after exercise enhances muscle protein synthesis and reduces protein breakdown. Leucine, an essential amino acid, plays a particularly important role in activating mTOR signaling. Optimal protein doses range from 20–40 g depending on body size and exercise stimulus [39].
+
+---
+
+## 10 Clinical Applications and Exercise as Medicine
+
+Understanding exercise biochemistry has important clinical applications for disease prevention and management [40].
+
+### 10.1 Metabolic Disease
+
+Exercise improves insulin sensitivity through multiple mechanisms including increased GLUT4 expression, enhanced mitochondrial function, and reduced intramuscular lipid accumulation. These adaptations are particularly beneficial for preventing and managing type 2 diabetes [41].
+
+Regular physical activity favorably modifies lipid profiles by increasing HDL cholesterol, reducing triglycerides, and improving LDL particle size distribution. These changes occur through enhanced lipoprotein lipase activity and altered hepatic lipid metabolism [42].
+
+### 10.2 Cardiovascular Health
+
+Exercise training induces favorable adaptations in endothelial function, arterial compliance, and cardiac efficiency. Enhanced nitric oxide bioavailability improves vasodilation and reduces oxidative stress in the vascular wall [43].
+
+Cardiac adaptations to endurance training include increased stroke volume, improved diastolic filling, and enhanced contractility. These changes reduce cardiac workload at any given absolute workload, improving efficiency and functional capacity [44].
+
+### 10.3 Aging and Sarcopenia
+
+Exercise, particularly resistance training, counteracts age-related muscle loss (sarcopenia) by stimulating muscle protein synthesis and satellite cell activation. Combined with adequate protein nutrition, exercise maintains muscle mass and function in older adults [45].
+
+Exercise also preserves mitochondrial function with aging, reducing the accumulation of damaged mitochondria and maintaining cellular energetics. This contributes to improved physical function and reduced frailty in older populations [46].
+
+---
+
+## 11 Key Terms Related to Physical Activity and Exercise Prescription
+
+**Physical activity**: any bodily movement produced by the contraction of skeletal muscles that increases energy expenditure above the basal level. This includes Incidental Physical Activity (or activities of daily living, such as cooking and cleaning) and Intentional Physical Activity (e.g., non-structured physical activity, such as walking the dog).
+
+**Exercise:** a subcategory of physical activity that is planned and structured, in which muscle contractions are performed with the explicit intent of ultimately improving or maintaining one or more components of physical fitness (e.g., aerobic capacity, muscle strength, power, and endurance, body composition, balance, coordination, or flexibility) and/or achieving a specific health benefit.
+
+**Sport:** another subcategory of physical activity; it involves gross motor movement that is rule governed, structured, and competitive. Cardiorespiratory fitness reflects the integrated ability of the circulatory and respiratory systems to supply oxygen to skeletal muscle mitochondria for the energy production needed during physical activity. Cardiorespiratory fitness is often expressed as maximal oxygen consumption (VO₂max) or is estimated from the maximum work rate achieved on an ergometer or from non-exercise algorithms. Cardiorespiratory exercise: exercise that requires the circulatory and respiratory systems to work together to support the metabolism of skeletal muscles and other organs to enable sustained exercise. It is preferred over terms such as aerobic exercise (which, at best, only describes the predominant energy system used) or endurance exercise (which describes only one of the potential types of performance improvements with this type of exercise). It includes activities in which the body's large muscles move in a rhythmic manner for a sustained period of time, such as walking, running, swimming and cycling.
+
+**Metabolic threshold:** a term used to describe an exercise intensity that results in an apparent change in metabolism (usually reflected by changes in oxygen uptake, carbon dioxide production, ventilation, or metabolites in the muscle and blood). The first detectable change in metabolism is often termed the first metabolic threshold, whereas the second detectable change in metabolism is often termed the second metabolic threshold.
+
+**Body Composition:** the relative proportions of the total body mass divided into the two components of fat mass and fat-free mass. Muscle strength: the ability of muscle to exert force during a specified task. Muscle power: the ability of muscle to exert force at a given velocity of movement (i.e., the product of the muscle force vector and action velocity of the muscle) or the rate of doing work (work done divided by time). Muscle endurance: the ability of muscle to continue to exert force. Muscle fitness: a global term that includes muscle strength, muscle power, and local muscle endurance.
+
+**Resistance exercise:** a form of exercise that requires skeletal muscles to exert force to push or pull against resistance with sufficient effort such that the number of repetitions or duration of contractions is limited due to neuromuscular fatigue. The resistance may include body weight, elastic bands, free weights, and weight or other mechanical machines, among others.
+
+**Flexibility:** the ability to move a joint through its maximal unrestricted range of motion without pain. Perception of effort: also known as perceived exertion or sense of effort, has been proposed to integrate feelings of effort, strain, and/or fatigue from the peripheral muscles and joints, the cardiopulmonary system, and the central nervous system to provide a cognitive feeling of effort associated with physical activity.
+
+---
+
+## 12 Conclusion
+
+Exercise biochemistry reveals the remarkable molecular and metabolic adaptations that enable human performance and health. From immediate energy provision through the ATP-PCr system to long-term adaptations in mitochondrial density and protein synthesis, exercise triggers coordinated biochemical responses across multiple systems.
+
+Understanding these principles allows for evidence-based optimization of training programs, nutritional strategies, and therapeutic interventions. The continued integration of molecular biology, biochemistry, and exercise physiology promises to further enhance our understanding of how physical activity promotes human health and performance.
+
+As research continues to uncover the intricate signaling pathways and metabolic networks activated by exercise, we gain deeper appreciation for exercise as a powerful stimulus for positive adaptation and a cornerstone of preventive medicine.
+
+---
+
+## References
+- [1] Brooks GA, Fahey TD, Baldwin KM. *Exercise Physiology: Human Bioenergetics and Its Applications* (4th ed.). McGraw-Hill; 2005.
+- [2] Hawley JA, Hargreaves M, Joyner MJ, Zierath JR. Integrative biology of exercise. *Cell*. 2014;159(4):738–749.
+- [3] Greenhaff PL. The creatine-phosphocreatine system: there's more than one song in its repertoire. *J Physiol*. 2001;537(3):657.
+- [4] Harris RC, Edwards RH, Hultman E, Nordesjö LO, Nylind B, Sahlin K. The time course of phosphorylcreatine resynthesis during recovery of the quadriceps muscle in man. *Pflügers Arch*. 1976;367(2):137–142.
+- [5] Robergs RA, Ghiasvand F, Parker D. Biochemistry of exercise-induced metabolic acidosis. *Am J Physiol Regul Integr Comp Physiol*. 2004;287(3):R502–R516.
+- [6] Holloszy JO, Coyle EF. Adaptations of skeletal muscle to endurance exercise and their metabolic consequences. *J Appl Physiol*. 1984;56(4):831–838.
+- [7] Berg JM, Tymoczko JL, Stryer L. *Biochemistry* (5th ed.). W.H. Freeman and Company; 2002.
+- [8] Bishop DJ, Beck B, Biddle SJH, et al. Physical activity and exercise intensity terminology. *J Sci Med Sport*. 2025;28:980–991.
+- [9] Nelson DL, Cox MM. *Lehninger Principles of Biochemistry* (6th ed.). W.H. Freeman and Company; 2013.
+- [10] Richter EA, Hargreaves M. Exercise, GLUT4, and skeletal muscle glucose uptake. *Physiol Rev*. 2013;93(3):993–1017.
+- [11] Coggan AR, Coyle EF. Carbohydrate ingestion during prolonged exercise: effects on metabolism and performance. *Exerc Sport Sci Rev*. 1991;19:1–40.
+- [12] Bergström J, Hermansen L, Hultman E, Saltin B. Diet, muscle glycogen and physical performance. *Acta Physiol Scand*. 1967;71(2):140–150.
+- [13] Jeukendrup AE. Regulation of fat metabolism in skeletal muscle. *Ann N Y Acad Sci*. 2002;967:217–235.
+- [14] Achten J, Gleeson M, Jeukendrup AE. Determination of the exercise intensity that elicits maximal fat oxidation. *Med Sci Sports Exerc*. 2002;34(1):92–97.
+- [15] Wagenmakers AJ. Protein and amino acid metabolism in human muscle. *Adv Exp Med Biol*. 1998;441:307–319.
+- [16] Galbo H. *Hormonal and Metabolic Adaptation to Exercise*. Thieme Medical Publishers; 1983.
+- [17] Kjaer M. Epinephrine and some other hormonal responses to exercise in man. *Int J Sports Med*. 1989;10(1):2–15.
+- [18] Wasserman DH. Four grams of glucose. *Am J Physiol Endocrinol Metab*. 2009;296(1):E11–E21.
+- [19] Viru A, Viru M. Cortisol — essential adaptation hormone in exercise. *Int J Sports Med*. 2004;25(6):461–464.
+- [20] Li X, Yang Y, Zhang B, Lin X, Fu X, An Y, Zou Y, Wang JX, Wang Z, Yu T. Lactate metabolism in human health and disease. *Signal Transduct Target Ther*. 2022;7(1):305.
+- [21] Brooks GA. Cell-cell and intracellular lactate shuttles. *J Physiol*. 2009;587(23):5591–5600.
+- [22] Brooks GA. The science and translation of lactate shuttle theory. *Cell Metab*. 2018;27(4):757–785.
+- [23] Faude O, Kindermann W, Meyer T. Lactate threshold concepts: how valid are they? *Sports Med*. 2009;39(6):469–490.
+- [24] Schiaffino S, Reggiani C. Fiber types in mammalian skeletal muscles. *Physiol Rev*. 2011;91(4):1447–1531.
+- [25] Bottinelli R, Reggiani C. Human skeletal muscle fibres: molecular and functional diversity. *Prog Biophys Mol Biol*. 2000;73(2-4):195–262.
+- [26] Holloszy JO. Regulation by exercise of skeletal muscle content of mitochondria and GLUT4. *J Physiol Pharmacol*. 2008;59(Suppl 7):5–18.
+- [27] Phillips SM. A brief review of critical processes in exercise-induced muscular hypertrophy. *Sports Med*. 2014;44(Suppl 1):71–77.
+- [28] Hardie DG. AMP-activated protein kinase: an energy sensor that regulates all aspects of cell function. *Genes Dev*. 2011;25(18):1895–1908.
+- [29] Bodine SC, Stitt TN, Gonzalez M, et al. Akt/mTOR pathway is a crucial regulator of skeletal muscle hypertrophy. *Nat Cell Biol*. 2001;3(11):014–019.
+- [30] Puigserver P, Wu Z, Park CW, Graves R, Wright M, Spiegelman BM. A cold-inducible coactivator of nuclear receptors linked to adaptive thermogenesis. *Cell*. 1998;92(6):829–839.
+- [31] Powers SK, Jackson MJ. Exercise-induced oxidative stress: cellular mechanisms and impact on muscle force production. *Physiol Rev*. 2008;88(4):1243–1276.
+- [32] Ristow M, Zarse K, Oberbach A, et al. Antioxidants prevent health-promoting effects of physical exercise in humans. *Proc Natl Acad Sci USA*. 2009;106(21):8665–8670.
+- [33] Ji LL. Modulation of skeletal muscle antioxidant defense by exercise: role of redox signaling. *Free Radic Biol Med*. 2008;44(2):142–152.
+- [34] Borsheim E, Bahr R. Effect of exercise intensity, duration and mode on post-exercise oxygen consumption. *Sports Med*. 2003;33(14):1037–1060.
+- [35] LaForgia J, Withers RT, Gore CJ. Effects of exercise intensity and duration on the excess post-exercise oxygen consumption. *J Sports Sci*. 2006;24(12):1247–1264.
+- [36] Jentjens R, Jeukendrup AE. Determinants of post-exercise glycogen synthesis during short-term recovery. *Sports Med*. 2003;33(2):117–144.
+- [37] van Loon LJ, Saris WH, Kruijshoop M, Wagenmakers AJ. Maximizing postexercise muscle glycogen synthesis. *Am J Clin Nutr*. 2000;72(1):106–111.
+- [38] Burd NA, West DW, Moore DR, et al. Enhanced amino acid sensitivity of myofibrillar protein synthesis persists for up to 24 h after resistance exercise in young men. *J Nutr*. 2011;141(4):568–573.
+- [39] Moore DR, Robinson MJ, Fry JL, et al. Ingested protein dose response of muscle and albumin protein synthesis after resistance exercise in young men. *Am J Clin Nutr*. 2009;89(1):161–168.
+- [40] Pedersen BK, Saltin B. Exercise as medicine — evidence for prescribing exercise as therapy in 26 different chronic diseases. *Scand J Med Sci Sports*. 2015;25(Suppl 3):1–72.
+- [41] Hawley JA, Lessard SJ. Exercise training-induced improvements in insulin action. *Acta Physiol*. 2008;192(1):127–135.
+- [42] Durstine JL, Grandjean PW, Davis PG, Ferguson MA, Alderson NL, DuBose KD. Blood lipid and lipoprotein adaptations to exercise. *Sports Med*. 2001;31(15):1033–1062.
+- [43] Green DJ, Maiorana A, O'Driscoll G, Taylor R. Effect of exercise training on endothelium-derived nitric oxide function in humans. *J Physiol*. 2004;561(1):1–25.
+- [44] Blomqvist CG, Saltin B. Cardiovascular adaptations to physical training. *Annu Rev Physiol*. 1983;45:169–189.
+- [45] Fiatarone MA, O'Neill EF, Ryan ND, et al. Exercise training and nutritional supplementation for physical frailty in very elderly people. *N Engl J Med*. 1994;330(25):1769–1775.
+- [46] Short KR, Bigelow ML, Kahl J, et al. Decline in skeletal muscle mitochondrial function with aging in humans. *Proc Natl Acad Sci USA*. 2005;102(15):5618–5623.
 
 ---
 
@@ -229,42 +683,23 @@ VO₂max in MET = 33.27 / 3.5 = 9.5 MET  (SEE = ±1.7 MET)
   A **One-Minute-Paper** (OMP) is a short, focused prompt that students answer in ~60 seconds at the end of a session to consolidate learning, surface misconceptions, and provide formative feedback.  When answering, be concise, specific, and use terminology from today's session.
 </Note>
 
-1. Name the four predictor variables in the Nes et al. (2011) model and explain in one sentence why each one is physiologically plausible.
-
-2. Define VO₂max in your own words and explain why it is expressed relative to body mass (ml·kg⁻¹·min⁻¹) rather than as an absolute value (l·min⁻¹).
-
-3. Explain why resting heart rate is included as a negative predictor in the Nes formula — what does an elevated resting HR tell us about cardiovascular fitness?
-
-4. The BMI coefficient is the largest in absolute terms (−0.933 for men). Why does higher BMI reduce predicted VO₂max even if the individual exercises regularly?
-
-5. Describe the PA-Index: how is it calculated, what is its possible range, and why does it carry the smallest regression coefficient despite reflecting actual exercise behaviour?
-
-6. Compare the male and female prediction equations: which variable shows the greatest sex-specific difference in its regression coefficient, and what might explain this?
-
-7. The model has an R² of ~0.58. What does this mean for individual-level interpretation, and what does the unexplained 42% of variance likely represent?
-
-8. Define SEE (Standard Error of Estimate) and explain what it means in practice if the SEE for men is ±5.8 ml·kg⁻¹·min⁻¹.
-
-9. Convert a predicted VO₂max of 40 ml·kg⁻¹·min⁻¹ to MET and explain what the MET unit represents physiologically.
-
-10. Compare the three worked examples (24 y male, 22 y female, 55 y male): which variable combination explains the largest difference between Example 1 and Example 3?
-
-11. Explain why resting HR measurement conditions (seated, quiet, morning) matter for valid input into the prediction model.
-
-12. Name two populations or contexts in which a non-exercise estimation of VO₂max would be preferred over a direct maximal exercise test, and justify your answer.
-
-13. The model was developed and validated in the HUNT Study with over 4,600 Norwegian adults. Identify one potential limitation when applying this model to a different population (e.g., elite athletes or clinical patients).
-
-14. A 30-year-old woman reports exercising almost every day at exhaustion for >60 min but has a BMI of 31 and a resting HR of 80 bpm. Without calculating, predict whether her VO₂max will be above or below average for her age — and explain your reasoning using the model variables.
-
-15. Describe one scenario in which the PA-Index could systematically overestimate or underestimate actual physical fitness, and what measurement approach would improve accuracy.
-
-16. Explain what "sensitivity analysis" means in the context of the Nes model, and give one concrete numerical example from the lecture of how changing a single variable shifts the predicted VO₂max.
-
-17. Relate VO₂max to the concept of homeostasis from Lecture 1: how does a higher VO₂max reflect an organism's improved capacity to regulate homeostasis during aerobic exercise?
-
-18. Why might long-term training adaptations (hormesis) increase VO₂max, and which of the four model variables would most visibly reflect these adaptations over a 12-week training programme?
-
-19. What single question about VO₂max estimation, model limitations, or the practical application of the Nes formula would you most like answered in the next lecture?
-
-20. Which concept from today's session was most counter-intuitive or surprising to you, and why?
+1. Compare the phosphagen, glycolytic, and oxidative ATP systems by time course and yield.
+2. Why does the phosphagen system dominate in efforts shorter than ~10 seconds?
+3. Outline glycolysis in three steps and identify its net ATP yield.
+4. Describe the three main fates of pyruvate and the conditions that favour each.
+5. Explain the Warburg effect in one sentence and name one context in which it occurs in healthy tissue.
+6. What is gluconeogenesis and why is it important during prolonged exercise?
+7. Briefly explain the role of the pentose phosphate pathway during oxidative stress.
+8. How does substrate utilisation shift from rest to high-intensity exercise?
+9. Describe one action of catecholamines on exercise metabolism.
+10. Contrast the metabolic effects of insulin and glucagon during and after exercise.
+11. How do cortisol and growth hormone contribute to substrate mobilisation?
+12. Why is lactate now considered a fuel rather than a waste product?
+13. Explain the lactate shuttle concept in one sentence.
+14. What is the role of MCT transporters in lactate exchange between tissues?
+15. How does GPR81 signalling link lactate to anti-inflammatory effects?
+16. Define protein lactylation and explain its potential epigenetic relevance.
+17. Compare Type I and Type II muscle fibres in terms of biochemical and metabolic properties.
+18. Describe how AMPK and mTOR signalling represent opposing adaptive pathways to endurance vs. resistance training.
+19. What is EPOC and which biochemical processes drive it after high-intensity exercise?
+20. Give one clinical application of exercise biochemistry relevant to post-infection recovery.
