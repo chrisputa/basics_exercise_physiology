@@ -423,6 +423,66 @@
 <p><strong>Sensitivity analysis:</strong> What happens if we change only one variable? For example, reducing the resting HR from 78 to 58 in Example 3 would increase predicted VO₂max by 0.167 × 20 = +3.3 ml·kg⁻¹·min⁻¹.</p>
 </li>
 </ol>
+<h3 id="one-at-a-time-sensitivity-of-all-four-predictors">One-at-a-time sensitivity of all four predictors</h3>
+<p>Because the Nes model is an <strong>additive linear equation with no interaction terms</strong>, each regression coefficient acts as a partial derivative: changing one predictor by a given amount shifts the estimate by a <em>constant</em> rate, independent of the other inputs. The tornado plot below applies this to Worked Example 3 (55 yr male; baseline ≈ 9.5 MET) by varying each predictor across a realistic range while holding the others fixed (resting HR varied from the baseline 78 bpm down to a trained 58 bpm).</p>
+<figure class="m-0"> <figcaption class="hidden md:block md:mr-[-53%] md:float-right md:clear-end md:w-[53%] px-6"> <p><strong>Figure 1 - One-at-a-time sensitivity of the Nes et al. (2011) VO₂max estimate, shown against the ±1 SEE and ±1.96 SEE prediction bands.</strong></p> </figcaption> <img src="/basics_exercise_physiology/_astro/vo2max_tornado.Ch5SZY5E_ZnOK0X.webp" alt="Tornado plot" loading="lazy" decoding="async" fetchpriority="auto" width="1800" height="827" class="w-full h-auto py-0 block dark:hidden"> <img src="/basics_exercise_physiology/_astro/vo2max_tornado_dark.CbIqBBCn_XPNbr.webp" alt="Tornado plot" loading="lazy" decoding="async" fetchpriority="auto" width="1800" height="827" class="w-full h-auto py-0 hidden dark:block"> <figcaption class="block md:hidden px-6 my-4"> <p><strong>Figure 1 - One-at-a-time sensitivity of the Nes et al. (2011) VO₂max estimate, shown against the ±1 SEE and ±1.96 SEE prediction bands.</strong></p> </figcaption> </figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Predictor (range varied)</th><th>MET range</th><th>Effect (MET)</th></tr></thead><tbody><tr><td>BMI (25–35 kg/m²)</td><td>8.2 – 10.8</td><td><strong>2.67</strong></td></tr><tr><td>Age (45–65 yr)</td><td>8.6 – 10.5</td><td>1.87</td></tr><tr><td>PA-Index (1.0 – 14.5)</td><td>9.5 – 10.5</td><td>0.99</td></tr><tr><td>Resting HR (58–78 bpm)</td><td>9.5 – 10.5</td><td>0.95</td></tr></tbody></table>
+<p><strong>Reading the plot.</strong> Bars extending <strong>left</strong> of the baseline indicate combinations producing <em>lower</em> predicted fitness; bars extending <strong>right</strong> indicate <em>higher</em> fitness. BMI is by far the most influential single predictor (largest absolute coefficient, −0.933), followed by age. The remaining two bars are <strong>one-sided</strong> because the baseline subject sits at the <em>unfavourable</em> end of each chosen range — PA-Index at the activity floor (1.0) and resting HR at the top of the 58–78 bpm range (78). Notably, these are also the two <strong>modifiable</strong> predictors: this individual could gain roughly +1 MET either by becoming maximally active (PA-Index → 14.5) or by lowering resting heart rate to a trained level (78 → 58 bpm), the latter matching the +0.95 MET shown in the lead example above. Age and BMI, by contrast, are structural for a given assessment.</p>
+<h3 id="what-the-see-band-represents">What the SEE band represents</h3>
+<p>The grey strips behind the bars show the model’s own predictive uncertainty, expressed as the <strong>Standard Error of Estimate (SEE)</strong> — the typical deviation of <em>measured</em> from <em>predicted</em> VO₂max in the validation sample (HUNT: SEE = 5.8 ml·kg⁻¹·min⁻¹ for men, ≈ ±1.7 MET). Interpreted via the normal distribution:</p>
+<ul>
+<li><strong>±1 SEE (≈ ±1.7 MET)</strong> — the darker strip — encloses roughly <strong>68 %</strong> of true values around the estimate.</li>
+<li><strong>±1.96 SEE (≈ ±3.3 MET)</strong> — the lighter strip — approximates the <strong>~95 % prediction band</strong> for a single new individual.</li>
+</ul>
+<p>The decisive teaching point is visible at a glance: <strong>every individual predictor bar fits entirely within the ±1 SEE band.</strong> Even the most influential variable (BMI, spanning 2.67 MET) moves the point estimate by less than the model’s own ±1 SEE noise. In other words, the measurement uncertainty of the equation is larger than the effect of any single one of its variables.</p>
+<h3 id="male-versus-female-two-distinct-comparisons">Male versus female: two distinct comparisons</h3>
+<p>The Nes model uses separate equations for men and women, which invites comparison. Two fundamentally different questions can be asked, and they should not be confused.</p>
+<p><strong>(a) Equation comparison — same input, different formula.</strong> Applying both equations to one <em>identical</em> profile (the Example 3 inputs: 55 yr, BMI 30, RHR 78, PA-Index 1.0) isolates the effect of the equation itself, holding the person constant.</p>
+<figure class="m-0"> <figcaption class="hidden md:block md:mr-[-53%] md:float-right md:clear-end md:w-[53%] px-6"> <p><strong>Figure 2 - Male vs. female VO₂max equation applied to one identical input profile; bars and SEE bands in greyscale.</strong></p> </figcaption> <img src="/basics_exercise_physiology/_astro/vo2max_tornado_equation.BAi8JiK-_Z10jkmI.webp" alt="Tornado plot equation" loading="lazy" decoding="async" fetchpriority="auto" width="1800" height="1492" class="w-full h-auto py-0 block dark:hidden"> <img src="/basics_exercise_physiology/_astro/vo2max_tornado_equation_dark.DS8u7PqF_ZrkAI9.webp" alt="Tornado plot equation" loading="lazy" decoding="async" fetchpriority="auto" width="1800" height="1492" class="w-full h-auto py-0 hidden dark:block"> <figcaption class="block md:hidden px-6 my-4"> <p><strong>Figure 2 - Male vs. female VO₂max equation applied to one identical input profile; bars and SEE bands in greyscale.</strong></p> </figcaption> </figure>
+<p>Two features stand out. First, a <strong>level difference</strong>: the female equation returns ≈ 7.6 MET versus ≈ 9.5 MET for the same profile (Δ ≈ 1.9 MET), driven almost entirely by the lower intercept (70.77 vs 92.05) and reflecting the generally lower VO₂max of women at equal body build. Second, <strong>lower sensitivity</strong>: because every female coefficient is smaller in absolute value, each female bar is shorter than its male counterpart (e.g. BMI 2.1 vs 2.7 MET). With baseline and ranges held identical, bar length here equals <em>coefficient × range</em>, so the difference is purely a coefficient effect.</p>
+<p><strong>(b) Person comparison — different people, each with their own equation.</strong> Comparing the two <em>actual</em> worked examples keeps each individual’s real profile and sex-specific equation. This answers a clinically realistic question but <strong>confounds</strong> sex, age, body composition, and activity.</p>
+<figure class="m-0"> <figcaption class="hidden md:block md:mr-[-53%] md:float-right md:clear-end md:w-[53%] px-6"> <p><strong>Figure 2 - Person comparison of Example 2 (fit young female) and Example 3 (inactive older male), each with own profile and equation.</strong></p> </figcaption> <img src="/basics_exercise_physiology/_astro/vo2max_tornado_persons.DlyE2Vkl_ZVIxvh.webp" alt="Tornado plot persons" loading="lazy" decoding="async" fetchpriority="auto" width="1800" height="1492" class="w-full h-auto py-0 block dark:hidden"> <img src="/basics_exercise_physiology/_astro/vo2max_tornado_persons_dark.CWbp-Uv1_11yRaA.webp" alt="Tornado plot persons" loading="lazy" decoding="async" fetchpriority="auto" width="1800" height="1492" class="w-full h-auto py-0 hidden dark:block"> <figcaption class="block md:hidden px-6 my-4"> <p><strong>Figure 2 - Person comparison of Example 2 (fit young female) and Example 3 (inactive older male), each with own profile and equation.</strong></p> </figcaption> </figure>
+<p>Here the contrast is one of <strong>position in the predictor space</strong>. The fit 22-year-old woman sits near a <em>ceiling</em> (baseline ≈ 13.1 MET): most bars extend leftward, i.e. realistic changes can almost only lower her estimate. The inactive 55-year-old man sits near a <em>floor</em> (≈ 9.5 MET): his bars extend rightward, i.e. almost any change improves the estimate. The same predictor can therefore be “protective” or “modifiable” depending solely on where the individual starts — a point about sensitivity that the coefficient alone does not convey.</p>
+<p><strong>Bottom line for teaching.</strong> Use comparison (a) to explain <em>why the equations differ</em>; use comparison (b) to explain <em>why two real people differ</em>. Bar length reflects both the regression coefficient (a) and the subject’s position within the varied range (b), and the two contributions must be read separately.</p>
+<h3 id="description-and-interpretation-the-mean-versus-the-individual">Description and interpretation: the mean versus the individual</h3>
+<p>Non-exercise prediction equations estimate maximal oxygen uptake from readily available demographic and physiological variables without a maximal or submaximal exercise test. Derived by multiple linear regression, they yield an additive, interaction-free approximation whose precision is summarised by the SEE.</p>
+<p><em>At the level of the group mean,</em> the approach is a genuine <strong>strength</strong>. Because regression returns an unbiased estimate of the conditional mean, population and subgroup averages are recovered accurately at negligible cost and risk. This makes non-exercise equations well suited to epidemiological surveillance, large-scale screening, and group-level risk stratification, where no ergometry, no maximal effort, and no specialised equipment are required — a decisive advantage in clinical or deconditioned populations for whom maximal testing is contraindicated.</p>
+<p><em>At the level of the individual,</em> the same equation is comparatively <strong>weak</strong>. The wide SEE means the prediction interval for a single person spans several MET — here wider than the effect of realistically varying any single predictor. Individual fitness classification is therefore uncertain, particularly near category boundaries, and estimates are subject to <strong>regression toward the sample mean</strong>, so that truly high- and low-fit individuals are systematically under- and over-estimated. Surrogate predictors (notably BMI standing in for body composition) further limit individual validity in non-representative groups such as athletes or older adults.</p>
+<p>A third caveat is <strong>transportability</strong>: the equation was developed in 4,600+ Norwegian HUNT participants. Applied to a systematically different population (e.g. elite athletes, other ethnicities, the very old), even the <em>mean</em> estimate may be biased — this is a validity problem, not an SEE problem.</p>
+<p><strong>Take-home message:</strong></p>
+<blockquote>
+<p>Non-exercise equations estimate <em>the average well and the individual poorly.</em> They are appropriate for describing and comparing populations, but point estimates should not be over-interpreted for individual diagnosis, exercise prescription, or longitudinal monitoring, where direct or submaximal measurement remains preferable.</p>
+</blockquote>
 <hr/>
 <h2 id="one-minute-paper-topics">One-Minute-Paper Topics</h2>
 <div class="marginnote m-0 md:mr-[-53%] md:float-right md:clear-end md:w-[53%] px-8 pb-4"> <p>A <strong>One-Minute-Paper</strong> (OMP) is a short, focused prompt that students answer in ~60 seconds at the end of a session to consolidate learning, surface misconceptions, and provide formative feedback.  When answering, be concise, specific, and use terminology from today’s session.</p> </div>
