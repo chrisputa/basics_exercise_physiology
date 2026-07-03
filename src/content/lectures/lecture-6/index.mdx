@@ -9,6 +9,7 @@ draft: false
 ---
 
 import Figure from '../../../components/Figure.astro';
+import Table from '../../../components/Table.astro';
 import fig1 from '../../../assets/Cellular_Respiration_bw.png';
 import fig1Dark from '../../../assets/generated/Cellular_Respiration_bw_dark.png';
 import { Note } from '../../../components/MarginNote/index.js';
@@ -112,14 +113,21 @@ ATP yields from complete oxidation are substantially higher than anaerobic pathw
 
 ### 2.4 Comparison of Energy Systems
 
+<Table>
+
 | System | Peak Power | ATP Rate | Capacity |
 |--------|-----------|----------|----------|
 | ATP-PCr | 5–10 seconds | Very High | Very Limited |
 | Glycolytic | 30–90 seconds | High | Limited |
 | Oxidative | >2–3 minutes | Moderate | Unlimited |
 
+<Fragment slot="caption">
+Comparison of the three energy systems by peak-power duration, ATP production rate and capacity.
+</Fragment>
+</Table>
+
 <Figure src={fig1} srcDark={fig1Dark} alt="Cellular Respiration">
-**Figure 3:** After uptake into the cell, glucose is phosphorylated and passes through the reactions of glycolysis down to the level of pyruvate. Under anaerobic conditions, pyruvate must be converted to lactate in order to regenerate the NAD⁺ required for glycolysis. Lactate is typically released by the cells. The energy yield amounts to 2 mol ATP per mol glucose. Under aerobic conditions, pyruvate is taken up into the mitochondria and converted there to acetyl-CoA by oxidative decarboxylation. This enters the citrate cycle, where it is broken down into CO₂ and reduction equivalents in the form of NADH/H⁺ and FADH₂. Their oxygen-dependent reoxidation yields water and is coupled to ATP synthesis from ADP and Pᵢ. Overall, the ATP yield is approximately 30 mol ATP per mol glucose. For the mechanisms of pyruvate oxidation, the citrate cycle, the respiratory chain, and oxidative phosphorylation.
+After uptake into the cell, glucose is phosphorylated and passes through the reactions of glycolysis down to the level of pyruvate. Under anaerobic conditions, pyruvate must be converted to lactate in order to regenerate the NAD⁺ required for glycolysis. Lactate is typically released by the cells. The energy yield amounts to 2 mol ATP per mol glucose. Under aerobic conditions, pyruvate is taken up into the mitochondria and converted there to acetyl-CoA by oxidative decarboxylation. This enters the citrate cycle, where it is broken down into CO₂ and reduction equivalents in the form of NADH/H⁺ and FADH₂. Their oxygen-dependent reoxidation yields water and is coupled to ATP synthesis from ADP and Pᵢ. Overall, the ATP yield is approximately 30 mol ATP per mol glucose.
 </Figure>
 
 ### 2.5 Common Metabolic Thresholds
@@ -320,11 +328,18 @@ While proteins contribute minimally to energy production during most exercise (t
 
 ### 3.4 Substrate Utilization at Different Exercise Intensities
 
+<Table>
+
 | Intensity | Primary Fuel | CHO:Fat Ratio |
 |-----------|-------------|---------------|
 | Low (&lt;40% VO₂max) | Fat (primarily FFA) | 30:70 |
 | Moderate (40–65% VO₂max) | Mixed (Fat + CHO) | 50:50 |
 | High (>75% VO₂max) | Carbohydrate (glycogen) | 85:15 |
+
+<Fragment slot="caption">
+Primary fuel and carbohydrate-to-fat ratio at low, moderate and high exercise intensities.
+</Fragment>
+</Table>
 
 [**Cellular Respiration - Slidedeck**](slides/slide-1/)
 
@@ -498,6 +513,8 @@ Type II fibers are subdivided into Type IIa (fast-twitch oxidative-glycolytic) a
 
 ### 6.3 Muscle Fiber Type Characteristics
 
+<Table>
+
 | Characteristic | Type I | Type IIa | Type IIx |
 |---------------|--------|----------|----------|
 | Contraction Speed | Slow | Fast | Very Fast |
@@ -505,6 +522,11 @@ Type II fibers are subdivided into Type IIa (fast-twitch oxidative-glycolytic) a
 | Mitochondrial Density | High | Moderate | Low |
 | Fatigue Resistance | High | Moderate | Low |
 | Primary Metabolism | Oxidative | Oxid-Glycolytic | Glycolytic |
+
+<Fragment slot="caption">
+Contractile and metabolic characteristics of the three skeletal-muscle fiber types.
+</Fragment>
+</Table>
 
 ---
 

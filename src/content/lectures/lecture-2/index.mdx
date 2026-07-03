@@ -8,6 +8,7 @@ draft: false
 ---
 
 import Figure from '../../../components/Figure.astro';
+import Table from '../../../components/Table.astro';
 import fig1 from '../../../assets/L02_Fig1_Limits_physical_performance_capacity_001_age_mortality_small_bw.png';
 import fig1Dark from '../../../assets/generated/L02_Fig1_Limits_physical_performance_capacity_001_age_mortality_small_bw_dark.png';
 import fig2 from '../../../assets/L02_Fig2_Limits_physical_performance_capacity.002_power_running_speed_small_bw.png';
@@ -187,12 +188,14 @@ When dealing with the limits of physical performance, a key question is whether 
 
 Beyond the narrow biological-physical definition, physical performance corresponds to the value created through physical work and energy consumption (movements, exercise, training, sport) and measured against the goal of action with a measurable result and a minimum level. Performance depends on biological, psychological and social resources, external stress and internal stress as well as the **willingness to perform** [1].
 
-<Figure src={fig2} srcDark={fig2Dark} alt="Limits of physical performance capacity — Power and running speed">
-**Figure: Limits of performance with age:**
-Relating MET, V̇O₂max, physical activity behaviour and mortality/morbidity [%] across the lifespan — from physical inactivity (1 MET, 3.5 mL·min⁻¹·kg⁻¹) to very fast running (~26 METs, ~90 mL·min⁻¹·kg⁻¹) — demonstrates age-dependent changes in maximal performance capacity.
+<Figure
+	src={fig2}
+	srcDark={fig2Dark}
+	alt="Limits of physical performance capacity — Power and running speed"
+	panels={[{ src: fig1, srcDark: fig1Dark, alt: 'Limits of physical performance capacity — Age and mortality' }]}
+>
+Limits of performance with age: relating MET, V̇O₂max, physical activity behaviour and mortality/morbidity [%] across the lifespan — from physical inactivity (1 MET, 3.5 mL·min⁻¹·kg⁻¹) to very fast running (~26 METs, ~90 mL·min⁻¹·kg⁻¹) — demonstrates age-dependent changes in maximal performance capacity.
 </Figure>
-
-<Figure src={fig1} srcDark={fig1Dark} alt="Limits of physical performance capacity — Age and mortality"/>
 
 ### 2.7 How Fast Can People Run for How Long?
 
@@ -202,6 +205,8 @@ The organism has an answer ready for high and low running speeds through differe
 
 Reference performance parameters (approximate maxima):
 
+<Table>
+
 | Parameter | Maximum | Mean | Minimum |
 |---|---|---|---|
 | V̇O₂max (mL·min⁻¹·kg⁻¹) | ~90 | ~45 | ~3.5 |
@@ -210,9 +215,16 @@ Reference performance parameters (approximate maxima):
 | Sprint top speed | ~12 m·s⁻¹ | ~6 m·s⁻¹ | 0 m·s⁻¹ |
 | Marathon mean speed | ~6 m·s⁻¹ | ~3 m·s⁻¹ | 0 m·s⁻¹ |
 
+<Fragment slot="caption">
+Approximate maximal, mean and minimal reference values for selected strength and endurance performance parameters.
+</Fragment>
+</Table>
+
 ### 2.8 How Fast Is the Energy Supply at Different Exercise Intensities?
 
 The speed of muscular contraction depends on the speed of energy supply [2]:
+
+<Table>
 
 | Duration | Energy source(s) | Examples |
 |---|---|---|
@@ -221,6 +233,11 @@ The speed of muscular contraction depends on the speed of energy supply [2]:
 | Up to ~90 seconds | ATP + PCr + anaerobic glycolysis (lactate formation) | Long sprints 200–400 m, 100 m swimming |
 | ~800 m | ~50 % anaerobic + ~50 % aerobic | Middle-distance running |
 | Longer distances | Aerobic glycolysis → β-oxidation (increasing proportion) | Long-distance running, endurance events |
+
+<Fragment slot="caption">
+Predominant energy-supply systems as a function of effort duration, with representative sporting examples.
+</Fragment>
+</Table>
 
 **Energy flow rates:**
 - ATP and creatine phosphate capacity: ~5 mmol·g⁻¹ | &lt;2–3 s; ~19 mmol·g⁻¹ | &lt;5–8 s
@@ -234,55 +251,38 @@ The speed of muscular contraction depends on the speed of energy supply [2]:
 - Aerobic β-oxidation: ~0.24–0.4
 
 <Figure src={fig3} srcDark={fig3Dark} alt="ATP flow rate cycling">
-**Figure: Adenosine-triphosphate (ATP) flow rates versus time. Abbreviations: P—cycling performance on a bicycle ergometer, RPE: Ratings of perceived exertion (Borg scale: 6–20).**
+Adenosine-triphosphate (ATP) flow rates versus time. P — cycling performance on a bicycle ergometer; RPE — ratings of perceived exertion (Borg scale 6–20).
 </Figure>
 
 <Figure src={fig4} srcDark={fig4Dark} alt="Energy time oxygen">
-**Figure: Time course of energy generation.**
+Time course of energy generation.
 </Figure>
 
-<Figure src={fig5} srcDark={fig5Dark} alt="Performance lactate 4h">
-**Figure: Cycle ergometer exercise of different intensities and duration. Outlined are performance, lactate generation, hormone secretion. Male subjects with a VO2max of 60–65 ml·min⁻¹·kg⁻¹.**
+<Figure
+	src={fig5}
+	srcDark={fig5Dark}
+	alt="Performance lactate 4h"
+	panels={[
+		{ src: fig6, srcDark: fig6Dark, alt: 'Performance energy lactate 4h' },
+		{ src: fig7, srcDark: fig7Dark, alt: 'Performance energy heart rate 4h' },
+		{ src: fig8, srcDark: fig8Dark, alt: 'Performance energy 4h' },
+		{ src: fig9, srcDark: fig9Dark, alt: 'Performance cortisol 4h' },
+		{ src: fig10, srcDark: fig10Dark, alt: 'Performance cortisol 4h amount' },
+		{ src: fig11, srcDark: fig11Dark, alt: 'Performance adrenaline 4h' },
+		{ src: fig12, srcDark: fig12Dark, alt: 'Performance adrenaline 4h amount' },
+		{ src: fig13, srcDark: fig13Dark, alt: 'Performance 100s lactate adrenaline cortisol' },
+	]}
+>
+Cycle-ergometer exercise of different intensities and durations, showing performance, lactate generation and hormone secretion built up step by step. Male subjects with a V̇O₂max of 60–65 ml·min⁻¹·kg⁻¹.
 </Figure>
 
-<Figure src={fig6} srcDark={fig6Dark} alt="Performance energy lactate 4h">
-**Figure: Cycle ergometer exercise of different intensities and duration. Outlined are performance, lactate generation, hormone secretion. Male subjects with a VO2max of 60–65 ml·min⁻¹·kg⁻¹.**
-</Figure>
-
-<Figure src={fig7} srcDark={fig7Dark} alt="Performance energy heart rate 4h">
-**Figure: Cycle ergometer exercise of different intensities and duration. Outlined are performance, lactate generation, hormone secretion. Male subjects with a VO2max of 60–65 ml·min⁻¹·kg⁻¹.**
-</Figure>
-
-<Figure src={fig8} srcDark={fig8Dark} alt="Performance energy 4h">
-**Figure: Cycle ergometer exercise of different intensities and duration. Outlined are performance, lactate generation, hormone secretion. Male subjects with a VO2max of 60–65 ml·min⁻¹·kg⁻¹.**
-</Figure>
-
-<Figure src={fig9} srcDark={fig9Dark} alt="Performance cortisol 4h">
-**Figure: Cycle ergometer exercise of different intensities and duration. Outlined are performance, lactate generation, hormone secretion. Male subjects with a VO2max of 60–65 ml·min⁻¹·kg⁻¹.**
-</Figure>
-
-<Figure src={fig10} srcDark={fig10Dark} alt="Performance cortisol 4h amount">
-**Figure: Cycle ergometer exercise of different intensities and duration. Outlined are performance, lactate generation, hormone secretion. Male subjects with a VO2max of 60–65 ml·min⁻¹·kg⁻¹.**
-</Figure>
-
-<Figure src={fig11} srcDark={fig11Dark} alt="Performance adrenaline 4h">
-**Figure: Cycle ergometer exercise of different intensities and duration. Outlined are performance, lactate generation, hormone secretion. Male subjects with a VO2max of 60–65 ml·min⁻¹·kg⁻¹.**
-</Figure>
-
-<Figure src={fig12} srcDark={fig12Dark} alt="Performance adrenaline 4h amount">
-**Figure: Cycle ergometer exercise of different intensities and duration. Outlined are performance, lactate generation, hormone secretion. Male subjects with a VO2max of 60–65 ml·min⁻¹·kg⁻¹.**
-</Figure>
-
-<Figure src={fig13} srcDark={fig13Dark} alt="Performance 100s lactate adrenaline cortisol">
-**Figure: Cycle ergometer exercise of different intensities and duration. Outlined are performance, lactate generation, hormone secretion. Male subjects with a VO2max of 60–65 ml·min⁻¹·kg⁻¹.**
-</Figure>
-
-<Figure src={fig14} srcDark={fig14Dark} alt="Exercise Strain lactate HPA SNS CHO Fat AA">
-**Figure: Overview of hormonal regulation and energy supply with different loads and durations of load. RPE: Rating of perceived exertion (Borg scale value).**
-</Figure>
-
-<Figure src={fig15} srcDark={fig15Dark} alt="Exercise Strain lactate CHO FAT AA">
-**Figure: Overview of hormonal regulation and energy supply with different loads and durations of load. RPE: Rating of perceived exertion (Borg scale value).**
+<Figure
+	src={fig14}
+	srcDark={fig14Dark}
+	alt="Exercise Strain lactate HPA SNS CHO Fat AA"
+	panels={[{ src: fig15, srcDark: fig15Dark, alt: 'Exercise Strain lactate CHO FAT AA' }]}
+>
+Overview of hormonal regulation and energy supply at different loads and load durations. RPE — rating of perceived exertion (Borg scale value).
 </Figure>
 
 ---
@@ -313,6 +313,8 @@ Carbon, hydrogen, oxygen, and nitrogen represent the basic structural units for 
 
 **Gross energy values (physical calorific values):**
 
+<Table>
+
 | Nutrient | Physical energy value (kcal·g⁻¹) | Physical energy value (kJ·g⁻¹) | Physiological energy value (kcal·g⁻¹) |
 |---|---|---|---|
 | Fat | 9.3 | 38.9 | 9.3 |
@@ -320,6 +322,11 @@ Carbon, hydrogen, oxygen, and nitrogen represent the basic structural units for 
 | Carbohydrate | 4.1 | 17.2 | 4.1 |
 | Glucose | 3.8 | 15.7 | 3.8 |
 | Ethanol | 7.1 | 29.7 | 7.1 |
+
+<Fragment slot="caption">
+Physical (gross) and physiological energy values of the macronutrients, glucose and ethanol.
+</Fragment>
+</Table>
 
 Coefficients of digestibility average 97 % for carbohydrates, 95 % for lipids, and 92 % for proteins. The complete breakdown of 1 mole of glucose liberates 689 kcal of energy; of this, approximately 34 % is conserved in ATP bonds.
 

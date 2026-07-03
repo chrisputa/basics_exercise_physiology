@@ -9,6 +9,7 @@ draft: false
 ---
 
 import Figure from '../../../components/Figure.astro';
+import Table from '../../../components/Table.astro';
 import fig1 from '../../../assets/figure1_Homeostasis_Immune_color.png';
 import fig1Dark from '../../../assets/generated/figure1_Homeostasis_Immune_color_dark.png';
 import fig2 from '../../../assets/figure2_ID40_Heart_rate.png';
@@ -113,6 +114,8 @@ measures are obtained via the same instruments (DEXA, BIA, hydrostatic weighing)
 
 The key conceptual distinctions are summarised in Table 1:
 
+<Table>
+
 | | FFM | LBM |
 |---|---|---|
 | Includes essential fat? | No | Yes (~3 % ♂ / ~12 % ♀) |
@@ -122,9 +125,12 @@ The key conceptual distinctions are summarised in Table 1:
 | Cunningham (1980) original wording | — | Uses *LBM* |
 | Ten Haaf & Weijs (2014) | Uses *FFM* | — |
 
-*Table 1. Conceptual comparison of fat-free mass (FFM) and lean body mass (LBM) in the context
-of BMR prediction equations.*
+<Fragment slot="caption">
+Conceptual comparison of fat-free mass (FFM) and lean body mass (LBM) in the context of BMR prediction equations.
+</Fragment>
+</Table>
 
+<Table>
 
 | Equation | Year | Formula | Input variables | Validated population |
 |---|---|---|---|---|
@@ -134,14 +140,10 @@ of BMR prediction equations.*
 | **Ten Haaf & Weijs** (FFM-based) | 2014 | REE = 370 + (21.6 × FFM) | Fat-free mass (kg) | Recreational athletes (18–35 y) |
 | **Ten Haaf & Weijs** (weight-based) | 2014 | REE = (25.9 × BW) − 284 | Body weight (kg) | Recreational athletes (18–35 y); no body composition data required |
 
-*All values in kcal/day. LBM = lean body mass; FFM = fat-free mass; BW = body weight.*
-*Note: LBM and FFM are related but not identical — LBM includes a small fraction of essential fat
-(~3 % in males, ~12 % in females) absent from FFM. Cunningham (1980) used LBM; Ten Haaf & Weijs
-(2014) used FFM. Both measures are typically obtained via DEXA, BIA, or hydrostatic weighing;
-substituting one for the other introduces only negligible error in most athletic populations.*
-
-*Table 2. Comparison of Estimation Formulas of Basal Metabolic Rate with special relevance for
-athletic populations (adapted from [17–20]).*
+<Fragment slot="caption">
+Comparison of estimation formulas of basal metabolic rate with special relevance for athletic populations (adapted from [17–20]). All values in kcal/day; LBM = lean body mass, FFM = fat-free mass, BW = body weight. Cunningham (1980) used LBM, Ten Haaf & Weijs (2014) used FFM; substituting one for the other introduces only negligible error in most athletic populations.
+</Fragment>
+</Table>
 
 #### Total Energy Expenditure across the Human Life Course
 
@@ -206,7 +208,7 @@ The organism responds to metabolic strain through acute physiological adjustment
 ### Concept of Homeostasis
 
 <Figure src={fig1} srcDark={fig1Dark} alt="Homeostasis">
-**Figure 1 - Homeostasis refers to the dynamic equilibrium of the internal environment, maintained through regulatory mechanisms that counteract disturbances. Physical activity is a significant disturbance to homeostasis, triggering rapid regulatory responses.**
+Homeostasis refers to the dynamic equilibrium of the internal environment, maintained through regulatory mechanisms that counteract disturbances. Physical activity is a significant disturbance to homeostasis, triggering rapid regulatory responses.
 </Figure>
 
 ### Acute Responses to Exercise
@@ -231,10 +233,14 @@ When the organism engages in physical activity, multiple physiological systems a
 - **Blood pressure rises** — systolic increases more than diastolic.
 - **Blood flow redistribution** — 20–25 % of cardiac output at rest goes to muscles; during exercise, this increases to 85–90 %.
 
-<Figure src={fig2} srcDark={fig2Dark} alt="Heart rate">
-**Figure 2 & 3 - Example for acute disturbance of the homeostasis by acute physical stress. Heart rate and ventilation increase during exercise and return after the end of the exercise. Light blue lines: Physical rest before exercise, red lines: Incremental graded maximal cycle ergometer exercise, dark blue lines: physical rest after the end of exercise.**
+<Figure
+	src={fig2}
+	srcDark={fig2Dark}
+	alt="Heart rate"
+	panels={[{ src: fig3, srcDark: fig3Dark, alt: 'Ventilation' }]}
+>
+Example for acute disturbance of the homeostasis by acute physical stress. Heart rate and ventilation increase during exercise and return after the end of the exercise. Light blue lines: physical rest before exercise, red lines: incremental graded maximal cycle ergometer exercise, dark blue lines: physical rest after the end of exercise.
 </Figure>
-<Figure src={fig3} srcDark={fig3Dark} alt="Ventilation"/>
 
 #### Respiratory Response
 - **Breathing frequency increases** to enhance gas exchange.
@@ -282,11 +288,11 @@ More formally, "hormesis refers to adaptive responses of biological systems to m
 Skeletal muscle and the broader physiological system perpetually encounter intrinsic mechanical and metabolic challenges imposed by physical activity. To cope with exercise-induced stressors — including mechanical loading, metabolic perturbation, oxidative stress, hypoxia, muscle damage, and thermal stress arising from sustained exertion — living organisms have evolved adaptive, protective training responses. At the molecular, cellular, and whole-organism levels, these responses share common regulatory features collectively termed 'exercise stress' and rely on evolutionarily conserved, exercise-responsive transcriptional networks [16]. The pattern of exercise-induced adaptations is dictated not only by the specific type of training stimulus (e.g., resistance, endurance, or concurrent exercise) but also by its intensity, frequency, and duration — variables central to exercise programming. Each of these factors, alone or in combination, can transiently disrupt physiological homeostasis and impair functional capacity. Sub-maximal training loads, however, elicit beneficial adaptive responses — including muscle hypertrophy, mitochondrial biogenesis, and improved cardiovascular function — that attenuate the physiological cost of subsequent bouts of the same or related exercise stress. This dose-dependent, biphasic adaptive property is known as 'hormesis' [15, 16]. A hallmark of exercise-induced hormesis is that the adaptive response to a given exercise stressor can extend cross-protective effects against future, and apparently unrelated, forms of physiological stress. The architecture of the exercise-responsive transcriptional network, whereby distinct modes of training regulate overlapping profiles of effector genes — including those encoding heat shock proteins, pro- and anti-inflammatory immune responses, antioxidant enzymes, and angiogenic factors — provides a compelling mechanistic explanation for this phenomenon [16].
 
 <Figure src={fig4} srcDark={fig4Dark} alt="Homeostasis time-course">
-**Figure 4 — Homeostasis time-course: the IL-6 peak, delayed IL-10/IL-1Ra counter-response, functional capacity dip, and the set-point reference line, with annotated phase zones.**
+Homeostasis time-course: the IL-6 peak, delayed IL-10/IL-1Ra counter-response, functional capacity dip, and the set-point reference line, with annotated phase zones.
 </Figure>
 
 <Figure src={fig5} srcDark={fig5Dark} alt="Hormesis dose-response">
-**Figure 5 — Hormesis dose-response: the full J-curve (URTI risk), bell-shaped adaptive benefit, and monotonically rising inflammatory load, with the three dose zones (sub-threshold / hormetic / overload) shaded.**
+Hormesis dose-response: the full J-curve (URTI risk), bell-shaped adaptive benefit, and monotonically rising inflammatory load, with the three dose zones (sub-threshold / hormetic / overload) shaded.
 </Figure>
 
 ### The Dual Identity of Inflammatory Mediators
@@ -325,6 +331,8 @@ Homeostasis and hormesis are not competing theories but complementary descriptio
 - In the **acute window (0–24 h post-exercise)**, the homeostatic frame predominates: the organism's priority is to restore internal equilibrium through negative feedback.
 - In the **sub-acute and chronic adaptation window (24 h to multiple training cycles)**, the hormetic frame becomes operative: if the inflammatory signal was of appropriate magnitude and the resolution phase was complete, molecular memory — in the form of elevated Nrf2 target gene expression, increased mitochondrial density, and epigenetic modification of stress-response promoters — shifts the set-point upward (supercompensation).
 
+<Table>
+
 | Dimension | Homeostasis framework | Hormesis framework |
 |---|---|---|
 | Primary signal role of IL-6/ROS | Error signal (perturbation magnitude) | Adaptive stimulus (dose-dependent trigger) |
@@ -336,7 +344,10 @@ Homeostasis and hormesis are not competing theories but complementary descriptio
 | Optimal treatment strategy | Anti-inflammatory resolution support | Preserve signal; avoid premature blunting |
 | Failure mode | Unresolved chronic inflammation | Overtraining / immunosuppression |
 
-*Table 1. Mechanistic contrast between homeostasis and hormesis frameworks applied to exercise-induced inflammation (adapted from [5]).*
+<Fragment slot="caption">
+Mechanistic contrast between homeostasis and hormesis frameworks applied to exercise-induced inflammation (adapted from [5]).
+</Fragment>
+</Table>
 
 ### Pathological Contexts: ME/CFS, Long COVID, and Post-Exertional Malaise
 

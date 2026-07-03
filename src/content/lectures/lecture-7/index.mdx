@@ -8,6 +8,7 @@ draft: false
 ---
 
 import Figure from '../../../components/Figure.astro';
+import Table from '../../../components/Table.astro';
 import fig1 from '../../../assets/L06_Fig01_ExerciseSnacks_bw_1.png';
 import fig1Dark from '../../../assets/generated/L06_Fig01_ExerciseSnacks_bw_1_dark.png';
 import fig2 from '../../../assets/L06_Fig02_ExerciseSnack_bw.png';
@@ -79,7 +80,7 @@ Without doubt, there is a need for practical recommendations for physical activi
 Figure 1 summarises the evidence-based effects of "Exercise Snacks."
 
 <Figure src={fig1} srcDark={fig1Dark} alt="Evidence-based effects of Exercise Snacks">
-**Figure 1.** Summary of evidence-based effects on energy metabolism, muscular adaptations, aerobic capacity and immunological signalling pathways of Exercise Snacks (Created in BioRender. Puta, C. (2025) https://BioRender.com/nvvnmmo).
+Summary of evidence-based effects on energy metabolism, muscular adaptations, aerobic capacity and immunological signalling pathways of Exercise Snacks (created in BioRender; Puta, C. 2025, https://BioRender.com/nvvnmmo).
 </Figure>
 
 ### 3.1 Exercise Snacks and Energy Metabolism (Glucose Regulation and Insulin Sensitivity)
@@ -127,7 +128,7 @@ The pro- and anti-inflammatory effects are context-dependent: After brief intens
 **Accordingly, our patient benefits from the anti-inflammatory effects of daily Exercise Snacks after exertion. This means that the signalling effect of muscle-expressed interleukin 6 is different from that of IL-6 in non-exertion-induced inflammation. Muscle-expressed IL-6 stimulates hepatic glucose production and lipolysis and induces anti-inflammatory signalling pathways (see Fig. 2). Overall, a reduction of the systemic inflammatory state is achieved.**
 
 <Figure src={fig2} srcDark={fig2Dark} alt="Exercise Snack protocols and anti-inflammatory efficacy">
-**Figure 2.** Exercise Snack protocols and anti-inflammatory efficacy (Data: Literature analysis). HIIT: high intensity interval training.
+Exercise Snack protocols and anti-inflammatory efficacy (data: literature analysis). HIIT: high-intensity interval training.
 </Figure>
 
 ---
@@ -155,7 +156,7 @@ Lipoprotein lipase (LPL) sits on the capillary endothelium of skeletal muscle an
 Both axes share AMPK as the central sensor and converge on reduced insulin resistance and lower cardiovascular risk — the core metabolic protective effect of exercise snacks.
 
 <Figure src={fig3} srcDark={fig3Dark} alt="Energy Metabolism Signaling">
-**Figure 3.** Exercise Snacks — Energy Metabolism Signaling. Both GLUT4 and LPL axes operate insulin-independently via AMPK activation, converging on reduced insulin resistance and lower cardiovascular risk.
+Exercise Snacks — energy metabolism signalling. Both GLUT4 and LPL axes operate insulin-independently via AMPK activation, converging on reduced insulin resistance and lower cardiovascular risk.
 </Figure>
 
 ### 4.2 Muscle Structure & Function
@@ -179,7 +180,7 @@ Mechanical stress activates satellite cells via Hepatocyte Growth Factor (HGF) a
 > **Clinical note (ME/CFS / Post-COVID):** mTORC1 activation through exercise may trigger post-exertional malaise rather than hypertrophy in populations with mitochondrial dysfunction — highlighting the need for wearable-based PEM monitoring as a safeguard.
 
 <Figure src={fig4} srcDark={fig4Dark} alt="Muscle Structure & Function Signaling">
-**Figure 4.** Exercise Snacks — Muscle Structure & Function Signaling. Three temporally staggered phases from acute AMPK/PGC-1α activation through mTORC1-driven protein synthesis to satellite cell–mediated hypertrophy.
+Exercise Snacks — muscle structure and function signalling. Three temporally staggered phases from acute AMPK/PGC-1α activation through mTORC1-driven protein synthesis to satellite cell–mediated hypertrophy.
 </Figure>
 
 ### 4.3 Aerobic Capacity
@@ -211,7 +212,7 @@ Together these widen the a-vO₂ diff — the muscle extracts more O₂ per unit
 > **Contrast with continuous exercise training**, which primarily raises CO. Exercise snacks disproportionately target the peripheral side — relevant for populations where cardiac adaptation is limited (e.g. deconditioning, autonomic dysfunction in Long COVID).
 
 <Figure src={fig5} srcDark={fig5Dark} alt="Aerobic Capacity Signaling">
-**Figure 5.** Exercise Snacks — Aerobic Capacity Signaling. Central (cardiac output) and peripheral (a-vO₂ diff) adaptations framed by the Fick equation, with exercise snacks disproportionately targeting the peripheral side.
+Exercise Snacks — aerobic capacity signalling. Central (cardiac output) and peripheral (a-vO₂ diff) adaptations framed by the Fick equation, with exercise snacks disproportionately targeting the peripheral side.
 </Figure>
 
 ### 4.4 Immunological Signalling Pathways
@@ -240,7 +241,7 @@ Regular short bouts increase gut microbiome diversity and the production of shor
 > **Research connection (ME/CFS / Long COVID):** Dysbiosis with reduced SCFA producers (*Faecalibacterium prausnitzii*, *Roseburia*) is consistently reported. Exercise snacks may rehabilitate this axis. The SCFA–NF-κB–EV miRNA triangle is a direct entry point for EV-associated miRNA biomarker studies: exercise snacks could shift EV cargo toward anti-inflammatory miRNA profiles (NF-κB, Nrf2 regulators), measurable and clinically meaningful.
 
 <Figure src={fig6} srcDark={fig6Dark} alt="Immunological Signalling Pathways">
-**Figure 6.** Exercise Snacks — Immunological Signalling Pathways. Three parallel axes (myokines, transcriptional reprogramming, microbiome metabolites) converge on NF-κB suppression and systemic anti-inflammatory effects.
+Exercise Snacks — immunological signalling pathways. Three parallel axes (myokines, transcriptional reprogramming, microbiome metabolites) converge on NF-κB suppression and systemic anti-inflammatory effects.
 </Figure>
 
 ### 4.5 Interactive Dashboard — Physiological Mechanisms
@@ -251,12 +252,19 @@ An interactive HTML dashboard provides a detailed, navigable visualisation of al
 
 ### 4.6 Summary
 
+<Table>
+
 | Domain | Primary Outcomes | Central Mediators | Timeframe |
 |---|---|---|---|
 | Energy Metabolism | ↓ Blood glucose, ↓ Triglycerides | AMPK, GLUT4, LPL | Minutes–hours |
 | Muscle Structure | ↑ Strength, ↑ CSA | AMPK, mTORC1, PGC-1α, satellite cells | Hours–months |
 | Aerobic Capacity | ↑ VO₂max, ↑ Performance | PGC-1α, VEGF, Fick CO × a-vO₂ | Weeks–months |
 | Immune Signalling | ↓ Inflammation, ↑ Tolerance | IL-6/IL-10, Nrf2, NF-κB, SCFAs | Hours–weeks |
+
+<Fragment slot="caption">
+Summary of the four physiological domains affected by Exercise Snacks, with primary outcomes, central mediators and timeframe.
+</Fragment>
+</Table>
 
 ---
 
@@ -274,6 +282,8 @@ Exercise Snacks are a highly promising, time-efficient strategy for improving ca
 - Each one-minute Exercise Snack should be performed at high to very high intensity. The target is a maximal heart rate of ≥75–85% (211 − 0.65 × age; for calculation see also: https://www.ntnu.edu/cerg/hrmax) or an RPE scale of 7–10 (CR10 scale; 7–10 corresponds to "very hard" to "maximal" exertion; you should feel like you are working hard and not be able to speak in full sentences).
 - Rest phases serve recovery and should be low-intensity or passive.
 
+<Table>
+
 | Step/Exercise | Duration | Exercise Example | Intensity Recommendation |
 |---|---|---|---|
 | Exercise 1 | 1 min | Stair climbing | Strong to very strong: ≥75–85% of maximal heart rate, ≥85% VO₂max, RPE 7–10 (CR10), "as intense as possible" |
@@ -287,6 +297,11 @@ Exercise Snacks are a highly promising, time-efficient strategy for improving ca
 | Exercise 5 | 1 min | Jumping jacks | Strong to very strong: ≥75–85% of maximal heart rate, RPE 7–10 (CR10) |
 | Pause | 45 min | Passive recovery | Low (active or passive recovery) |
 | Exercise 6 | 1 min | Lunges | Strong to very strong: ≥75–85% of maximal heart rate, RPE 7–10 (CR10) |
+
+<Fragment slot="caption">
+Example Exercise Snack protocol for the patient presented in the introduction, with exercise, duration and intensity recommendation.
+</Fragment>
+</Table>
 
 RPE: Rating of Perceived Exertion (Rating of perceived exertion on the Borg CR-10 Scale [32]), Borg CR10 Scale (Category rating 0–10: 0 = no exertion at all, 2 = light, 5 = heavy, 7 = very heavy, 10 = extremely strenuous / nearly maximal)
 

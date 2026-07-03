@@ -6,6 +6,7 @@ draft: false
 ---
 
 import Figure from '../../../components/Figure.astro';
+import Table from '../../../components/Table.astro';
 import fig1 from '../../../assets/vo2max_tornado.png';
 import fig1Dark from '../../../assets/generated/vo2max_tornado_dark.png';
 import fig2 from '../../../assets/vo2max_tornado_equation.png';
@@ -57,6 +58,8 @@ R² = 0.57; SEE = 5.1 ml·kg⁻¹·min⁻¹
 
 The PA-Index is composed of three self-report questions (see Arbeitsblatt_Nes.pdf):
 
+<Table>
+
 | Question | Answer | Score |
 |---|---|---|
 | **1. Frequency** – How often do you exercise per week? | Never / less than once | 0 |
@@ -69,6 +72,11 @@ The PA-Index is composed of three self-report questions (see Arbeitsblatt_Nes.pd
 | **3. Duration** – Average training duration per session? | < 15 min or 15–30 min | 1 |
 | | 30–60 min or > 60 min | 1.5 |
 
+<Fragment slot="caption">
+Scoring of the three self-report questions that make up the Physical Activity Index (PA-Index).
+</Fragment>
+</Table>
+
 **PA-Index = Frequency + Intensity + Duration** (Range: 1 – 14.5)
 
 ---
@@ -76,6 +84,8 @@ The PA-Index is composed of three self-report questions (see Arbeitsblatt_Nes.pd
 ## Worked Example 1: Male Student, 24 years, moderately active
 
 ### Step 1 – Anthropometric Data
+
+<Table>
 
 | Variable | Value |
 |---|---|
@@ -86,13 +96,25 @@ The PA-Index is composed of three self-report questions (see Arbeitsblatt_Nes.pd
 | **BMI** | 78 / (1.81)² = **23.8 kg/m²** |
 | Resting HR (seated) | 68 bpm |
 
+<Fragment slot="caption">
+Worked Example 1 — anthropometric input data (24-year-old male).
+</Fragment>
+</Table>
+
 ### Step 2 – Physical Activity Index
+
+<Table>
 
 | Question | Selected answer | Score |
 |---|---|---|
 | Frequency | 2–3 times/week | 2 |
 | Intensity | Sweating and heavy breathing | 5 |
 | Duration | 30–60 min | 1.5 |
+
+<Fragment slot="caption">
+Worked Example 1 — Physical Activity Index scoring.
+</Fragment>
+</Table>
 
 ### Step 3 – Calculate PA-Index
 
@@ -120,6 +142,8 @@ VO₂max in MET = 52.82 / 3.5 = 15.1 MET  (SEE = ±1.7 MET)
 
 ### Step 1 – Anthropometric Data
 
+<Table>
+
 | Variable | Value |
 |---|---|
 | Sex | female |
@@ -129,13 +153,25 @@ VO₂max in MET = 52.82 / 3.5 = 15.1 MET  (SEE = ±1.7 MET)
 | **BMI** | 62 / (1.68)² = **22.0 kg/m²** |
 | Resting HR (seated) | 58 bpm |
 
+<Fragment slot="caption">
+Worked Example 2 — anthropometric input data (22-year-old female).
+</Fragment>
+</Table>
+
 ### Step 2 – Physical Activity Index
+
+<Table>
 
 | Question | Selected answer | Score |
 |---|---|---|
 | Frequency | Almost every day | 3 |
 | Intensity | Push to exhaustion | 10 |
 | Duration | > 60 min | 1.5 |
+
+<Fragment slot="caption">
+Worked Example 2 — Physical Activity Index scoring.
+</Fragment>
+</Table>
 
 ### Step 3 – Calculate PA-Index
 
@@ -163,6 +199,8 @@ VO₂max in MET = 45.83 / 3.5 = 13.1 MET  (SEE = ±1.5 MET)
 
 ### Step 1 – Anthropometric Data
 
+<Table>
+
 | Variable | Value |
 |---|---|
 | Sex | male |
@@ -172,13 +210,25 @@ VO₂max in MET = 45.83 / 3.5 = 13.1 MET  (SEE = ±1.5 MET)
 | **BMI** | 92 / (1.75)² = **30.0 kg/m²** |
 | Resting HR (seated) | 78 bpm |
 
+<Fragment slot="caption">
+Worked Example 3 — anthropometric input data (55-year-old male).
+</Fragment>
+</Table>
+
 ### Step 2 – Physical Activity Index
+
+<Table>
 
 | Question | Selected answer | Score |
 |---|---|---|
 | Frequency | Less than once/week | 0 |
 | Intensity | No sweating | 0 |
 | Duration | < 15 min | 1 |
+
+<Fragment slot="caption">
+Worked Example 3 — Physical Activity Index scoring.
+</Fragment>
+</Table>
 
 ### Step 3 – Calculate PA-Index
 
@@ -204,6 +254,8 @@ VO₂max in MET = 33.27 / 3.5 = 9.5 MET  (SEE = ±1.7 MET)
 
 ## Summary Comparison Table
 
+<Table>
+
 | Parameter | Example 1 | Example 2 | Example 3 |
 |---|---|---|---|
 | Sex | male | female | male |
@@ -213,6 +265,11 @@ VO₂max in MET = 33.27 / 3.5 = 9.5 MET  (SEE = ±1.7 MET)
 | PA-Index | 8.5 | 14.5 | 1.0 |
 | **pred. VO₂max (ml·kg⁻¹·min⁻¹)** | **52.8** | **45.8** | **33.3** |
 | **pred. VO₂max (MET)** | **15.1** | **13.1** | **9.5** |
+
+<Fragment slot="caption">
+Summary comparison of predicted VO₂max across the three worked examples.
+</Fragment>
+</Table>
 
 ---
 
@@ -233,8 +290,10 @@ VO₂max in MET = 33.27 / 3.5 = 9.5 MET  (SEE = ±1.7 MET)
 Because the Nes model is an **additive linear equation with no interaction terms**, each regression coefficient acts as a partial derivative: changing one predictor by a given amount shifts the estimate by a *constant* rate, independent of the other inputs. The tornado plot below applies this to Worked Example 3 (55 yr male; baseline ≈ 9.5 MET) by varying each predictor across a realistic range while holding the others fixed (resting HR varied from the baseline 78 bpm down to a trained 58 bpm).
 
 <Figure src={fig1} srcDark={fig1Dark} alt="Tornado plot">
-**Figure 1 - One-at-a-time sensitivity of the Nes et al. (2011) VO₂max estimate, shown against the ±1 SEE and ±1.96 SEE prediction bands.**
+One-at-a-time sensitivity of the Nes et al. (2011) VO₂max estimate, shown against the ±1 SEE and ±1.96 SEE prediction bands.
 </Figure>
+
+<Table>
 
 | Predictor (range varied)   | MET range   | Effect (MET) |
 | -------------------------- | ----------- | ------------ |
@@ -242,6 +301,11 @@ Because the Nes model is an **additive linear equation with no interaction terms
 | Age (45–65 yr)             | 8.6 – 10.5  | 1.87         |
 | PA-Index (1.0 – 14.5)      | 9.5 – 10.5  | 0.99         |
 | Resting HR (58–78 bpm)     | 9.5 – 10.5  | 0.95         |
+
+<Fragment slot="caption">
+One-at-a-time sensitivity of each predictor in the Nes model applied to Worked Example 3 (baseline ≈ 9.5 MET).
+</Fragment>
+</Table>
 
 **Reading the plot.** Bars extending **left** of the baseline indicate combinations producing *lower* predicted fitness; bars extending **right** indicate *higher* fitness. BMI is by far the most influential single predictor (largest absolute coefficient, −0.933), followed by age. The remaining two bars are **one-sided** because the baseline subject sits at the *unfavourable* end of each chosen range — PA-Index at the activity floor (1.0) and resting HR at the top of the 58–78 bpm range (78). Notably, these are also the two **modifiable** predictors: this individual could gain roughly +1 MET either by becoming maximally active (PA-Index → 14.5) or by lowering resting heart rate to a trained level (78 → 58 bpm), the latter matching the +0.95 MET shown in the lead example above. Age and BMI, by contrast, are structural for a given assessment.
 
@@ -261,7 +325,7 @@ The Nes model uses separate equations for men and women, which invites compariso
 **(a) Equation comparison — same input, different formula.** Applying both equations to one *identical* profile (the Example 3 inputs: 55 yr, BMI 30, RHR 78, PA-Index 1.0) isolates the effect of the equation itself, holding the person constant.
 
 <Figure src={fig2} srcDark={fig2Dark} alt="Tornado plot equation">
-**Figure 2 - Male vs. female VO₂max equation applied to one identical input profile; bars and SEE bands in greyscale.**
+Male vs. female VO₂max equation applied to one identical input profile; bars and SEE bands in greyscale.
 </Figure>
 
 Two features stand out. First, a **level difference**: the female equation returns ≈ 7.6 MET versus ≈ 9.5 MET for the same profile (Δ ≈ 1.9 MET), driven almost entirely by the lower intercept (70.77 vs 92.05) and reflecting the generally lower VO₂max of women at equal body build. Second, **lower sensitivity**: because every female coefficient is smaller in absolute value, each female bar is shorter than its male counterpart (e.g. BMI 2.1 vs 2.7 MET). With baseline and ranges held identical, bar length here equals *coefficient × range*, so the difference is purely a coefficient effect.
@@ -269,7 +333,7 @@ Two features stand out. First, a **level difference**: the female equation retur
 **(b) Person comparison — different people, each with their own equation.** Comparing the two *actual* worked examples keeps each individual's real profile and sex-specific equation. This answers a clinically realistic question but **confounds** sex, age, body composition, and activity.
 
 <Figure src={fig3} srcDark={fig3Dark} alt="Tornado plot persons">
-**Figure 2 - Person comparison of Example 2 (fit young female) and Example 3 (inactive older male), each with own profile and equation.**
+Person comparison of Example 2 (fit young female) and Example 3 (inactive older male), each with own profile and equation.
 </Figure>
 
 Here the contrast is one of **position in the predictor space**. The fit 22-year-old woman sits near a *ceiling* (baseline ≈ 13.1 MET): most bars extend leftward, i.e. realistic changes can almost only lower her estimate. The inactive 55-year-old man sits near a *floor* (≈ 9.5 MET): his bars extend rightward, i.e. almost any change improves the estimate. The same predictor can therefore be "protective" or "modifiable" depending solely on where the individual starts — a point about sensitivity that the coefficient alone does not convey.
