@@ -5,14 +5,20 @@ description: Introduces the three energy systems (ATP-PCr, glycolytic, oxidative
   Covers substrate utilisation across exercise intensities and its hormonal control by catecholamines, insulin/glucagon and cortisol/growth hormone.
   Develops the lactate paradigm shift — production and clearance, MCT transport and the lactate shuttle, GPR81 signalling, histone lactylation, and the lactate threshold.
   Closes with fibre-type biochemistry, endurance vs resistance adaptations (AMPK, mTOR, PGC-1α), ROS and hormesis, recovery metabolism (EPOC, glycogen resynthesis, muscle protein synthesis), and exercise as medicine.
-examRelevant: true
+examRelevant: false
 draft: false
 ---
 
 import Figure from '../../../components/Figure.astro';
 import Table from '../../../components/Table.astro';
-import fig1 from '../../../assets/Cellular_Respiration_bw.png';
-import fig1Dark from '../../../assets/generated/Cellular_Respiration_bw_dark.png';
+import fig1 from '../../../assets/biochemistry_01_energy_systems.png';
+import fig1Dark from '../../../assets/biochemistry_01_energy_systems_dark.png';
+import fig2 from '../../../assets/Cellular_Respiration_bw.png';
+import fig2Dark from '../../../assets/generated/Cellular_Respiration_bw_dark.png';
+import fig3 from '../../../assets/biochemistry_02_atp_yield.png';
+import fig3Dark from '../../../assets/biochemistry_02_atp_yield_dark.png';
+import fig4 from '../../../assets/biochemistry_03_fat_cho_crossover.png';
+import fig4Dark from '../../../assets/biochemistry_03_fat_cho_crossover_dark.png';
 import { Note } from '../../../components/MarginNote/index.js';
 
 
@@ -70,20 +76,11 @@ ATP yields from complete oxidation are substantially higher than anaerobic pathw
 
 ### 1.5 Comparison of Energy Systems
 
-<Table>
+<Figure src={fig1} srcDark={fig1Dark} alt="ATP resynthesis rate of the three energy systems against effort duration">
+The three energy systems compared by the two properties that matter in practice: how fast they resynthesise ATP, and how long they can keep it up. ATP–PCr delivers the highest rate but is spent within 5–10 s, glycolysis peaks over 30–90 s, and oxidative phosphorylation sustains a moderate rate for effectively unlimited duration. Note the logarithmic time axis.
+</Figure>
 
-| System | Peak Power | ATP Rate | Capacity |
-|---|---|---|---|
-| ATP-PCr | 5–10 seconds | Very High | Very Limited |
-| Glycolytic | 30–90 seconds | High | Limited |
-| Oxidative | >2–3 minutes | Moderate | Unlimited |
-
-<Fragment slot="caption">
-Comparison of the three energy systems by peak-power duration, ATP production rate and capacity.
-</Fragment>
-</Table>
-
-<Figure src={fig1} srcDark={fig1Dark} alt="Cellular respiration">
+<Figure src={fig2} srcDark={fig2Dark} alt="Cellular respiration">
 After uptake into the cell, glucose is phosphorylated and passes through glycolysis down to pyruvate. Under anaerobic conditions, pyruvate is converted to lactate to regenerate the NAD⁺ required for glycolysis, and lactate is typically released by the cells (2 mol ATP per mol glucose). Under aerobic conditions, pyruvate enters the mitochondria and is converted to acetyl-CoA by oxidative decarboxylation, feeding the citrate cycle; it is broken down to CO₂ and the reduction equivalents NADH/H⁺ and FADH₂, whose oxygen-dependent reoxidation yields water and is coupled to ATP synthesis from ADP and Pᵢ, giving ≈ 30 mol ATP per mol glucose.
 </Figure>
 
@@ -146,6 +143,10 @@ The pyruvate formed by glycolysis is further metabolised via one of three catabo
 ### 2.3 Glycolysis Regulation and the Warburg Effect
 
 Pasteur observed that glucose consumption is many times greater anaerobically than aerobically — the **Pasteur effect**. Its basis is now clear: the anaerobic ATP yield (2 per glucose) is far below the aerobic yield (30–32 per glucose), so ~15× as much glucose must be consumed anaerobically for the same ATP (Nelson & Cox 2013).
+
+<Figure src={fig3} srcDark={fig3Dark} alt="ATP yield per mole of substrate and the resulting Pasteur effect">
+**Left**: ATP yield per mole of substrate on a logarithmic scale — 2 for anaerobic glycolysis, ~31 for the complete aerobic oxidation of glucose, and 106 for palmitate. **Right**: the direct consequence, the Pasteur effect. Because the anaerobic yield is roughly 15-fold lower, about 15× as much glucose must be consumed anaerobically to liberate the same amount of ATP (Nelson & Cox 2013).
+</Figure>
 
 Glycolytic flux is regulated to keep ATP nearly constant, via allosteric control of hexokinase, PFK-1 and pyruvate kinase, and second-to-second metabolite fluctuations; on a slower scale by glucagon, epinephrine and insulin, and by enzyme gene expression.
 
@@ -246,18 +247,9 @@ Proteins contribute minimally to most exercise (typically 5–15 % of total ener
 
 ### 3.4 Substrate Utilization at Different Exercise Intensities
 
-<Table>
-
-| Intensity | Primary Fuel | CHO:Fat Ratio |
-|---|---|---|
-| Low (&lt;40 % V̇O₂max) | Fat (primarily FFA) | 30:70 |
-| Moderate (40–65 % V̇O₂max) | Mixed (Fat + CHO) | 50:50 |
-| High (>75 % V̇O₂max) | Carbohydrate (glycogen) | 85:15 |
-
-<Fragment slot="caption">
-Primary fuel and carbohydrate-to-fat ratio at low, moderate and high exercise intensities.
-</Fragment>
-</Table>
+<Figure src={fig4} srcDark={fig4Dark} alt="Relative contribution of fat and carbohydrate to energy supply across exercise intensity">
+The crossover from fat to carbohydrate as exercise intensity rises. At low intensity the CHO:fat ratio is about 30:70, near 50:50 at moderate intensity, and 85:15 at high intensity. FAT_max — the intensity at which absolute fat oxidation peaks — lies at roughly 45–65 % V̇O₂max, well below the intensity at which carbohydrate begins to dominate the mixture.
+</Figure>
 
 Exercise triggers profound hormonal responses that coordinate these metabolic adjustments to meet energy demands and maintain homeostasis (Galbo 1983).
 
